@@ -20,7 +20,7 @@ Specify the validation rule, please refer to this document in the [Schema Hub]()
 • Medium - can do work without it; but it's important (e.g. to save time or for convenience)
 • Important - it's a blocker and can't do work without it
 
-## When will use cases depending on this become relevant?** Select from the options below:
+### When will use cases depending on this become relevant? Select from the options below:
 • Short-term - 2-4 weeks
 • Mid-term - 2-4 months
 • Long-term - 6 months - 1 year
