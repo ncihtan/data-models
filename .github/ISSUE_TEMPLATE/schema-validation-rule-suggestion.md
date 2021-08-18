@@ -13,7 +13,7 @@ Specify the attribute that you would like validation rule to apply to
 **Attribute**:
 
 ### Validation Rule
-Specify the validation rule, please refer to this document in the [Schema Hub]()
+Specify the validation rule, please refer to this document in the [Schema Hub](https://github.com/Sage-Bionetworks/schematic/pull/509)
 
 ### How important is this validation? Select from the options below:
 • Low - it's an enhancement but not crucial for work
