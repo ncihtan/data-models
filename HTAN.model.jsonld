@@ -2994,6 +2994,81 @@
                 },
                 {
                     "@id": "bts:ModeofCancerDetection"
+                },
+                {
+                    "@id": "bts:EducationLevel"
+                },
+                {
+                    "@id": "bts:CountryofBirth"
+                },
+                {
+                    "@id": "bts:MedicallyUnderservedArea"
+                },
+                {
+                    "@id": "bts:RuralvsUrban"
+                },
+                {
+                    "@id": "bts:CancerIncidence"
+                },
+                {
+                    "@id": "bts:CancerIncidenceLocation"
+                }
+            ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:SRRSClinicalDataTier2",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Cancer related clinical data specific to SRRS",
+            "rdfs:label": "SRRSClinicalDataTier2",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Patient"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "SRRS Clinical Data Tier 2",
+            "sms:required": "sms:false",
+            "sms:requiresComponent": [
+                {
+                    "@id": "bts:Patient"
+                }
+            ],
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:Component"
+                },
+                {
+                    "@id": "bts:HTANParticipantID"
+                },
+                {
+                    "@id": "bts:TimepointLabel"
+                },
+                {
+                    "@id": "bts:StartDaysfromIndex"
+                },
+                {
+                    "@id": "bts:StopDaysfromIndex"
+                },
+                {
+                    "@id": "bts:EducationLevel"
+                },
+                {
+                    "@id": "bts:CountryofBirth"
+                },
+                {
+                    "@id": "bts:MedicallyUnderservedArea"
+                },
+                {
+                    "@id": "bts:RuralvsUrban"
+                },
+                {
+                    "@id": "bts:CancerIncidence"
+                },
+                {
+                    "@id": "bts:CancerIncidenceLocation"
                 }
             ],
             "sms:validationRules": []
@@ -4618,6 +4693,72 @@
                 },
                 {
                     "@id": "bts:MethodofNucleicAcidIsolation"
+                }
+            ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:SRRSBiospecimen",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "SRRS-specific HTAN biological entity; this can be tissue, blood, analyte and subsamples of those, however it can be described via fewer attributes than a standard HTAN specimen",
+            "rdfs:label": "SRRSBiospecimen",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Biosample"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "SRRS Biospecimen",
+            "sms:required": "sms:false",
+            "sms:requiresComponent": [
+                {
+                    "@id": "bts:Patient"
+                }
+            ],
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:Component"
+                },
+                {
+                    "@id": "bts:HTANBiospecimenID"
+                },
+                {
+                    "@id": "bts:HTANParentID"
+                },
+                {
+                    "@id": "bts:TimepointLabel"
+                },
+                {
+                    "@id": "bts:CollectionDaysfromIndex"
+                },
+                {
+                    "@id": "bts:BiospecimenType"
+                },
+                {
+                    "@id": "bts:AcquisitionMethodType"
+                },
+                {
+                    "@id": "bts:FixativeType"
+                },
+                {
+                    "@id": "bts:StorageMethod"
+                },
+                {
+                    "@id": "bts:PreinvasiveMorphology"
+                },
+                {
+                    "@id": "bts:IschemicTime"
+                },
+                {
+                    "@id": "bts:IschemicTemperature"
+                },
+                {
+                    "@id": "bts:HistologicMorphologyCode"
+                },
+                {
+                    "@id": "bts:PreservationMethod"
                 }
             ],
             "sms:validationRules": []
@@ -11449,6 +11590,18 @@
                 },
                 {
                     "@id": "bts:PreservationMethod"
+                },
+                {
+                    "@id": "bts:BiospecimenDimension1"
+                },
+                {
+                    "@id": "bts:BiospecimenDimension2"
+                },
+                {
+                    "@id": "bts:BiospecimenDimension3"
+                },
+                {
+                    "@id": "bts:SectionNumberinSequence"
                 }
             ],
             "sms:validationRules": []
@@ -11495,6 +11648,18 @@
                 },
                 {
                     "@id": "bts:PreservationMethod"
+                },
+                {
+                    "@id": "bts:BiospecimenDimension1"
+                },
+                {
+                    "@id": "bts:BiospecimenDimension2"
+                },
+                {
+                    "@id": "bts:BiospecimenDimension3"
+                },
+                {
+                    "@id": "bts:SectionNumberinSequence"
                 }
             ],
             "sms:validationRules": []
@@ -11772,6 +11937,33 @@
                     "@id": "bts:OtherAcquisitionMethod"
                 },
                 {
+                    "@id": "bts:Noninducedsputum"
+                },
+                {
+                    "@id": "bts:Inducedsputum"
+                },
+                {
+                    "@id": "bts:BAL(bronchialalveolarlavage)"
+                },
+                {
+                    "@id": "bts:Cytobrush"
+                },
+                {
+                    "@id": "bts:Blooddraw"
+                },
+                {
+                    "@id": "bts:Fluidcollection"
+                },
+                {
+                    "@id": "bts:Forcepsbiopsy"
+                },
+                {
+                    "@id": "bts:Coreneedlebiopsy"
+                },
+                {
+                    "@id": "bts:Endoscopicbiopsy"
+                },
+                {
                     "@id": "bts:Notspecified"
                 }
             ],
@@ -11855,6 +12047,9 @@
                 },
                 {
                     "@id": "bts:Fresh"
+                },
+                {
+                    "@id": "bts:FreshdissociatedandsinglecellsortedintoplatesinNP40buffer"
                 },
                 {
                     "@id": "bts:OCT"
@@ -12138,7 +12333,7 @@
         {
             "@id": "bts:TotalVolume",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Numeric value for the total amount of sample or specimen, measured in milliliters (mL).",
+            "rdfs:comment": "Numeric value for the total amount of sample or specimen",
             "rdfs:label": "TotalVolume",
             "rdfs:subClassOf": [
                 {
@@ -12150,12 +12345,45 @@
             },
             "sms:displayName": "Total Volume",
             "sms:required": "sms:false",
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:TotalVolumeUnit"
+                }
+            ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:TotalVolumeUnit",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Unit of measurement used for the total amount of sample or specimen",
+            "rdfs:label": "TotalVolumeUnit",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Biospecimen"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:ML"
+                },
+                {
+                    "@id": "bts:Mm^3"
+                },
+                {
+                    "@id": "bts:Cm^2"
+                }
+            ],
+            "sms:displayName": "Total Volume Unit",
+            "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
             "@id": "bts:TumorTissueType",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Text that describes the kind of disease present in the tumor specimen as related to a specific timepoint.",
+            "rdfs:comment": "Text that describes the kind of disease present in the tumor specimen as related to a specific timepoint (add rows to select multiple values along with timepoints)",
             "rdfs:label": "TumorTissueType",
             "rdfs:subClassOf": [
                 {
@@ -12183,6 +12411,24 @@
                 },
                 {
                     "@id": "bts:Recurrent"
+                },
+                {
+                    "@id": "bts:Normal"
+                },
+                {
+                    "@id": "bts:Normaladjacent"
+                },
+                {
+                    "@id": "bts:Normaldistant"
+                },
+                {
+                    "@id": "bts:Posttherapy"
+                },
+                {
+                    "@id": "bts:Posttherapyneoadjuvant"
+                },
+                {
+                    "@id": "bts:Posttherapyadjuvant"
                 },
                 {
                     "@id": "bts:NotOtherwiseSpecified"
@@ -12276,6 +12522,48 @@
                 },
                 {
                     "@id": "bts:Invasivemelanoma-other"
+                },
+                {
+                    "@id": "bts:NormalWDA"
+                },
+                {
+                    "@id": "bts:Reservecellhyperplasia"
+                },
+                {
+                    "@id": "bts:Squamousmetaplasia-mature"
+                },
+                {
+                    "@id": "bts:Squamousmetaplasia-immature"
+                },
+                {
+                    "@id": "bts:Milddysplasia"
+                },
+                {
+                    "@id": "bts:Moderatedysplasia"
+                },
+                {
+                    "@id": "bts:Severedysplasia"
+                },
+                {
+                    "@id": "bts:Atypicaladenomatoushyperplasia"
+                },
+                {
+                    "@id": "bts:Adenocarcinomainsitu-nonmucinous"
+                },
+                {
+                    "@id": "bts:Adenocarcinomainsitu-mucinous"
+                },
+                {
+                    "@id": "bts:BenigntumorNOS"
+                },
+                {
+                    "@id": "bts:Hamartoma"
+                },
+                {
+                    "@id": "bts:CarcinomaNOS"
+                },
+                {
+                    "@id": "bts:Nodiagnosispossible"
                 }
             ],
             "sms:displayName": "Preinvasive Morphology",
@@ -13010,6 +13298,104 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Method of Nucleic Acid Isolation",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:BiospecimenDimension1",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "First dimension of tissue fragment (number, up to one decimal place) measured in units as defined by the \"dimensions_unit\" CDE",
+            "rdfs:label": "BiospecimenDimension1",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Biospecimen"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Biospecimen Dimension 1",
+            "sms:required": "sms:false",
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:DimensionsUnit"
+                }
+            ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:BiospecimenDimension2",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Second dimension of tissue fragment (number, up to one decimal place) measured in units as defined by the \"dimensions_unit\" CDE",
+            "rdfs:label": "BiospecimenDimension2",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Biospecimen"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Biospecimen Dimension 2",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:BiospecimenDimension3",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Third dimension of tissue fragment (number, up to one decimal place) measured in units as defined by the \"dimensions_unit\" CDE",
+            "rdfs:label": "BiospecimenDimension3",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Biospecimen"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Biospecimen Dimension 3",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:DimensionsUnit",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Unit of measurement used for dimension CDEs in metric system (i.e. cm, mm, etc)",
+            "rdfs:label": "DimensionsUnit",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Biospecimen"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Mm"
+                },
+                {
+                    "@id": "bts:Cm"
+                }
+            ],
+            "sms:displayName": "Dimensions Unit",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:SectionNumberinSequence",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Numeric value (integer, including ranges) provided to a sample in a series of sections (list all adjacent sections in the Adjacent Biospecimen IDs field)",
+            "rdfs:label": "SectionNumberinSequence",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Biospecimen"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Section Number in Sequence",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -14202,6 +14588,933 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Weeks Gestation at Birth",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:EducationLevel",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Highest level of education that the patient completed (direct patient-derived information)",
+            "rdfs:label": "EducationLevel",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ClinicalTier2"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Bachelor'sdegree"
+                },
+                {
+                    "@id": "bts:Doctoraldegreeorprofessionaldegree"
+                },
+                {
+                    "@id": "bts:Gradeschool"
+                },
+                {
+                    "@id": "bts:Graduateorprofessionaldegree"
+                },
+                {
+                    "@id": "bts:Highschoolgraduate(includingequivalency)"
+                },
+                {
+                    "@id": "bts:Master'sdegree"
+                },
+                {
+                    "@id": "bts:Noformaleducation"
+                },
+                {
+                    "@id": "bts:Nothighschoolgraduate"
+                },
+                {
+                    "@id": "bts:Somecollegeorassociatedegree"
+                },
+                {
+                    "@id": "bts:Datanotavailable"
+                }
+            ],
+            "sms:displayName": "Education Level",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CountryofBirth",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Country where the patient was born.",
+            "rdfs:label": "CountryofBirth",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ClinicalTier2"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Afghanistan"
+                },
+                {
+                    "@id": "bts:Albania"
+                },
+                {
+                    "@id": "bts:Algeria"
+                },
+                {
+                    "@id": "bts:Andorra"
+                },
+                {
+                    "@id": "bts:Angola"
+                },
+                {
+                    "@id": "bts:Anguilla"
+                },
+                {
+                    "@id": "bts:AntiguaandBarbuda"
+                },
+                {
+                    "@id": "bts:Argentina"
+                },
+                {
+                    "@id": "bts:Armenia"
+                },
+                {
+                    "@id": "bts:Aruba"
+                },
+                {
+                    "@id": "bts:Australia"
+                },
+                {
+                    "@id": "bts:Austria"
+                },
+                {
+                    "@id": "bts:Azerbaijan"
+                },
+                {
+                    "@id": "bts:Bahamas"
+                },
+                {
+                    "@id": "bts:Bahrain"
+                },
+                {
+                    "@id": "bts:Bangladesh"
+                },
+                {
+                    "@id": "bts:Barbados"
+                },
+                {
+                    "@id": "bts:Belarus"
+                },
+                {
+                    "@id": "bts:Belgium"
+                },
+                {
+                    "@id": "bts:Belize"
+                },
+                {
+                    "@id": "bts:Benin"
+                },
+                {
+                    "@id": "bts:Bermuda"
+                },
+                {
+                    "@id": "bts:Bhutan"
+                },
+                {
+                    "@id": "bts:Bolivia"
+                },
+                {
+                    "@id": "bts:BosniaandHerzegovina"
+                },
+                {
+                    "@id": "bts:Botswana"
+                },
+                {
+                    "@id": "bts:Brazil"
+                },
+                {
+                    "@id": "bts:Brunei"
+                },
+                {
+                    "@id": "bts:Bulgaria"
+                },
+                {
+                    "@id": "bts:BurkinaFaso"
+                },
+                {
+                    "@id": "bts:Burundi"
+                },
+                {
+                    "@id": "bts:Cambodia"
+                },
+                {
+                    "@id": "bts:Cameroon"
+                },
+                {
+                    "@id": "bts:Canada"
+                },
+                {
+                    "@id": "bts:CapeVerde"
+                },
+                {
+                    "@id": "bts:CaymanIslands"
+                },
+                {
+                    "@id": "bts:CentralAfricanRepublic"
+                },
+                {
+                    "@id": "bts:Chad"
+                },
+                {
+                    "@id": "bts:Chile"
+                },
+                {
+                    "@id": "bts:China"
+                },
+                {
+                    "@id": "bts:Colombia"
+                },
+                {
+                    "@id": "bts:Comoros"
+                },
+                {
+                    "@id": "bts:Congo"
+                },
+                {
+                    "@id": "bts:CookIslands"
+                },
+                {
+                    "@id": "bts:CostaRica"
+                },
+                {
+                    "@id": "bts:Coted'Ivoire"
+                },
+                {
+                    "@id": "bts:Croatia"
+                },
+                {
+                    "@id": "bts:Cuba"
+                },
+                {
+                    "@id": "bts:Curacao"
+                },
+                {
+                    "@id": "bts:Cyprus"
+                },
+                {
+                    "@id": "bts:CzechRepublic(Czechia)"
+                },
+                {
+                    "@id": "bts:DemocraticRepublicoftheCongo"
+                },
+                {
+                    "@id": "bts:Denmark"
+                },
+                {
+                    "@id": "bts:Djibouti"
+                },
+                {
+                    "@id": "bts:Dominica"
+                },
+                {
+                    "@id": "bts:DominicanRepublic"
+                },
+                {
+                    "@id": "bts:Ecuador"
+                },
+                {
+                    "@id": "bts:Egypt"
+                },
+                {
+                    "@id": "bts:ElSalvador"
+                },
+                {
+                    "@id": "bts:EquatorialGuinea"
+                },
+                {
+                    "@id": "bts:Eritrea"
+                },
+                {
+                    "@id": "bts:Estonia"
+                },
+                {
+                    "@id": "bts:Eswatini"
+                },
+                {
+                    "@id": "bts:Ethiopia"
+                },
+                {
+                    "@id": "bts:FalklandIslands(Malvinas)"
+                },
+                {
+                    "@id": "bts:FaroeIslands"
+                },
+                {
+                    "@id": "bts:FederatedStatesofMicronesia"
+                },
+                {
+                    "@id": "bts:Fiji"
+                },
+                {
+                    "@id": "bts:Finland"
+                },
+                {
+                    "@id": "bts:France"
+                },
+                {
+                    "@id": "bts:FrenchGuiana"
+                },
+                {
+                    "@id": "bts:FrenchPolynesia"
+                },
+                {
+                    "@id": "bts:Gabon"
+                },
+                {
+                    "@id": "bts:Gambia"
+                },
+                {
+                    "@id": "bts:Georgia"
+                },
+                {
+                    "@id": "bts:Germany"
+                },
+                {
+                    "@id": "bts:Ghana"
+                },
+                {
+                    "@id": "bts:Gibraltar"
+                },
+                {
+                    "@id": "bts:Greece"
+                },
+                {
+                    "@id": "bts:Greenland"
+                },
+                {
+                    "@id": "bts:Grenada"
+                },
+                {
+                    "@id": "bts:Guadeloupe"
+                },
+                {
+                    "@id": "bts:Guam"
+                },
+                {
+                    "@id": "bts:Guatemala"
+                },
+                {
+                    "@id": "bts:Guernsey"
+                },
+                {
+                    "@id": "bts:Guinea"
+                },
+                {
+                    "@id": "bts:Guinea-Bissau"
+                },
+                {
+                    "@id": "bts:Guyana"
+                },
+                {
+                    "@id": "bts:Haiti"
+                },
+                {
+                    "@id": "bts:HolySee"
+                },
+                {
+                    "@id": "bts:Honduras"
+                },
+                {
+                    "@id": "bts:HongKong"
+                },
+                {
+                    "@id": "bts:Hungary"
+                },
+                {
+                    "@id": "bts:Iceland"
+                },
+                {
+                    "@id": "bts:India"
+                },
+                {
+                    "@id": "bts:Indonesia"
+                },
+                {
+                    "@id": "bts:Iran"
+                },
+                {
+                    "@id": "bts:Iraq"
+                },
+                {
+                    "@id": "bts:Ireland"
+                },
+                {
+                    "@id": "bts:IsleofMan"
+                },
+                {
+                    "@id": "bts:Israel"
+                },
+                {
+                    "@id": "bts:Italy"
+                },
+                {
+                    "@id": "bts:Jamaica"
+                },
+                {
+                    "@id": "bts:Japan"
+                },
+                {
+                    "@id": "bts:Jersey"
+                },
+                {
+                    "@id": "bts:Jordan"
+                },
+                {
+                    "@id": "bts:Kazakhstan"
+                },
+                {
+                    "@id": "bts:Kenya"
+                },
+                {
+                    "@id": "bts:Kiribati"
+                },
+                {
+                    "@id": "bts:Kosovo"
+                },
+                {
+                    "@id": "bts:Kuwait"
+                },
+                {
+                    "@id": "bts:Kyrgyzstan"
+                },
+                {
+                    "@id": "bts:Laos"
+                },
+                {
+                    "@id": "bts:Latvia"
+                },
+                {
+                    "@id": "bts:Lebanon"
+                },
+                {
+                    "@id": "bts:Lesotho"
+                },
+                {
+                    "@id": "bts:Liberia"
+                },
+                {
+                    "@id": "bts:Libya"
+                },
+                {
+                    "@id": "bts:Liechtenstein"
+                },
+                {
+                    "@id": "bts:Lithuania"
+                },
+                {
+                    "@id": "bts:Luxembourg"
+                },
+                {
+                    "@id": "bts:Macau"
+                },
+                {
+                    "@id": "bts:Madagascar"
+                },
+                {
+                    "@id": "bts:Malawi"
+                },
+                {
+                    "@id": "bts:Malaysia"
+                },
+                {
+                    "@id": "bts:Maldives"
+                },
+                {
+                    "@id": "bts:Mali"
+                },
+                {
+                    "@id": "bts:Malta"
+                },
+                {
+                    "@id": "bts:MarshallIslands"
+                },
+                {
+                    "@id": "bts:Martinique"
+                },
+                {
+                    "@id": "bts:Mauritania"
+                },
+                {
+                    "@id": "bts:Mauritius"
+                },
+                {
+                    "@id": "bts:Mayotte"
+                },
+                {
+                    "@id": "bts:Mexico"
+                },
+                {
+                    "@id": "bts:Moldova"
+                },
+                {
+                    "@id": "bts:Monaco"
+                },
+                {
+                    "@id": "bts:Mongolia"
+                },
+                {
+                    "@id": "bts:Montenegro"
+                },
+                {
+                    "@id": "bts:Montserrat"
+                },
+                {
+                    "@id": "bts:Morocco"
+                },
+                {
+                    "@id": "bts:Mozambique"
+                },
+                {
+                    "@id": "bts:Myanmar"
+                },
+                {
+                    "@id": "bts:Namibia"
+                },
+                {
+                    "@id": "bts:Nauru"
+                },
+                {
+                    "@id": "bts:Nepal"
+                },
+                {
+                    "@id": "bts:Netherlands"
+                },
+                {
+                    "@id": "bts:NewCaledonia"
+                },
+                {
+                    "@id": "bts:NewZealand"
+                },
+                {
+                    "@id": "bts:Nicaragua"
+                },
+                {
+                    "@id": "bts:Niger"
+                },
+                {
+                    "@id": "bts:Nigeria"
+                },
+                {
+                    "@id": "bts:Niue"
+                },
+                {
+                    "@id": "bts:NorthKorea"
+                },
+                {
+                    "@id": "bts:NorthMacedonia"
+                },
+                {
+                    "@id": "bts:NorthernMarianaIslands"
+                },
+                {
+                    "@id": "bts:Norway"
+                },
+                {
+                    "@id": "bts:Oman"
+                },
+                {
+                    "@id": "bts:Pakistan"
+                },
+                {
+                    "@id": "bts:Palau"
+                },
+                {
+                    "@id": "bts:Panama"
+                },
+                {
+                    "@id": "bts:PapuaNewGuinea"
+                },
+                {
+                    "@id": "bts:Paraguay"
+                },
+                {
+                    "@id": "bts:Peru"
+                },
+                {
+                    "@id": "bts:Philippines"
+                },
+                {
+                    "@id": "bts:Poland"
+                },
+                {
+                    "@id": "bts:Portugal"
+                },
+                {
+                    "@id": "bts:PuertoRico"
+                },
+                {
+                    "@id": "bts:Qatar"
+                },
+                {
+                    "@id": "bts:Reunion"
+                },
+                {
+                    "@id": "bts:Romania"
+                },
+                {
+                    "@id": "bts:Russia"
+                },
+                {
+                    "@id": "bts:Rwanda"
+                },
+                {
+                    "@id": "bts:SaintHelenaAscensionandTristandaCunha"
+                },
+                {
+                    "@id": "bts:SaintKittsandNevis"
+                },
+                {
+                    "@id": "bts:SaintLucia"
+                },
+                {
+                    "@id": "bts:SaintPierreandMiquelon"
+                },
+                {
+                    "@id": "bts:SaintVincentandtheGrenadines"
+                },
+                {
+                    "@id": "bts:Samoa"
+                },
+                {
+                    "@id": "bts:SanMarino"
+                },
+                {
+                    "@id": "bts:SaoTomeandPrincipe"
+                },
+                {
+                    "@id": "bts:SaudiArabia"
+                },
+                {
+                    "@id": "bts:Senegal"
+                },
+                {
+                    "@id": "bts:Serbia"
+                },
+                {
+                    "@id": "bts:Seychelles"
+                },
+                {
+                    "@id": "bts:SierraLeone"
+                },
+                {
+                    "@id": "bts:Singapore"
+                },
+                {
+                    "@id": "bts:Slovakia"
+                },
+                {
+                    "@id": "bts:Slovenia"
+                },
+                {
+                    "@id": "bts:SolomonIslands"
+                },
+                {
+                    "@id": "bts:Somalia"
+                },
+                {
+                    "@id": "bts:SouthAfrica"
+                },
+                {
+                    "@id": "bts:SouthKorea"
+                },
+                {
+                    "@id": "bts:SouthSudan"
+                },
+                {
+                    "@id": "bts:Spain"
+                },
+                {
+                    "@id": "bts:SriLanka"
+                },
+                {
+                    "@id": "bts:StateofPalestine"
+                },
+                {
+                    "@id": "bts:Sudan"
+                },
+                {
+                    "@id": "bts:Suriname"
+                },
+                {
+                    "@id": "bts:Svalbard&JanMayenIslands"
+                },
+                {
+                    "@id": "bts:Sweden"
+                },
+                {
+                    "@id": "bts:Switzerland"
+                },
+                {
+                    "@id": "bts:Syria"
+                },
+                {
+                    "@id": "bts:Taiwan"
+                },
+                {
+                    "@id": "bts:Tajikistan"
+                },
+                {
+                    "@id": "bts:Tanzania"
+                },
+                {
+                    "@id": "bts:Thailand"
+                },
+                {
+                    "@id": "bts:Timor-Leste"
+                },
+                {
+                    "@id": "bts:Togo"
+                },
+                {
+                    "@id": "bts:Tokelau"
+                },
+                {
+                    "@id": "bts:Tonga"
+                },
+                {
+                    "@id": "bts:TrinidadandTobago"
+                },
+                {
+                    "@id": "bts:Tunisia"
+                },
+                {
+                    "@id": "bts:Turkey"
+                },
+                {
+                    "@id": "bts:Turkmenistan"
+                },
+                {
+                    "@id": "bts:Tuvalu"
+                },
+                {
+                    "@id": "bts:Uganda"
+                },
+                {
+                    "@id": "bts:Ukraine"
+                },
+                {
+                    "@id": "bts:UnitedArabEmirates"
+                },
+                {
+                    "@id": "bts:UnitedKingdom"
+                },
+                {
+                    "@id": "bts:UnitedStates"
+                },
+                {
+                    "@id": "bts:Uruguay"
+                },
+                {
+                    "@id": "bts:Uzbekistan"
+                },
+                {
+                    "@id": "bts:Vanuatu"
+                },
+                {
+                    "@id": "bts:Venezuela"
+                },
+                {
+                    "@id": "bts:Vietnam"
+                },
+                {
+                    "@id": "bts:VirginIslandsBritish"
+                },
+                {
+                    "@id": "bts:VirginIslandsU.S."
+                },
+                {
+                    "@id": "bts:WallisandFutuna"
+                },
+                {
+                    "@id": "bts:WesternSahara"
+                },
+                {
+                    "@id": "bts:Yemen"
+                },
+                {
+                    "@id": "bts:Zambia"
+                },
+                {
+                    "@id": "bts:Zimbabwe"
+                }
+            ],
+            "sms:displayName": "Country of Birth",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:MedicallyUnderservedArea",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Areas or populations designated by HRSA as having too few primary care providers, high infant mortality, high poverty or a high elderly population:  Use patient zip code to find the county the patient lives in by going to https://www.unitedstateszipcodes.org/ - enter the zip code in the main text field and use the associated county on the right side of the result field. Go to data.hrsa.gov website and select \"Query Data\". Pick the Medically Underserved Areas/Populations (MUA/P) data source in the step 1 menu and select \"View Data\". Enter the name of the county (_______ county) in the first \"Service Area\" column, adding the state in the 5th column may help direct you to the data.  If the designation type in the third column is \"medically underserved area\" enter \"Yes\" as the value. If the county generates a \"No data available in table\" enter \"No\" as the value.  A value of \"Unknown\" indicates that sufficient data was not available to look up the value.  If value is yes, complete the Medically_underserved_score data element.",
+            "rdfs:label": "MedicallyUnderservedArea",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ClinicalTier2"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:MedicallyUnderservedArea-Yes"
+                },
+                {
+                    "@id": "bts:MedicallyUnderservedArea-No"
+                },
+                {
+                    "@id": "bts:MedicallyUnderservedArea-Unknown"
+                }
+            ],
+            "sms:displayName": "Medically Underserved Area",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:MedicallyUnderservedArea-Yes",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Patient's zip code is in a medically underserved area",
+            "rdfs:label": "MedicallyUnderservedArea-Yes",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ClinicalTier2"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Medically Underserved Area - Yes",
+            "sms:required": "sms:false",
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:MedicallyUnderservedScore"
+                }
+            ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:MedicallyUnderservedArea-No",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Patient's zip code is not in a medically underserved area",
+            "rdfs:label": "MedicallyUnderservedArea-No",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ClinicalTier2"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Medically Underserved Area - No",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:MedicallyUnderservedArea-Unknown",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Insufficient data to look up the Medically Underserved Area value",
+            "rdfs:label": "MedicallyUnderservedArea-Unknown",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ClinicalTier2"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Medically Underserved Area - Unknown",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:MedicallyUnderservedScore",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Index of Medical Underservice (IMU) score, a number between 0 and 100, where 0 represents completely underserved and 100 represents best served or least underserved. Use patient zip code to find the county the patient lives in by going to https://www.unitedstateszipcodes.org/. Enter the zip code in the main text field and use the asociated county on the right side of the result field. Go to data.hrsa.gov website and select Query Data. Pick the Medically Underserved Areas/Populations (MUA/P) data source in the step 1 menu and select View Data. Enter the name of the county (______ county) in the first \"Service Area\" column, adding the state in the 5th column may help direct you to the data. Enter the Index of Medical Underservice Score in the fourth column to one decimal place as the value.",
+            "rdfs:label": "MedicallyUnderservedScore",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ClinicalTier2"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Medically Underserved Score",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:RuralvsUrban",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Density of population in the county of residence, based on census data (updated last on 4/28/20). Use patient zip code to find the county the patient lives in by going to https://www.unitedstateszipcodes.org/. Enter the zip code in the main text field and use the associated county on the right side of the result field. Go to https://www2.census.gov/programs-surveys/acs/data/covid_19/Data_Profiles_for_HHS/050-County_By_State/. Select the dp02_XX.csv file where XX = the two letter abbreviation for the appropriate state. On row 166 find the total population for the appropriate county.  If the total population is <2,500 enter a value of \"Rural Population\"; if 2,500 - 50,000 enter a value of \"Urban Cluster\"; or if >50,000 enter \"Urban Population\"",
+            "rdfs:label": "RuralvsUrban",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ClinicalTier2"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:UrbanPopulation(population>50000)"
+                },
+                {
+                    "@id": "bts:UrbanCluster(population2500-50000)"
+                },
+                {
+                    "@id": "bts:RuralPopulation(population<2500)"
+                }
+            ],
+            "sms:displayName": "Rural vs Urban",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CancerIncidence",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Incidence of specific cancer type in a defined area (a number between 0 and 100). The rate of incident cases per population of 100,000 persons of a specific type of cancer as designated in the \"primary_diagnosis\" data element in the county where the patient resides, using the most recent 2013-2017 NCI Cancer Atlas derived data.  Use patient zip code to find the county the patient lives in by going to https://www.unitedstateszipcodes.org/. Enter the zip code in the main text field and use the asociated county on the right side of the result field. On the https://gis.cancer.gov/canceratlas/tableview/ website, choose \"Incidence\" from the Topic dropdown menu, state of interest from the Area menu, \"All Races\" from the Race menu, and the cancer type (\"Both Sexes\" when possible) from the Statistic menu. Find the county of interest and enter the numeric Age-Adjusted Rate per 100,000 as the value.",
+            "rdfs:label": "CancerIncidence",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ClinicalTier2"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Cancer Incidence",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CancerIncidenceLocation",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The county and state in which the patient lives and to which the cancer_incidence data correlates. Record as \"County, State\" as they appear in the incidence box from which the cancer_incidence data is obtained in the https://gis.cancer.gov/canceratlas/tableview/ website",
+            "rdfs:label": "CancerIncidenceLocation",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ClinicalTier2"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Cancer Incidence Location",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -44904,6 +46217,159 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:Noninducedsputum",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Noninducedsputum",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AcquisitionMethodType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Non induced sputum",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Inducedsputum",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Inducedsputum",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AcquisitionMethodType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Induced sputum",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:BAL(bronchialalveolarlavage)",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "BAL(bronchialalveolarlavage)",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AcquisitionMethodType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "BAL (bronchial alveolar lavage)",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Cytobrush",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Cytobrush",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AcquisitionMethodType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Cytobrush",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Blooddraw",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Blooddraw",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AcquisitionMethodType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Blood draw",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Fluidcollection",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Fluidcollection",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AcquisitionMethodType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Fluid collection",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Forcepsbiopsy",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Forcepsbiopsy",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AcquisitionMethodType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Forceps biopsy",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Coreneedlebiopsy",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Coreneedlebiopsy",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AcquisitionMethodType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Core needle biopsy",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Endoscopicbiopsy",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Endoscopicbiopsy",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AcquisitionMethodType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Endoscopic biopsy",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Notspecified",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -45053,6 +46519,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Fresh",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:FreshdissociatedandsinglecellsortedintoplatesinNP40buffer",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "FreshdissociatedandsinglecellsortedintoplatesinNP40buffer",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:PreservationMethod"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Fresh dissociated and single cell sorted into plates in NP40 buffer",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -45737,6 +47220,57 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:ML",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "ML",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TotalVolumeUnit"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "mL",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Mm^3",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Mm^3",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TotalVolumeUnit"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "mm^3",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Cm^2",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Cm^2",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TotalVolumeUnit"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "cm^2",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:AdditionalPrimary",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -45835,6 +47369,108 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Recurrent",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Normal",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Normal",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TumorTissueType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Normal",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Normaladjacent",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Normaladjacent",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TumorTissueType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Normal adjacent",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Normaldistant",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Normaldistant",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TumorTissueType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Normal distant",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Posttherapy",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Posttherapy",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TumorTissueType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Post therapy",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Posttherapyneoadjuvant",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Posttherapyneoadjuvant",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TumorTissueType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Post therapy neoadjuvant",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Posttherapyadjuvant",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Posttherapyadjuvant",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TumorTissueType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Post therapy adjuvant",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -46158,6 +47794,244 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Invasive melanoma - other",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NormalWDA",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "NormalWDA",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:PreinvasiveMorphology"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Normal WDA",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Reservecellhyperplasia",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Reservecellhyperplasia",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:PreinvasiveMorphology"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Reserve cell hyperplasia",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Squamousmetaplasia-mature",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Squamousmetaplasia-mature",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:PreinvasiveMorphology"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Squamous metaplasia - mature",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Squamousmetaplasia-immature",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Squamousmetaplasia-immature",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:PreinvasiveMorphology"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Squamous metaplasia - immature",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Milddysplasia",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Milddysplasia",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:PreinvasiveMorphology"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Mild dysplasia",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Moderatedysplasia",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Moderatedysplasia",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:PreinvasiveMorphology"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Moderate dysplasia",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Severedysplasia",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Severedysplasia",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:PreinvasiveMorphology"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Severe dysplasia",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Atypicaladenomatoushyperplasia",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Atypicaladenomatoushyperplasia",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:PreinvasiveMorphology"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Atypical adenomatous hyperplasia",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Adenocarcinomainsitu-nonmucinous",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Adenocarcinomainsitu-nonmucinous",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:PreinvasiveMorphology"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Adenocarcinoma in situ - non mucinous",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Adenocarcinomainsitu-mucinous",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Adenocarcinomainsitu-mucinous",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:PreinvasiveMorphology"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Adenocarcinoma in situ - mucinous",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:BenigntumorNOS",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "BenigntumorNOS",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:PreinvasiveMorphology"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Benign tumor NOS",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Hamartoma",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Hamartoma",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:PreinvasiveMorphology"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Hamartoma",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CarcinomaNOS",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "CarcinomaNOS",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:PreinvasiveMorphology"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Carcinoma NOS",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Nodiagnosispossible",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Nodiagnosispossible",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:PreinvasiveMorphology"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "No diagnosis possible",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -46651,57 +48525,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Normal or basal cell hyperplasia or metaplasia",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Milddysplasia",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Milddysplasia",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:DegreeofDysplasia"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Mild dysplasia",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Moderatedysplasia",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Moderatedysplasia",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:DegreeofDysplasia"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Moderate dysplasia",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Severedysplasia",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Severedysplasia",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:DegreeofDysplasia"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Severe dysplasia",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -51224,6 +53047,227 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Social Security Death Index",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Bachelor'sdegree",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Bachelor'sdegree",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:EducationLevel"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Bachelor's degree",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Doctoraldegreeorprofessionaldegree",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Doctoraldegreeorprofessionaldegree",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:EducationLevel"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Doctoral degree or professional degree",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Gradeschool",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Gradeschool",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:EducationLevel"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Grade school",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Graduateorprofessionaldegree",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Graduateorprofessionaldegree",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:EducationLevel"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Graduate or professional degree",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Highschoolgraduate(includingequivalency)",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Highschoolgraduate(includingequivalency)",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:EducationLevel"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "High school graduate (including equivalency)",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Master'sdegree",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Master'sdegree",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:EducationLevel"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Master's degree",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Noformaleducation",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Noformaleducation",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:EducationLevel"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "No formal education",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Nothighschoolgraduate",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Nothighschoolgraduate",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:EducationLevel"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Not high school graduate",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Somecollegeorassociatedegree",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Somecollegeorassociatedegree",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:EducationLevel"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Some college or associate degree",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Datanotavailable",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Datanotavailable",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:EducationLevel"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Data not available",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:UrbanPopulation(population>50000)",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "UrbanPopulation(population>50000)",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:RuralvsUrban"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Urban Population (population >50000)",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:UrbanCluster(population2500-50000)",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "UrbanCluster(population2500-50000)",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:RuralvsUrban"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Urban Cluster (population 2500 - 50000)",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:RuralPopulation(population<2500)",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "RuralPopulation(population<2500)",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:RuralvsUrban"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Rural Population (population <2500)",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -82423,193 +84467,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:NormalWDA",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "NormalWDA",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:PrecancerousConditionType"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Normal WDA",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Reservecellhyperplasia",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Reservecellhyperplasia",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:PrecancerousConditionType"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Reserve cell hyperplasia",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Squamousmetaplasia-mature",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Squamousmetaplasia-mature",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:PrecancerousConditionType"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Squamous metaplasia - mature",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Squamousmetaplasia-immature",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Squamousmetaplasia-immature",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:PrecancerousConditionType"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Squamous metaplasia - immature",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Atypicaladenomatoushyperplasia",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Atypicaladenomatoushyperplasia",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:PrecancerousConditionType"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Atypical adenomatous hyperplasia",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Adenocarcinomainsitu-nonmucinous",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Adenocarcinomainsitu-nonmucinous",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:PrecancerousConditionType"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Adenocarcinoma in situ - non mucinous",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Adenocarcinomainsitu-mucinous",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Adenocarcinomainsitu-mucinous",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:PrecancerousConditionType"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Adenocarcinoma in situ - mucinous",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:BenigntumorNOS",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "BenigntumorNOS",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:PrecancerousConditionType"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Benign tumor NOS",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Hamartoma",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Hamartoma",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:PrecancerousConditionType"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Hamartoma",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:CarcinomaNOS",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "CarcinomaNOS",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:PrecancerousConditionType"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Carcinoma NOS",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Nodiagnosispossible",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Nodiagnosispossible",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:PrecancerousConditionType"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "No diagnosis possible",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:Abdomentotal",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -90430,23 +92287,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:Datanotavailable",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Datanotavailable",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:MutationalSignatures"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Data not available",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:MismatchrepairdeficiencyMMRD",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -91055,23 +92895,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Low",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Normal",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Normal",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:TestResult"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Normal",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
