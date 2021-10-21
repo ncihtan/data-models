@@ -3069,6 +3069,75 @@
                 },
                 {
                     "@id": "bts:CancerIncidenceLocation"
+                },
+                {
+                    "@id": "bts:Ethnicity"
+                },
+                {
+                    "@id": "bts:Gender"
+                },
+                {
+                    "@id": "bts:Race"
+                },
+                {
+                    "@id": "bts:VitalStatus"
+                },
+                {
+                    "@id": "bts:AgeatDiagnosis"
+                },
+                {
+                    "@id": "bts:DaystoLastFollowup"
+                },
+                {
+                    "@id": "bts:DaystoLastKnownDiseaseStatus"
+                },
+                {
+                    "@id": "bts:DaystoRecurrence"
+                },
+                {
+                    "@id": "bts:LastKnownDiseaseStatus"
+                },
+                {
+                    "@id": "bts:Morphology"
+                },
+                {
+                    "@id": "bts:PrimaryDiagnosis"
+                },
+                {
+                    "@id": "bts:ProgressionorRecurrence"
+                },
+                {
+                    "@id": "bts:SiteofResectionorBiopsy"
+                },
+                {
+                    "@id": "bts:TissueorOrganofOrigin"
+                },
+                {
+                    "@id": "bts:TumorGrade"
+                },
+                {
+                    "@id": "bts:PackYearsSmoked"
+                },
+                {
+                    "@id": "bts:YearsSmoked"
+                },
+                {
+                    "@id": "bts:DaystoFollowUp"
+                },
+                {
+                    "@id": "bts:GeneSymbol"
+                },
+                {
+                    "@id": "bts:MolecularAnalysisMethod"
+                },
+                {
+                    "@id": "bts:TestResult"
+                },
+                {
+                    "@id": "bts:TreatmentType"
+                },
+                {
+                    "@id": "bts:TumorLargestDimensionDiameter"
                 }
             ],
             "sms:validationRules": []
@@ -4728,16 +4797,37 @@
                     "@id": "bts:HTANParentID"
                 },
                 {
+                    "@id": "bts:AdjacentBiospecimenIDs"
+                },
+                {
+                    "@id": "bts:BiospecimenType"
+                },
+                {
+                    "@id": "bts:AssayType"
+                },
+                {
                     "@id": "bts:TimepointLabel"
                 },
                 {
                     "@id": "bts:CollectionDaysfromIndex"
                 },
                 {
-                    "@id": "bts:BiospecimenType"
+                    "@id": "bts:AcquisitionMethodType"
                 },
                 {
-                    "@id": "bts:AcquisitionMethodType"
+                    "@id": "bts:IschemicTime"
+                },
+                {
+                    "@id": "bts:IschemicTemperature"
+                },
+                {
+                    "@id": "bts:CollectionMedia"
+                },
+                {
+                    "@id": "bts:TopographyCode"
+                },
+                {
+                    "@id": "bts:AdditionalTopography"
                 },
                 {
                     "@id": "bts:FixativeType"
@@ -4759,6 +4849,12 @@
                 },
                 {
                     "@id": "bts:PreservationMethod"
+                },
+                {
+                    "@id": "bts:ProcessingDaysfromIndex"
+                },
+                {
+                    "@id": "bts:ProtocolLink"
                 }
             ],
             "sms:validationRules": []
@@ -12693,6 +12789,15 @@
                 },
                 {
                     "@id": "bts:Refrigeratedvacuumchamber"
+                },
+                {
+                    "@id": "bts:4Cinvacuumchamber"
+                },
+                {
+                    "@id": "bts:Desiccantat4C"
+                },
+                {
+                    "@id": "bts:NotApplicable"
                 },
                 {
                     "@id": "bts:Unknown"
@@ -36051,6 +36156,105 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:TopographyCode",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Topography Code, indicating site within the body, based on ICD-O-3.",
+            "rdfs:label": "TopographyCode",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Diagnosis"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Topography Code",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:AdditionalTopography",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Topography not included in the ICD-O-3 Topography codes.",
+            "rdfs:label": "AdditionalTopography",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Diagnosis"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Skinofscalp"
+                },
+                {
+                    "@id": "bts:Skinofeyelid"
+                },
+                {
+                    "@id": "bts:Skinofnose"
+                },
+                {
+                    "@id": "bts:Skinoflip"
+                },
+                {
+                    "@id": "bts:Skinofear"
+                },
+                {
+                    "@id": "bts:Skinofneck"
+                },
+                {
+                    "@id": "bts:Skinofotherpartsofface"
+                },
+                {
+                    "@id": "bts:Skinofchest"
+                },
+                {
+                    "@id": "bts:Skinofback"
+                },
+                {
+                    "@id": "bts:Skinofabdomen"
+                },
+                {
+                    "@id": "bts:Skinoftrunk"
+                },
+                {
+                    "@id": "bts:Skinofbreast"
+                },
+                {
+                    "@id": "bts:Skinofupperlimbandshoulder"
+                },
+                {
+                    "@id": "bts:Skinofpalm"
+                },
+                {
+                    "@id": "bts:Skinoflowerlimbandhip"
+                },
+                {
+                    "@id": "bts:Skinofsole"
+                },
+                {
+                    "@id": "bts:Skinofpenis"
+                },
+                {
+                    "@id": "bts:Skinofscrotum"
+                },
+                {
+                    "@id": "bts:Skinofvulva"
+                },
+                {
+                    "@id": "bts:SkinNOS"
+                },
+                {
+                    "@id": "bts:NotReported"
+                }
+            ],
+            "sms:displayName": "Additional Topography",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:LungCancerDetectionMethodType",
             "@type": "rdfs:Class",
             "rdfs:comment": "The means, manner of procedure, or systematic course of actions performed in order to discover or identify lung cancer",
@@ -48321,6 +48525,40 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Refrigerated vacuum chamber",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:4Cinvacuumchamber",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "4Cinvacuumchamber",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:StorageMethod"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "4C in vacuum chamber",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Desiccantat4C",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Desiccantat4C",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:StorageMethod"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Desiccant at 4C",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -109457,6 +109695,278 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:Skinofscalp",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Skinofscalp",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AdditionalTopography"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Skin of scalp",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Skinofeyelid",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Skinofeyelid",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AdditionalTopography"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Skin of eye lid",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Skinofnose",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Skinofnose",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AdditionalTopography"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Skin of nose",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Skinoflip",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Skinoflip",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AdditionalTopography"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Skin of lip",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Skinofear",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Skinofear",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AdditionalTopography"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Skin of ear",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Skinofneck",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Skinofneck",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AdditionalTopography"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Skin of neck",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Skinofotherpartsofface",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Skinofotherpartsofface",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AdditionalTopography"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Skin of other parts of face",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Skinofchest",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Skinofchest",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AdditionalTopography"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Skin of chest",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Skinofback",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Skinofback",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AdditionalTopography"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Skin of back",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Skinofabdomen",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Skinofabdomen",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AdditionalTopography"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Skin of abdomen",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Skinofbreast",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Skinofbreast",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AdditionalTopography"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Skin of breast",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Skinofpalm",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Skinofpalm",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AdditionalTopography"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Skin of palm",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Skinofsole",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Skinofsole",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AdditionalTopography"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Skin of sole",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Skinofpenis",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Skinofpenis",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AdditionalTopography"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Skin of penis",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Skinofscrotum",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Skinofscrotum",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AdditionalTopography"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Skin of scrotum",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Skinofvulva",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Skinofvulva",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AdditionalTopography"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Skin of vulva",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:LowDoseComputedTomography(LDCT)",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -116716,176 +117226,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:Skinofscalp",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Skinofscalp",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:MelanomaBiopsyResectionSites"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "skin of scalp",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Skinofeyelid",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Skinofeyelid",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:MelanomaBiopsyResectionSites"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "skin of eye lid",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Skinofnose",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Skinofnose",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:MelanomaBiopsyResectionSites"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "skin of nose",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Skinoflip",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Skinoflip",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:MelanomaBiopsyResectionSites"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "skin of lip",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Skinofear",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Skinofear",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:MelanomaBiopsyResectionSites"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "skin of ear",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Skinofneck",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Skinofneck",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:MelanomaBiopsyResectionSites"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "skin of neck",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Skinofotherpartsofface",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Skinofotherpartsofface",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:MelanomaBiopsyResectionSites"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "skin of other parts of face",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Skinofchest",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Skinofchest",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:MelanomaBiopsyResectionSites"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "skin of chest",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Skinofback",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Skinofback",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:MelanomaBiopsyResectionSites"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "skin of back",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Skinofabdomen",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Skinofabdomen",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:MelanomaBiopsyResectionSites"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "skin of abdomen",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:Skinoftrunk-other",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -116899,108 +117239,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "skin of trunk-other",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Skinofbreast",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Skinofbreast",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:MelanomaBiopsyResectionSites"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "skin of breast",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Skinofpalm",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Skinofpalm",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:MelanomaBiopsyResectionSites"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "skin of palm",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Skinofsole",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Skinofsole",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:MelanomaBiopsyResectionSites"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "skin of sole",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Skinofpenis",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Skinofpenis",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:MelanomaBiopsyResectionSites"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "skin of penis",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Skinofscrotum",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Skinofscrotum",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:MelanomaBiopsyResectionSites"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "skin of scrotum",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Skinofvulva",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Skinofvulva",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:MelanomaBiopsyResectionSites"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "skin of vulva",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
