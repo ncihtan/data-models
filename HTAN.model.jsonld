@@ -3113,6 +3113,9 @@
                     "@id": "bts:TissueorOrganofOrigin"
                 },
                 {
+                    "@id": "bts:NCIAtlasCancerSite"
+                },
+                {
                     "@id": "bts:TumorGrade"
                 },
                 {
@@ -11979,6 +11982,15 @@
                 },
                 {
                     "@id": "bts:CDNALibrariesAnalyte"
+                },
+                {
+                    "@id": "bts:PBMCs"
+                },
+                {
+                    "@id": "bts:Plasma"
+                },
+                {
+                    "@id": "bts:SerumAnalyte"
                 }
             ],
             "sms:displayName": "Analyte Type",
@@ -12251,6 +12263,12 @@
                     "@id": "bts:Cryo-store"
                 },
                 {
+                    "@id": "bts:Carnoy'sFixative"
+                },
+                {
+                    "@id": "bts:Polaxamer"
+                },
+                {
                     "@id": "bts:Other"
                 },
                 {
@@ -12325,7 +12343,10 @@
                     "@id": "bts:4Cwetice"
                 },
                 {
-                    "@id": "bts:Negative-20DegCDryIce"
+                    "@id": "bts:Negative-20C"
+                },
+                {
+                    "@id": "bts:DryIce"
                 },
                 {
                     "@id": "bts:LiquidNitrogen"
@@ -12639,6 +12660,9 @@
                 },
                 {
                     "@id": "bts:Severedysplasia"
+                },
+                {
+                    "@id": "bts:SquamousCarcinomainsitu"
                 },
                 {
                     "@id": "bts:Atypicaladenomatoushyperplasia"
@@ -24206,6 +24230,23 @@
                 }
             ],
             "sms:displayName": "Treatment Anatomic Site",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NCIAtlasCancerSite",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The primary tumor site used to calculate the incidence rate using the NCI Cancer Atlas, a digital atlas which provides geographical data related to cancer utilizing the Surveillance, Epidemiology, and End Results (SEER) Program cancer incidence rates for 2013 to 2017",
+            "rdfs:label": "NCIAtlasCancerSite",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Diagnosis"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "NCI Atlas Cancer Site",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -46251,6 +46292,57 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:PBMCs",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "PBMCs",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AnalyteType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "PBMCs",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Plasma",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Plasma",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AnalyteType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Plasma",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:SerumAnalyte",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "SerumAnalyte",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AnalyteType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Serum Analyte",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Autopsy",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -47186,6 +47278,40 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:Carnoy'sFixative",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Carnoy'sFixative",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:FixativeType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Carnoy's Fixative",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Polaxamer",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Polaxamer",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:FixativeType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Polaxamer",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:None",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -47271,10 +47397,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:Negative-20DegCDryIce",
+            "@id": "bts:Negative-20C",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
-            "rdfs:label": "Negative-20DegCDryIce",
+            "rdfs:label": "Negative-20C",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:IschemicTemperature"
@@ -47283,7 +47409,24 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Negative -20 Deg C Dry Ice",
+            "sms:displayName": "Negative -20C",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:DryIce",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "DryIce",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:IschemicTemperature"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Dry Ice",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -48121,6 +48264,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:SquamousCarcinomainsitu",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "SquamousCarcinomainsitu",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:PreinvasiveMorphology"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Squamous Carcinoma in situ",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Atypicaladenomatoushyperplasia",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -48593,23 +48753,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Cold Pack",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:DryIce",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "DryIce",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:ShippingConditionType"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Dry Ice",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -93779,23 +93922,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Peritoneal Fluid",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Plasma",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Plasma",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:ClinicalBiospecimenType"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Plasma",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
