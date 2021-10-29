@@ -6035,6 +6035,63 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:ScATAC-seqLevel4",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Data represents the relationships between cells derived from Level 3 expression data and shown as tSNE or UMAP coordinates per cell, plus all other cell-specific meta information (e.g., cell type)",
+            "rdfs:label": "ScATAC-seqLevel4",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Sequencing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "scATAC-seq Level 4",
+            "sms:required": "sms:false",
+            "sms:requiresComponent": [
+                {
+                    "@id": "bts:ScRNA-seqLevel3"
+                }
+            ],
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:Component"
+                },
+                {
+                    "@id": "bts:filename"
+                },
+                {
+                    "@id": "bts:fileFormat"
+                },
+                {
+                    "@id": "bts:HTANParentDataFileID"
+                },
+                {
+                    "@id": "bts:HTANDataFileID"
+                },
+                {
+                    "@id": "bts:ScATACseqWorkflowType"
+                },
+                {
+                    "@id": "bts:ScATACseqWorkflowParametersDescription"
+                },
+                {
+                    "@id": "bts:WorkflowVersion"
+                },
+                {
+                    "@id": "bts:WorkflowLink"
+                },
+                {
+                    "@id": "bts:WorkflowStartDatetime"
+                },
+                {
+                    "@id": "bts:WorkflowEndDatetime"
+                }
+            ],
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:ImagingLevel2",
             "@type": "rdfs:Class",
             "rdfs:comment": "Raw and pre-processed image data",
@@ -10427,6 +10484,40 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "scRNAseq Workflow Parameters Description",
+            "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ScATACseqWorkflowType",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Generic name for the workflow used to analyze a data set.",
+            "rdfs:label": "ScATACseqWorkflowType",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Sequencing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "scATACseq Workflow Type",
+            "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ScATACseqWorkflowParametersDescription",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Parameters used to run the scATAC-seq workflow. ",
+            "rdfs:label": "ScATACseqWorkflowParametersDescription",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Sequencing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "scATACseq Workflow Parameters Description",
             "sms:required": "sms:true",
             "sms:validationRules": []
         },
