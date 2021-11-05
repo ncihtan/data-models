@@ -6051,7 +6051,7 @@
             "sms:required": "sms:false",
             "sms:requiresComponent": [
                 {
-                    "@id": "bts:ScRNA-seqLevel3"
+                    "@id": "bts:ScATAC-seqLevel3"
                 }
             ],
             "sms:requiresDependency": [
@@ -6228,6 +6228,129 @@
                 },
                 {
                     "@id": "bts:PhysicalSizeZUnit"
+                },
+                {
+                    "@id": "bts:PixelsBigEndian"
+                },
+                {
+                    "@id": "bts:PlaneCount"
+                },
+                {
+                    "@id": "bts:SizeC"
+                },
+                {
+                    "@id": "bts:SizeT"
+                },
+                {
+                    "@id": "bts:SizeX"
+                },
+                {
+                    "@id": "bts:SizeY"
+                },
+                {
+                    "@id": "bts:SizeZ"
+                },
+                {
+                    "@id": "bts:PixelType"
+                }
+            ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:SRRSImagingLevel2",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "SRRS-specific HTAN raw and pre-processed image data",
+            "rdfs:label": "SRRSImagingLevel2",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Assay"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "SRRS Imaging Level 2",
+            "sms:required": "sms:false",
+            "sms:requiresComponent": [
+                {
+                    "@id": "bts:Biospecimen"
+                },
+                {
+                    "@id": "bts:ImagingLevel2Channels"
+                }
+            ],
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:Component"
+                },
+                {
+                    "@id": "bts:filename"
+                },
+                {
+                    "@id": "bts:fileFormat"
+                },
+                {
+                    "@id": "bts:HTANParticipantID"
+                },
+                {
+                    "@id": "bts:HTANParentBiospecimenID"
+                },
+                {
+                    "@id": "bts:HTANDataFileID"
+                },
+                {
+                    "@id": "bts:ChannelMetadataFilename"
+                },
+                {
+                    "@id": "bts:ImagingAssayType"
+                },
+                {
+                    "@id": "bts:ProtocolLink"
+                },
+                {
+                    "@id": "bts:SoftwareandVersion"
+                },
+                {
+                    "@id": "bts:Microscope"
+                },
+                {
+                    "@id": "bts:Objective"
+                },
+                {
+                    "@id": "bts:NominalMagnification"
+                },
+                {
+                    "@id": "bts:Pyramid"
+                },
+                {
+                    "@id": "bts:Zstack"
+                },
+                {
+                    "@id": "bts:Tseries"
+                },
+                {
+                    "@id": "bts:PassedQC"
+                },
+                {
+                    "@id": "bts:FrameAveraging"
+                },
+                {
+                    "@id": "bts:ImageID"
+                },
+                {
+                    "@id": "bts:DimensionOrder"
+                },
+                {
+                    "@id": "bts:PhysicalSizeX"
+                },
+                {
+                    "@id": "bts:PhysicalSizeXUnit"
+                },
+                {
+                    "@id": "bts:PhysicalSizeY"
+                },
+                {
+                    "@id": "bts:PhysicalSizeYUnit"
                 },
                 {
                     "@id": "bts:PixelsBigEndian"
@@ -7454,18 +7577,13 @@
             ],
             "sms:displayName": "PhysicalSizeYUnit",
             "sms:required": "sms:true",
-            "sms:requiresDependency": [
-                {
-                    "@id": "bts:PhysicalSizeZUnit"
-                }
-            ],
             "sms:validationRules": []
         },
         {
-            "@id": "bts:PhysicalSizeYUnit",
+            "@id": "bts:PhysicalSizeZ",
             "@type": "rdfs:Class",
             "rdfs:comment": "Physical size (Z-dimension) of a pixel. Units are set by PhysicalSizeZUnit. Floating point value > 0.",
-            "rdfs:label": "PhysicalSizeYUnit",
+            "rdfs:label": "PhysicalSizeZ",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:ImagingLevel2"
@@ -7474,8 +7592,13 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "PhysicalSizeYUnit",
+            "sms:displayName": "PhysicalSizeZ",
             "sms:required": "sms:true",
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:PhysicalSizeZUnit"
+                }
+            ],
             "sms:validationRules": []
         },
         {
@@ -42048,19 +42171,19 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:PhysicalSizeZ",
+            "@id": "bts:ScATAC-seqLevel3",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
-            "rdfs:label": "PhysicalSizeZ",
+            "rdfs:label": "ScATAC-seqLevel3",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel2"
+                    "@id": "schema:Thing"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "PhysicalSizeZ",
+            "sms:displayName": "scATAC-seq Level 3",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
