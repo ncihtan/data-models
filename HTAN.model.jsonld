@@ -6918,6 +6918,9 @@
                 },
                 {
                     "@id": "bts:ExSeq"
+                },
+                {
+                    "@id": "bts:NotApplicable"
                 }
             ],
             "sms:displayName": "Imaging Assay Type",
@@ -12564,6 +12567,9 @@
                 },
                 {
                     "@id": "bts:LiquidNitrogen"
+                },
+                {
+                    "@id": "bts:Unknown"
                 }
             ],
             "sms:displayName": "Ischemic Temperature",
@@ -12601,6 +12607,9 @@
                 },
                 {
                     "@id": "bts:PBS+Serum"
+                },
+                {
+                    "@id": "bts:None"
                 }
             ],
             "sms:displayName": "Collection Media",
@@ -15692,6 +15701,9 @@
                 },
                 {
                     "@id": "bts:Zimbabwe"
+                },
+                {
+                    "@id": "bts:Unknown"
                 }
             ],
             "sms:displayName": "Country of Birth",
@@ -24460,6 +24472,74 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Bladder"
+                },
+                {
+                    "@id": "bts:BrainAndOtherNervousSystem"
+                },
+                {
+                    "@id": "bts:FemaleBreast"
+                },
+                {
+                    "@id": "bts:InsituFemaleBreast"
+                },
+                {
+                    "@id": "bts:CervixUteri"
+                },
+                {
+                    "@id": "bts:LessThanAge"
+                },
+                {
+                    "@id": "bts:MalignantChildhoodNeoplasm"
+                },
+                {
+                    "@id": "bts:ColonAndRectum"
+                },
+                {
+                    "@id": "bts:Esophagus"
+                },
+                {
+                    "@id": "bts:KidneyAndRenalPelvis"
+                },
+                {
+                    "@id": "bts:Leukemia"
+                },
+                {
+                    "@id": "bts:LiverAndBileDuct"
+                },
+                {
+                    "@id": "bts:LungAndBronchus"
+                },
+                {
+                    "@id": "bts:CutaneousMelanoma"
+                },
+                {
+                    "@id": "bts:Non-Hodgkin'sLymphoma"
+                },
+                {
+                    "@id": "bts:OralCavityAndPharynx"
+                },
+                {
+                    "@id": "bts:Ovary"
+                },
+                {
+                    "@id": "bts:Pancreas"
+                },
+                {
+                    "@id": "bts:ProstateGland"
+                },
+                {
+                    "@id": "bts:Stomach"
+                },
+                {
+                    "@id": "bts:ThyroidGland"
+                },
+                {
+                    "@id": "bts:Uterus"
+                }
+            ],
             "sms:displayName": "NCI Atlas Cancer Site",
             "sms:required": "sms:false",
             "sms:validationRules": []
@@ -36502,6 +36582,12 @@
                     "@id": "bts:SkinNOS"
                 },
                 {
+                    "@id": "bts:HilarAirway"
+                },
+                {
+                    "@id": "bts:Peri-tumoralAirway"
+                },
+                {
                     "@id": "bts:NotReported"
                 }
             ],
@@ -42460,6 +42546,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:NotApplicable",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "NotApplicable",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ImagingAssayType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Not Applicable",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Cm",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -43119,23 +43222,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Enzymatic Digestion",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:NotApplicable",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "NotApplicable",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:DissociationMethod"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Not Applicable",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -81662,6 +81748,329 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:BrainAndOtherNervousSystem",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "BrainAndOtherNervousSystem",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NCIAtlasCancerSite"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Brain And Other Nervous System",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:FemaleBreast",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "FemaleBreast",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NCIAtlasCancerSite"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Female Breast",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:InsituFemaleBreast",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "InsituFemaleBreast",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NCIAtlasCancerSite"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "In situ Female Breast",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CervixUteri",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "CervixUteri",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NCIAtlasCancerSite"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Cervix Uteri",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:LessThanAge",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "LessThanAge",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NCIAtlasCancerSite"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Less Than Age",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:MalignantChildhoodNeoplasm",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "MalignantChildhoodNeoplasm",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NCIAtlasCancerSite"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Malignant Childhood Neoplasm",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ColonAndRectum",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "ColonAndRectum",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NCIAtlasCancerSite"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Colon And Rectum",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Esophagus",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Esophagus",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NCIAtlasCancerSite"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Esophagus",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:KidneyAndRenalPelvis",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "KidneyAndRenalPelvis",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NCIAtlasCancerSite"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Kidney And Renal Pelvis",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:LiverAndBileDuct",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "LiverAndBileDuct",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NCIAtlasCancerSite"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Liver And Bile Duct",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:LungAndBronchus",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "LungAndBronchus",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NCIAtlasCancerSite"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Lung And Bronchus",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CutaneousMelanoma",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "CutaneousMelanoma",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NCIAtlasCancerSite"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Cutaneous Melanoma",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Non-Hodgkin'sLymphoma",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Non-Hodgkin'sLymphoma",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NCIAtlasCancerSite"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Non-Hodgkin's Lymphoma",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:OralCavityAndPharynx",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "OralCavityAndPharynx",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NCIAtlasCancerSite"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Oral Cavity And Pharynx",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Pancreas",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Pancreas",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NCIAtlasCancerSite"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Pancreas",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ProstateGland",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "ProstateGland",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NCIAtlasCancerSite"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Prostate Gland",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Stomach",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Stomach",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NCIAtlasCancerSite"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Stomach",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ThyroidGland",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "ThyroidGland",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NCIAtlasCancerSite"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Thyroid Gland",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Uterus",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Uterus",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NCIAtlasCancerSite"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Uterus",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Biochemical",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -86354,23 +86763,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:Esophagus",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Esophagus",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:PriorSitesofRadiation"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Esophagus",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:EsophagusMucosaOnly",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -88156,23 +88548,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:Pancreas",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Pancreas",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:PriorSitesofRadiation"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Pancreas",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:ParaspinalGanglion",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -89125,23 +89500,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:Stomach",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Stomach",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:PriorSitesofRadiation"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Stomach",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:StomachMucosaOnly",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -89495,23 +89853,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Urinary Tract",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Uterus",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Uterus",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:PriorSitesofRadiation"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Uterus",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -110303,6 +110644,40 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Skin of vulva",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:HilarAirway",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "HilarAirway",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AdditionalTopography"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Hilar Airway",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Peri-tumoralAirway",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Peri-tumoralAirway",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AdditionalTopography"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Peri-tumoral Airway",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
