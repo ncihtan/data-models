@@ -2783,7 +2783,7 @@
             "sms:displayName": "HTAN Data File ID",
             "sms:required": "sms:true",
             "sms:validationRules": [
-                "regex match ^HTA_"
+                "regex search HTA_*"
             ]
         },
         {
