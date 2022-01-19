@@ -10801,10 +10801,49 @@
                     "@id": "bts:GATK4"
                 },
                 {
-                    "@id": "bts:Other"
+                    "@id": "bts:OtherGermlineVariantsWorkflowType"
                 }
             ],
             "sms:displayName": "Germline Variants Workflow Type",
+            "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:OtherGermlineVariantsWorkflowType",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Other Germline Variants Workflow Type",
+            "rdfs:label": "OtherGermlineVariantsWorkflowType",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Sequencing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Other Germline Variants Workflow Type",
+            "sms:required": "sms:false",
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:CustomGermlineVariantsWorkflowType"
+                }
+            ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CustomGermlineVariantsWorkflowType",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Specify the name of a custom alignment workflow",
+            "rdfs:label": "CustomGermlineVariantsWorkflowType",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Sequencing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Custom Germline Variants Workflow Type",
             "sms:required": "sms:true",
             "sms:validationRules": []
         },
@@ -10862,9 +10901,51 @@
                 },
                 {
                     "@id": "bts:VarScan2"
+                },
+                {
+                    "@id": "bts:OtherSomaticVariantsWorkflowType"
                 }
             ],
             "sms:displayName": "Somatic Variants Workflow Type",
+            "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:OtherSomaticVariantsWorkflowType",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Other Somatic Variants Workflow Type",
+            "rdfs:label": "OtherSomaticVariantsWorkflowType",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Sequencing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Other Somatic Variants Workflow Type",
+            "sms:required": "sms:false",
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:CustomSomaticVariantsWorkflowType"
+                }
+            ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CustomSomaticVariantsWorkflowType",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Specify the name of a custom workflow name",
+            "rdfs:label": "CustomSomaticVariantsWorkflowType",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Sequencing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Custom Somatic Variants Workflow Type",
             "sms:required": "sms:true",
             "sms:validationRules": []
         },
@@ -10935,9 +11016,51 @@
                 },
                 {
                     "@id": "bts:CNVkit"
+                },
+                {
+                    "@id": "bts:OtherStructuralVariantWorkflowType"
                 }
             ],
             "sms:displayName": "Structural Variant Workflow Type",
+            "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:OtherStructuralVariantWorkflowType",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Other Structural Variant Workflow Type",
+            "rdfs:label": "OtherStructuralVariantWorkflowType",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Sequencing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Other Structural Variant Workflow Type",
+            "sms:required": "sms:false",
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:CustomStructuralVariantWorkflowType"
+                }
+            ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CustomStructuralVariantWorkflowType",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Specify the name of a custom workflow name",
+            "rdfs:label": "CustomStructuralVariantWorkflowType",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Sequencing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Custom Structural Variant Workflow Type",
             "sms:required": "sms:true",
             "sms:validationRules": []
         },
@@ -10998,9 +11121,51 @@
                 },
                 {
                     "@id": "bts:STAR2-PassTranscriptome"
+                },
+                {
+                    "@id": "bts:OtherAlignmentWorkflow"
                 }
             ],
             "sms:displayName": "Alignment Workflow Type",
+            "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:OtherAlignmentWorkflow",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Other Alignment Workflow",
+            "rdfs:label": "OtherAlignmentWorkflow",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Sequencing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Other Alignment Workflow",
+            "sms:required": "sms:false",
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:CustomAlignmentWorkflow"
+                }
+            ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CustomAlignmentWorkflow",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Specify the name of a custom alignment workflow",
+            "rdfs:label": "CustomAlignmentWorkflow",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Sequencing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Custom Alignment Workflow",
             "sms:required": "sms:true",
             "sms:validationRules": []
         },
