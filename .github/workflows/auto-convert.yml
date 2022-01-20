@@ -36,5 +36,5 @@ jobs:
           git config user.email github-actions@github.com
           git checkout ${GITHUB_REF##*/}
           git add HTAN.model.jsonld
-          git commit -m "add changes of HTAN.model.jsonld"
+          git commit -m "auto convert to .jsonld"
           git push origin ${GITHUB_REF##*/}
