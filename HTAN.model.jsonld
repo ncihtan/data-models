@@ -4653,6 +4653,9 @@
                     "@id": "bts:HTANBiospecimenID"
                 },
                 {
+                    "@id": "bts:SourceHTANBiospecimenID"
+                },
+                {
                     "@id": "bts:HTANParentID"
                 },
                 {
@@ -4797,6 +4800,9 @@
                     "@id": "bts:HTANBiospecimenID"
                 },
                 {
+                    "@id": "bts:SourceHTANBiospecimenID"
+                },
+                {
                     "@id": "bts:HTANParentID"
                 },
                 {
@@ -4860,6 +4866,111 @@
                     "@id": "bts:ProtocolLink"
                 }
             ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:SourceHTANBiospecimenID",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "This is the HTAN ID that may have been assigned to the biospecimen at the site of biospecimen origin (e.g. BU).",
+            "rdfs:label": "SourceHTANBiospecimenID",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Biosample"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Source HTAN Biospecimen ID",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:BloodTubeType",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The type of test tube, capillary tube, or other tube used for the collection of blood specimen.",
+            "rdfs:label": "BloodTubeType",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Biosample"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Green(Heparin)"
+                },
+                {
+                    "@id": "bts:Lightblue(SodiumCitrate)"
+                },
+                {
+                    "@id": "bts:OtherBloodTubeType-specify"
+                },
+                {
+                    "@id": "bts:PAXgeneBloodDNATube"
+                },
+                {
+                    "@id": "bts:PAXgeneBloodRNATube"
+                },
+                {
+                    "@id": "bts:Purple/Lavender(EDTA)"
+                },
+                {
+                    "@id": "bts:Red(Serum)"
+                },
+                {
+                    "@id": "bts:Streck"
+                },
+                {
+                    "@id": "bts:Unknown"
+                },
+                {
+                    "@id": "bts:Yellow(ACD)"
+                }
+            ],
+            "sms:displayName": "Blood Tube Type",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:OtherBloodTubeType-specify",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Different than the one(s) previously specified or mentioned.",
+            "rdfs:label": "OtherBloodTubeType-specify",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Biosample"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Other Blood Tube Type-specify",
+            "sms:required": "sms:false",
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:BloodTubeTypeOther"
+                }
+            ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:BloodTubeTypeOther",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Conditionally required if Blood Tube Type set to Other.",
+            "rdfs:label": "BloodTubeTypeOther",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Biosample"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Blood Tube Type Other",
+            "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
@@ -7747,21 +7858,6 @@
                 },
                 {
                     "@id": "bts:Å"
-                },
-                {
-                    "@id": "bts:Cm"
-                },
-                {
-                    "@id": "bts:Mm"
-                },
-                {
-                    "@id": "bts:Μm"
-                },
-                {
-                    "@id": "bts:Nm"
-                },
-                {
-                    "@id": "bts:Å"
                 }
             ],
             "sms:displayName": "PhysicalSizeYUnit",
@@ -7791,10 +7887,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:PhysicalSizeYUnit",
+            "@id": "bts:PhysicalSizeZUnit",
             "@type": "rdfs:Class",
             "rdfs:comment": "The units of the physical size of a pixel. See OME enumeration of allowed values for the UnitsLength attribute -- default: microns (um)",
-            "rdfs:label": "PhysicalSizeYUnit",
+            "rdfs:label": "PhysicalSizeZUnit",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:ImagingLevel2"
@@ -7803,7 +7899,24 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "PhysicalSizeYUnit",
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Cm"
+                },
+                {
+                    "@id": "bts:Mm"
+                },
+                {
+                    "@id": "bts:Μm"
+                },
+                {
+                    "@id": "bts:Nm"
+                },
+                {
+                    "@id": "bts:Å"
+                }
+            ],
+            "sms:displayName": "PhysicalSizeZUnit",
             "sms:required": "sms:true",
             "sms:validationRules": []
         },
@@ -42733,6 +42846,159 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:Green(Heparin)",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Green(Heparin)",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:BloodTubeType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Green (Heparin)",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Lightblue(SodiumCitrate)",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Lightblue(SodiumCitrate)",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:BloodTubeType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Light blue (Sodium Citrate)",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:PAXgeneBloodDNATube",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "PAXgeneBloodDNATube",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:BloodTubeType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "PAXgene Blood DNA Tube",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:PAXgeneBloodRNATube",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "PAXgeneBloodRNATube",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:BloodTubeType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "PAXgene Blood RNA Tube",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Purple/Lavender(EDTA)",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Purple/Lavender(EDTA)",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:BloodTubeType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Purple/Lavender (EDTA)",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Red(Serum)",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Red(Serum)",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:BloodTubeType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Red (Serum)",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Streck",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Streck",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:BloodTubeType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Streck",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Unknown",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Unknown",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:BloodTubeType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Unknown",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Yellow(ACD)",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Yellow(ACD)",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:BloodTubeType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Yellow (ACD)",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Flow",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -42814,23 +43080,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "scATAC-seq Level 3",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:PhysicalSizeZUnit",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "PhysicalSizeZUnit",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:ImagingLevel2"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "PhysicalSizeZUnit",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -44871,23 +45120,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "NovaSeqS4",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Unknown",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Unknown",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:SequencingPlatform"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "unknown",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
