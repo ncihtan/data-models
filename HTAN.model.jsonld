@@ -7379,7 +7379,7 @@
                 }
             ],
             "sms:displayName": "WorkingDistanceUnit",
-            "sms:required": "sms:true",
+            "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
