@@ -13,7 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
       - name: Install System Dependencies
         run: |
           sudo apt-get update
@@ -22,8 +21,11 @@ jobs:
       - name: Install Schematic
         shell: bash
         run: |
+          pip3 install poetry
           git clone --single-branch --branch develop https://github.com/Sage-Bionetworks/schematic.git
-          python3 -m pip install schematicpy
+          cd schematic
+          poetry build
+          pip3 install dist/schematicpy-1.0.0-py3-none-any.whl
 
       - name: Convert .csv to .jsonld
         shell: bash
