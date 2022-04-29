@@ -115,7 +115,7 @@ Pixels BigEndian,Boolean (True/False),"True, False",,,TRUE,Imaging Level 2,,,
 PlaneCount,"Number of Z-planes (not to be confused with downsampled ""pyramid""). Integer >=1",,,,TRUE,Imaging Level 2,,,
 SizeC,Number of channels. Integer >= 1,,,,TRUE,Imaging Level 2,,,
 SizeT,Number of time points. Integer >= 1,,,,TRUE,Imaging Level 2,,,
-SizeX,Size of image: X dimension (in pixels). Integer >= 1,,,,TRUE,Imaging Level 2,,,
+SizeX,Size of image: X dimension (in pixels). Integer >= 1,,,,TRUE,Imaging Level 2,,,int
 SizeY,Size of image: Y dimension (in pixels). Integer >= 1,,,,TRUE,Imaging Level 2,,,
 SizeZ,Size of image: Z dimension (in pixels). Integer >= 1,,,,TRUE,Imaging Level 2,,,
 PixelType,"Data type for each pixel value. E.g. ""uint16""","int8, int16, int32, uint8, uint16, uint32, float, double, bit",,,TRUE,Imaging Level 2,,,
