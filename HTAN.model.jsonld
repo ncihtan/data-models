@@ -9308,7 +9308,9 @@
             },
             "sms:displayName": "Library Preparation Days from Index",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:SingleCellDissociationDaysfromIndex",
@@ -9325,7 +9327,9 @@
             },
             "sms:displayName": "Single Cell Dissociation Days from Index",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:SequencingLibraryConstructionDaysfromIndex",
@@ -9342,7 +9346,9 @@
             },
             "sms:displayName": "Sequencing Library Construction Days from Index",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:NucleicAcidCaptureDaysfromIndex",
@@ -9359,7 +9365,9 @@
             },
             "sms:displayName": "Nucleic Acid Capture Days from Index",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:CryopreservedCellsinSample",
@@ -12737,7 +12745,9 @@
             },
             "sms:displayName": "Collection Days from Index",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:ProtocolLink",
@@ -13636,7 +13646,9 @@
             },
             "sms:displayName": "Sectioning Days from Index",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:StorageMethod",
@@ -13726,7 +13738,9 @@
             },
             "sms:displayName": "Processing Days from Index",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:ShippingConditionType",
@@ -14228,7 +14242,7 @@
         {
             "@id": "bts:AntigenRetrieval",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Imaging specific: information on antigen retrieval when it is used for a pathology specimen. E.g. pH 6 (Citric Acid), pH 8 (tris), or pH 10. [Text - max length 100] ",
+            "rdfs:comment": "Imaging specific: information on antigen retrieval when it is used for a pathology specimen. E.g. pH 6 (Citric Acid), pH 8 (tris), or pH 10. [Text - max length 100]",
             "rdfs:label": "AntigenRetrieval",
             "rdfs:subClassOf": [
                 {
@@ -14423,7 +14437,9 @@
             },
             "sms:displayName": "Start Days from Index",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:StopDaysfromIndex",
@@ -14440,7 +14456,9 @@
             },
             "sms:displayName": "Stop Days from Index",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:Ethnicity",
@@ -14633,7 +14651,9 @@
             },
             "sms:displayName": "Days to Birth",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:YearofDeath",
@@ -15533,7 +15553,9 @@
             },
             "sms:displayName": "Days to Death",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:OccupationDurationYears",
@@ -17052,7 +17074,9 @@
             },
             "sms:displayName": "Alcohol Days Per Week",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:AlcoholDrinksPerDay",
@@ -17837,7 +17861,9 @@
             },
             "sms:displayName": "Days to Follow Up",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:AdverseEvent",
@@ -20780,7 +20806,9 @@
             },
             "sms:displayName": "Days to Adverse Event",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:DaystoComorbidity",
@@ -20797,7 +20825,9 @@
             },
             "sms:displayName": "Days to Comorbidity",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:DaystoProgression",
@@ -20814,7 +20844,9 @@
             },
             "sms:displayName": "Days to Progression",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:DaystoProgressionFree",
@@ -20831,7 +20863,9 @@
             },
             "sms:displayName": "Days to Progression Free",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:DaystoRecurrence",
@@ -20848,7 +20882,9 @@
             },
             "sms:displayName": "Days to Recurrence",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:DiabetesTreatmentType",
@@ -21578,7 +21614,9 @@
             },
             "sms:displayName": "Days to Imaging",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:EvidenceofRecurrenceType",
@@ -25694,7 +25732,9 @@
             },
             "sms:displayName": "Days to Treatment End",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:DaystoTreatmentStart",
@@ -25711,7 +25751,9 @@
             },
             "sms:displayName": "Days to Treatment Start",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:InitialDiseaseStatus",
@@ -31536,7 +31578,9 @@
             },
             "sms:displayName": "Days to Last Follow up",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:DaystoLastKnownDiseaseStatus",
@@ -31553,7 +31597,9 @@
             },
             "sms:displayName": "Days to Last Known Disease Status",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:LastKnownDiseaseStatus",
@@ -36346,7 +36392,9 @@
             },
             "sms:displayName": "Days to Diagnosis",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:FirstSymptomPriortoDiagnosis",
