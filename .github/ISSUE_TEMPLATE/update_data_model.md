@@ -1,3 +1,12 @@
+---
+name: Update data model
+about: Use this template to implement changes to the data model
+title: ''
+labels: 
+assignees: elv-sb adamjtaylor
+
+---
+
 ## Information
 ### Proposed change: 
 *a clear and consice description of proposed data model ammendments*
