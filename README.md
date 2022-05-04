@@ -34,4 +34,14 @@ This repository contains 3 major files:
     - Ensure that the `github-actions` user has commited into your branch with the message `auto convert to .jsonld`
 6.  Make a new PR from your feature branch to `main`
     - Assign @elv-sb as reviewer
+7. Once merged...
+    - Delete the branch to keep things tidy
+    - Notify FAIR data team to regenerate the Data Curator App with the updated model
+9. If a new component has been added...
+    - Create a branch named `add-<component>` in [`ncihtan/HTAN-data-curator`](https://github.com/ncihtan/HTAN-data-curator)
+    - Modify `www/config.json` to add the component ensuring the `schema_name` matches the data model `Component` you are adding
+    - Push the change
+    - Open a PR in [`ncihtan/HTAN-data-curator`](https://github.com/ncihtan/HTAN-data-curator)
+    - Assign @elv-sb as reviewer
+    - Once approved notify FAIR data team to regenerate Data Curator App with latest component
 
