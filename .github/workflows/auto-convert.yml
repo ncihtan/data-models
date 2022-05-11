@@ -1,0 +1,42 @@
+# This workflow is used to convert changed HTAN.model.csv to HTAN.model.jsonld
+# and push the updated HTAN.model.jsonld to feature branch
+
+name: Schema Converter
+
+on:
+  push:
+    paths:
+      - 'HTAN.model.csv'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pip python3.8-venv libcurl4-openssl-dev
+
+      - name: Install Schematic
+        shell: bash
+        run: |
+          pip3 install poetry
+          git clone --single-branch --branch develop https://github.com/Sage-Bionetworks/schematic.git
+          cd schematic
+          poetry build
+          pip3 install dist/schematicpy-1.0.0-py3-none-any.whl
+
+      - name: Convert .csv to .jsonld
+        shell: bash
+        run: |
+          schematic schema convert HTAN.model.csv
+
+      - name: Update .jsonld in the Branch
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git checkout ${GITHUB_REF##*/}
+          git add HTAN.model.jsonld
+          git commit -m "auto convert to .jsonld"
+          git push origin ${GITHUB_REF##*/}
