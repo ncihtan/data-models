@@ -41587,15 +41587,6 @@
             "sms:validationRules": []
         },
         {
-<<<<<<< HEAD
-            "@id": "bts:Pre-processingCompleted",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Pre-processing steps completed to convert level 1 raw data to a single level 2 image",
-            "rdfs:label": "Pre-processingCompleted",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:ImagingLevel1"
-=======
             "@id": "bts:HTANRPPAAntibodyTableID",
             "@type": "rdfs:Class",
             "rdfs:comment": "HTAN identifier associated with RPPA antibody level metadata. Identical for every row of the table.",
@@ -41603,35 +41594,11 @@
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:HTANRPPAAntibodyTable"
->>>>>>> main
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-<<<<<<< HEAD
-            "schema:rangeIncludes": [
-                {
-                    "@id": "bts:Illuminationcorrection"
-                },
-                {
-                    "@id": "bts:TileStitching"
-                },
-                {
-                    "@id": "bts:Channel/CycleRegistration"
-                },
-                {
-                    "@id": "bts:TMAde-arraying"
-                },
-                {
-                    "@id": "bts:None"
-                },
-                {
-                    "@id": "bts:Other"
-                }
-            ],
-            "sms:displayName": "Pre-processing Completed",
-=======
             "sms:displayName": "HTAN RPPA Antibody Table ID",
             "sms:required": "sms:true",
             "sms:validationRules": []
@@ -41709,20 +41676,10 @@
                 }
             ],
             "sms:displayName": "Phosphoprotein Flag",
->>>>>>> main
             "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
-<<<<<<< HEAD
-            "@id": "bts:Pre-processingRequired",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Pre-processing steps required to convert level 1 raw data to a single level 2 image",
-            "rdfs:label": "Pre-processingRequired",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:ImagingLevel1"
-=======
             "@id": "bts:InternalAntibodyID",
             "@type": "rdfs:Class",
             "rdfs:comment": "Internal lab ID for an antibody.",
@@ -41747,7 +41704,6 @@
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:HTANRPPAAntibodyTable"
->>>>>>> main
                 }
             ],
             "schema:isPartOf": {
@@ -41755,28 +41711,6 @@
             },
             "schema:rangeIncludes": [
                 {
-<<<<<<< HEAD
-                    "@id": "bts:Illuminationcorrection"
-                },
-                {
-                    "@id": "bts:TileStitching"
-                },
-                {
-                    "@id": "bts:Channel/CycleRegistration"
-                },
-                {
-                    "@id": "bts:TMAde-arraying"
-                },
-                {
-                    "@id": "bts:None"
-                },
-                {
-                    "@id": "bts:Other"
-                }
-            ],
-            "sms:displayName": "Pre-processing Required",
-            "sms:required": "sms:true",
-=======
                     "@id": "bts:Mouse"
                 },
                 {
@@ -41875,7 +41809,80 @@
             },
             "sms:displayName": "Antibody Notes",
             "sms:required": "sms:false",
->>>>>>> main
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Pre-processingCompleted",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Pre-processing steps completed to convert level 1 raw data to a single level 2 image",
+            "rdfs:label": "Pre-processingCompleted",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ImagingLevel1"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Illuminationcorrection"
+                },
+                {
+                    "@id": "bts:TileStitching"
+                },
+                {
+                    "@id": "bts:Channel/CycleRegistration"
+                },
+                {
+                    "@id": "bts:TMAde-arraying"
+                },
+                {
+                    "@id": "bts:None"
+                },
+                {
+                    "@id": "bts:Other"
+                }
+            ],
+            "sms:displayName": "Pre-processing Completed",
+            "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Pre-processingRequired",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Pre-processing steps required to convert level 1 raw data to a single level 2 image",
+            "rdfs:label": "Pre-processingRequired",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ImagingLevel1"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Illuminationcorrection"
+                },
+                {
+                    "@id": "bts:TileStitching"
+                },
+                {
+                    "@id": "bts:Channel/CycleRegistration"
+                },
+                {
+                    "@id": "bts:TMAde-arraying"
+                },
+                {
+                    "@id": "bts:None"
+                },
+                {
+                    "@id": "bts:Other"
+                }
+            ],
+            "sms:displayName": "Pre-processing Required",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -119667,6 +119674,74 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Used for QC",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Illuminationcorrection",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Illuminationcorrection",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Pre-processingCompleted"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Illumination correction",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:TileStitching",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "TileStitching",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Pre-processingCompleted"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Tile Stitching",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Channel/CycleRegistration",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Channel/CycleRegistration",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Pre-processingCompleted"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Channel/Cycle Registration",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:TMAde-arraying",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "TMAde-arraying",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Pre-processingCompleted"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "TMA de-arraying",
             "sms:required": "sms:false",
             "sms:validationRules": []
         }
