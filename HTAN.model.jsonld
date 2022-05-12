@@ -4677,9 +4677,6 @@
                     "@id": "bts:FixativeType"
                 },
                 {
-                    "@id": "bts:SiteofResectionorBiopsy"
-                },
-                {
                     "@id": "bts:StorageMethod"
                 },
                 {
@@ -6278,9 +6275,6 @@
                     "@id": "bts:WorkingDistance"
                 },
                 {
-                    "@id": "bts:WorkingDistanceUnit"
-                },
-                {
                     "@id": "bts:Immersion"
                 },
                 {
@@ -6305,13 +6299,7 @@
                     "@id": "bts:FOVX"
                 },
                 {
-                    "@id": "bts:FOVXUnit"
-                },
-                {
                     "@id": "bts:FOVY"
-                },
-                {
-                    "@id": "bts:FOVYUnit"
                 },
                 {
                     "@id": "bts:FrameAveraging"
@@ -6326,19 +6314,10 @@
                     "@id": "bts:PhysicalSizeX"
                 },
                 {
-                    "@id": "bts:PhysicalSizeXUnit"
-                },
-                {
                     "@id": "bts:PhysicalSizeY"
                 },
                 {
-                    "@id": "bts:PhysicalSizeYUnit"
-                },
-                {
                     "@id": "bts:PhysicalSizeZ"
-                },
-                {
-                    "@id": "bts:PhysicalSizeZUnit"
                 },
                 {
                     "@id": "bts:PixelsBigEndian"
@@ -6440,13 +6419,7 @@
                     "@id": "bts:FOVX"
                 },
                 {
-                    "@id": "bts:FOVXUnit"
-                },
-                {
                     "@id": "bts:FOVY"
-                },
-                {
-                    "@id": "bts:FOVYUnit"
                 },
                 {
                     "@id": "bts:FrameAveraging"
@@ -6461,19 +6434,10 @@
                     "@id": "bts:PhysicalSizeX"
                 },
                 {
-                    "@id": "bts:PhysicalSizeXUnit"
-                },
-                {
                     "@id": "bts:PhysicalSizeY"
                 },
                 {
-                    "@id": "bts:PhysicalSizeYUnit"
-                },
-                {
                     "@id": "bts:PhysicalSizeZ"
-                },
-                {
-                    "@id": "bts:PhysicalSizeYUnit"
                 },
                 {
                     "@id": "bts:PixelsBigEndian"
@@ -6641,13 +6605,7 @@
                     "@id": "bts:PhysicalSizeX"
                 },
                 {
-                    "@id": "bts:PhysicalSizeXUnit"
-                },
-                {
                     "@id": "bts:PhysicalSizeY"
-                },
-                {
-                    "@id": "bts:PhysicalSizeYUnit"
                 },
                 {
                     "@id": "bts:PixelsBigEndian"
@@ -35434,7 +35392,7 @@
         {
             "@id": "bts:AJCCClinicalM",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Extent of the distant metastasis for the cancer based on evidence obtained from clinical\n assessment parameters determined prior to treatment.",
+            "rdfs:comment": "Extent of the distant metastasis for the cancer based on evidence obtained from clinical\r\n assessment parameters determined prior to treatment.",
             "rdfs:label": "AJCCClinicalM",
             "rdfs:subClassOf": [
                 {
@@ -35480,7 +35438,7 @@
         {
             "@id": "bts:AJCCClinicalN",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Extent of the regional lymph node involvement for the cancer based on evidence obtained from\n clinical assessment parameters determined prior to treatment.",
+            "rdfs:comment": "Extent of the regional lymph node involvement for the cancer based on evidence obtained from\r\n clinical assessment parameters determined prior to treatment.",
             "rdfs:label": "AJCCClinicalN",
             "rdfs:subClassOf": [
                 {
@@ -35577,7 +35535,7 @@
         {
             "@id": "bts:AJCCClinicalStage",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Stage group determined from clinical information on the tumor (T), regional node (N) and\n metastases (M) and by grouping cases with similar prognosis for cancer.",
+            "rdfs:comment": "Stage group determined from clinical information on the tumor (T), regional node (N) and\r\n metastases (M) and by grouping cases with similar prognosis for cancer.",
             "rdfs:label": "AJCCClinicalStage",
             "rdfs:subClassOf": [
                 {
@@ -35695,7 +35653,7 @@
         {
             "@id": "bts:AJCCClinicalT",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Extent of the primary cancer based on evidence obtained from clinical assessment parameters\n determined prior to treatment.",
+            "rdfs:comment": "Extent of the primary cancer based on evidence obtained from clinical assessment parameters\r\n determined prior to treatment.",
             "rdfs:label": "AJCCClinicalT",
             "rdfs:subClassOf": [
                 {
@@ -35822,7 +35780,7 @@
         {
             "@id": "bts:AJCCPathologicM",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Code to represent the defined absence or presence of distant spread or metastases (M) to\n locations via vascular channels or lymphatics beyond the regional lymph nodes, using\n criteria established by the American Joint Committee on Cancer (AJCC).",
+            "rdfs:comment": "Code to represent the defined absence or presence of distant spread or metastases (M) to\r\n locations via vascular channels or lymphatics beyond the regional lymph nodes, using\r\n criteria established by the American Joint Committee on Cancer (AJCC).",
             "rdfs:label": "AJCCPathologicM",
             "rdfs:subClassOf": [
                 {
@@ -35868,7 +35826,7 @@
         {
             "@id": "bts:AJCCPathologicN",
             "@type": "rdfs:Class",
-            "rdfs:comment": "The codes that represent the stage of cancer based on the nodes present (N stage) according\n to criteria based on multiple editions of the AJCC's Cancer Staging Manual.",
+            "rdfs:comment": "The codes that represent the stage of cancer based on the nodes present (N stage) according\r\n to criteria based on multiple editions of the AJCC's Cancer Staging Manual.",
             "rdfs:label": "AJCCPathologicN",
             "rdfs:subClassOf": [
                 {
@@ -35965,7 +35923,7 @@
         {
             "@id": "bts:AJCCPathologicStage",
             "@type": "rdfs:Class",
-            "rdfs:comment": "The extent of a cancer, especially whether the disease has spread from the original site to\n other parts of the body based on AJCC staging criteria.",
+            "rdfs:comment": "The extent of a cancer, especially whether the disease has spread from the original site to\r\n other parts of the body based on AJCC staging criteria.",
             "rdfs:label": "AJCCPathologicStage",
             "rdfs:subClassOf": [
                 {
@@ -36083,7 +36041,7 @@
         {
             "@id": "bts:AJCCPathologicT",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Code of pathological T (primary tumor) to define the size or contiguous extension of the\n primary tumor (T), using staging criteria from the American Joint Committee on Cancer\n (AJCC).",
+            "rdfs:comment": "Code of pathological T (primary tumor) to define the size or contiguous extension of the\r\n primary tumor (T), using staging criteria from the American Joint Committee on Cancer\r\n (AJCC).",
             "rdfs:label": "AJCCPathologicT",
             "rdfs:subClassOf": [
                 {
@@ -36210,7 +36168,7 @@
         {
             "@id": "bts:AJCCStagingSystemEdition",
             "@type": "rdfs:Class",
-            "rdfs:comment": "The text term used to describe the version or edition of the American Joint Committee on Cancer\n Staging Handbooks, a publication by the group formed for the purpose of developing a system of\n staging for cancer that is acceptable to the American medical profession and is compatible with\n other accepted classifications.",
+            "rdfs:comment": "The text term used to describe the version or edition of the American Joint Committee on Cancer\r\n Staging Handbooks, a publication by the group formed for the purpose of developing a system of\r\n staging for cancer that is acceptable to the American medical profession and is compatible with\r\n other accepted classifications.",
             "rdfs:label": "AJCCStagingSystemEdition",
             "rdfs:subClassOf": [
                 {
@@ -36259,7 +36217,7 @@
         {
             "@id": "bts:AnaplasiaPresent",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Yes/no/unknown/Not Reported indicator used to describe whether anaplasia was present at the\ntime of diagnosis.",
+            "rdfs:comment": "Yes/no/unknown/Not Reported indicator used to describe whether anaplasia was present at the\r\ntime of diagnosis.",
             "rdfs:label": "AnaplasiaPresent",
             "rdfs:subClassOf": [
                 {
