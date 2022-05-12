@@ -6737,6 +6737,135 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:RPPALevel2",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Array based protemics. Each dilution curve of spot intensities is fitted using the monotone increasing B-spline model in the SuperCurve R package. This fits a single curve using all the samples on a slide with the signal intensity as the response variable and the dilution steps as independent variables. The fitted curve is plotted with the signal intensities on the y-axis and the log2-concentration of proteins on the x-axis for diagnostic purposes.",
+            "rdfs:label": "RPPALevel2",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Assay"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "RPPA Level 2",
+            "sms:required": "sms:false",
+            "sms:requiresComponent": [
+                {
+                    "@id": "bts:Biospecimen"
+                }
+            ],
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:Component"
+                },
+                {
+                    "@id": "bts:filename"
+                },
+                {
+                    "@id": "bts:fileFormat"
+                },
+                {
+                    "@id": "bts:HTANParticipantID"
+                },
+                {
+                    "@id": "bts:HTANParentBiospecimenID"
+                },
+                {
+                    "@id": "bts:HTANParentDataFileID"
+                },
+                {
+                    "@id": "bts:HTANRPPAAntibodyTable"
+                },
+                {
+                    "@id": "bts:AssayType"
+                },
+                {
+                    "@id": "bts:ProtocolLink"
+                },
+                {
+                    "@id": "bts:SoftwareandVersion"
+                }
+            ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:HTANRPPAAntibodyTable",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "A table containing antibody level metadata for RPPA",
+            "rdfs:label": "HTANRPPAAntibodyTable",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:RPPALevel2"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "HTAN RPPA Antibody Table",
+            "sms:required": "sms:false",
+            "sms:requiresComponent": [
+                {
+                    "@id": "bts:RPPALevel2"
+                }
+            ],
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:HTANRPPAAntibodyTableID"
+                },
+                {
+                    "@id": "bts:filename"
+                },
+                {
+                    "@id": "bts:fileFormat"
+                },
+                {
+                    "@id": "bts:AbNameReportedonDataset"
+                },
+                {
+                    "@id": "bts:GENCODEGeneSymbolTarget"
+                },
+                {
+                    "@id": "bts:UNIPROTProteinIDTarget"
+                },
+                {
+                    "@id": "bts:PhosphoproteinFlag"
+                },
+                {
+                    "@id": "bts:Vendor"
+                },
+                {
+                    "@id": "bts:CatalogNumber"
+                },
+                {
+                    "@id": "bts:InternalAbID"
+                },
+                {
+                    "@id": "bts:Species"
+                },
+                {
+                    "@id": "bts:RPPADilution"
+                },
+                {
+                    "@id": "bts:PhosphoSite"
+                },
+                {
+                    "@id": "bts:RPPAValidationStatus"
+                },
+                {
+                    "@id": "bts:Clone"
+                },
+                {
+                    "@id": "bts:Clonality"
+                },
+                {
+                    "@id": "bts:Notes"
+                }
+            ],
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:ImagingLevel2Channels",
             "@type": "rdfs:Class",
             "rdfs:comment": "Channel-level Metadata Attributes",
@@ -41458,6 +41587,7 @@
             "sms:validationRules": []
         },
         {
+<<<<<<< HEAD
             "@id": "bts:Pre-processingCompleted",
             "@type": "rdfs:Class",
             "rdfs:comment": "Pre-processing steps completed to convert level 1 raw data to a single level 2 image",
@@ -41465,11 +41595,21 @@
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:ImagingLevel1"
+=======
+            "@id": "bts:HTANRPPAAntibodyTableID",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "HTAN identifier associated with RPPA antibody level metadata. Identical for every row of the table.",
+            "rdfs:label": "HTANRPPAAntibodyTableID",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:HTANRPPAAntibodyTable"
+>>>>>>> main
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
+<<<<<<< HEAD
             "schema:rangeIncludes": [
                 {
                     "@id": "bts:Illuminationcorrection"
@@ -41491,17 +41631,70 @@
                 }
             ],
             "sms:displayName": "Pre-processing Completed",
+=======
+            "sms:displayName": "HTAN RPPA Antibody Table ID",
             "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
-            "@id": "bts:Pre-processingRequired",
+            "@id": "bts:AbNameReportedonDataset",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Pre-processing steps required to convert level 1 raw data to a single level 2 image",
-            "rdfs:label": "Pre-processingRequired",
+            "rdfs:comment": "The antibody name.",
+            "rdfs:label": "AbNameReportedonDataset",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel1"
+                    "@id": "bts:HTANRPPAAntibodyTable"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Ab Name Reported on Dataset",
+            "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:GENCODEGeneSymbolTarget",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The comma separated list of gene symbols targeted by the antibody.",
+            "rdfs:label": "GENCODEGeneSymbolTarget",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:HTANRPPAAntibodyTable"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "GENCODE Gene Symbol Target",
+            "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:UNIPROTGeneSymbolTarget",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The comma separated list of UNIPROT IDs targeted by the antibody.",
+            "rdfs:label": "UNIPROTGeneSymbolTarget",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:HTANRPPAAntibodyTable"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "UNIPROT Gene Symbol Target",
+            "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:PhosphoproteinFlag",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "A flag the denotes if an antibody targets a phosphoprotein.",
+            "rdfs:label": "PhosphoproteinFlag",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:HTANRPPAAntibodyTable"
                 }
             ],
             "schema:isPartOf": {
@@ -41509,6 +41702,60 @@
             },
             "schema:rangeIncludes": [
                 {
+                    "@id": "bts:True"
+                },
+                {
+                    "@id": "bts:False"
+                }
+            ],
+            "sms:displayName": "Phosphoprotein Flag",
+>>>>>>> main
+            "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+        {
+<<<<<<< HEAD
+            "@id": "bts:Pre-processingRequired",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Pre-processing steps required to convert level 1 raw data to a single level 2 image",
+            "rdfs:label": "Pre-processingRequired",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ImagingLevel1"
+=======
+            "@id": "bts:InternalAntibodyID",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Internal lab ID for an antibody.",
+            "rdfs:label": "InternalAntibodyID",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:HTANRPPAAntibodyTable"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Internal Antibody ID",
+            "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Species",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Host animal.",
+            "rdfs:label": "Species",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:HTANRPPAAntibodyTable"
+>>>>>>> main
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+<<<<<<< HEAD
                     "@id": "bts:Illuminationcorrection"
                 },
                 {
@@ -41529,6 +41776,106 @@
             ],
             "sms:displayName": "Pre-processing Required",
             "sms:required": "sms:true",
+=======
+                    "@id": "bts:Mouse"
+                },
+                {
+                    "@id": "bts:Rabbit"
+                },
+                {
+                    "@id": "bts:Goat"
+                }
+            ],
+            "sms:displayName": "Species",
+            "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:RPPADilution",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The dilution ratio.",
+            "rdfs:label": "RPPADilution",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:HTANRPPAAntibodyTable"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "RPPA Dilution",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:PhosphoSite",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The protein site for a phosphoprotein targeting antibody. Report AA and site (i.e. S442)",
+            "rdfs:label": "PhosphoSite",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:HTANRPPAAntibodyTable"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Phospho Site",
+            "sms:required": "sms:false",
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:PhosphoproteinFlag"
+                }
+            ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:RPPAValidationStatus",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Valid = RPPA and WB correlation > 0.7; Use with Caution = RPPA and WB correlation < 0.7; Under Evaluation = Antibody has given mixed results and/or evaluated by another lab; We are in the process of (re)validating; Used for QC = These antibodies are used for tissue sample quality control (QC)",
+            "rdfs:label": "RPPAValidationStatus",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:HTANRPPAAntibodyTable"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Valid"
+                },
+                {
+                    "@id": "bts:UsewithCaution"
+                },
+                {
+                    "@id": "bts:UnderEvaluation"
+                },
+                {
+                    "@id": "bts:UsedforQC"
+                }
+            ],
+            "sms:displayName": "RPPA Validation Status",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:AntibodyNotes",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Notes on antibodies replacements and antibody recognition observations.",
+            "rdfs:label": "AntibodyNotes",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:HTANRPPAAntibodyTable"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Antibody Notes",
+            "sms:required": "sms:false",
+>>>>>>> main
             "sms:validationRules": []
         },
         {
@@ -43262,6 +43609,57 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "scATAC-seq Level 3",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:UNIPROTProteinIDTarget",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "UNIPROTProteinIDTarget",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:HTANRPPAAntibodyTable"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "UNIPROT Protein ID Target",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:InternalAbID",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "InternalAbID",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:HTANRPPAAntibodyTable"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Internal Ab ID",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Notes",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Notes",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:HTANRPPAAntibodyTable"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Notes",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -119154,70 +119552,121 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:Illuminationcorrection",
+            "@id": "bts:Mouse",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
-            "rdfs:label": "Illuminationcorrection",
+            "rdfs:label": "Mouse",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Pre-processingCompleted"
+                    "@id": "bts:Species"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Illumination correction",
+            "sms:displayName": "Mouse",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
-            "@id": "bts:TileStitching",
+            "@id": "bts:Rabbit",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
-            "rdfs:label": "TileStitching",
+            "rdfs:label": "Rabbit",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Pre-processingCompleted"
+                    "@id": "bts:Species"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Tile Stitching",
+            "sms:displayName": "Rabbit",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
-            "@id": "bts:Channel/CycleRegistration",
+            "@id": "bts:Goat",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
-            "rdfs:label": "Channel/CycleRegistration",
+            "rdfs:label": "Goat",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Pre-processingCompleted"
+                    "@id": "bts:Species"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Channel/Cycle Registration",
+            "sms:displayName": "Goat",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
-            "@id": "bts:TMAde-arraying",
+            "@id": "bts:Valid",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
-            "rdfs:label": "TMAde-arraying",
+            "rdfs:label": "Valid",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Pre-processingCompleted"
+                    "@id": "bts:RPPAValidationStatus"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "TMA de-arraying",
+            "sms:displayName": "Valid",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:UsewithCaution",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "UsewithCaution",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:RPPAValidationStatus"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Use with Caution",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:UnderEvaluation",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "UnderEvaluation",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:RPPAValidationStatus"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Under Evaluation",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:UsedforQC",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "UsedforQC",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:RPPAValidationStatus"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Used for QC",
             "sms:required": "sms:false",
             "sms:validationRules": []
         }
