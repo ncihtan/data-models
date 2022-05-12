@@ -6222,7 +6222,7 @@
                     "@id": "bts:Biospecimen"
                 },
                 {
-                    "@id": "bts:ImagingLevel2Channels"
+                    "@id": "bts:ImagingLevel1"
                 }
             ],
             "sms:requiresDependency": [
@@ -6598,9 +6598,6 @@
             "sms:requiresComponent": [
                 {
                     "@id": "bts:Biospecimen"
-                },
-                {
-                    "@id": "bts:ImagingLevel2Channels"
                 }
             ],
             "sms:requiresDependency": [
@@ -6833,10 +6830,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:ImagingLevel2Channels",
+            "@id": "bts:ImagingLevel3Channels",
             "@type": "rdfs:Class",
             "rdfs:comment": "Channel-level Metadata Attributes",
-            "rdfs:label": "ImagingLevel2Channels",
+            "rdfs:label": "ImagingLevel3Channels",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:ImagingLevel2"
@@ -6845,7 +6842,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Imaging Level 2 Channels",
+            "sms:displayName": "Imaging Level 3 Channels",
             "sms:required": "sms:false",
             "sms:requiresDependency": [
                 {
@@ -6862,6 +6859,9 @@
                 },
                 {
                     "@id": "bts:SubCycleNumber"
+                },
+                {
+                    "@id": "bts:AntibodyRole"
                 },
                 {
                     "@id": "bts:TargetName"
@@ -6927,7 +6927,7 @@
             "rdfs:label": "ChannelID",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel2Channels"
+                    "@id": "bts:ImagingLevel3Channels"
                 }
             ],
             "schema:isPartOf": {
@@ -6944,7 +6944,7 @@
             "rdfs:label": "ChannelName",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel2Channels"
+                    "@id": "bts:ImagingLevel3Channels"
                 }
             ],
             "schema:isPartOf": {
@@ -6961,7 +6961,7 @@
             "rdfs:label": "ChannelPassedQC",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel2Channels"
+                    "@id": "bts:ImagingLevel3Channels"
                 }
             ],
             "schema:isPartOf": {
@@ -6986,7 +6986,7 @@
             "rdfs:label": "CycleNumber",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel2Channels"
+                    "@id": "bts:ImagingLevel3Channels"
                 }
             ],
             "schema:isPartOf": {
@@ -6994,7 +6994,9 @@
             },
             "sms:displayName": "Cycle Number",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:SubCycleNumber",
@@ -7003,7 +7005,7 @@
             "rdfs:label": "SubCycleNumber",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel2Channels"
+                    "@id": "bts:ImagingLevel3Channels"
                 }
             ],
             "schema:isPartOf": {
@@ -7011,7 +7013,9 @@
             },
             "sms:displayName": "Sub Cycle Number",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:TargetName",
@@ -7020,14 +7024,39 @@
             "rdfs:label": "TargetName",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel2Channels"
+                    "@id": "bts:ImagingLevel3Channels"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Target Name",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:AntibodyRole",
+            "@type": "rdfs:Class",
+            "rdfs:comment": " \"Is this antibody acting as a primary or secondary antibody\"",
+            "rdfs:label": "AntibodyRole",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ImagingLevel3Channels"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Primary"
+                },
+                {
+                    "@id": "bts:Secondary"
+                }
+            ],
+            "sms:displayName": "Antibody Role",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -7037,14 +7066,14 @@
             "rdfs:label": "AntibodyName",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel2Channels"
+                    "@id": "bts:ImagingLevel3Channels"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Antibody Name",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -7054,15 +7083,17 @@
             "rdfs:label": "RRIDidentifier",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel2Channels"
+                    "@id": "bts:ImagingLevel3Channels"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "RRID identifier",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:required": "sms:true",
+            "sms:validationRules": [
+                "regex match AB_\\d+"
+            ]
         },
         {
             "@id": "bts:Fluorophore",
@@ -7071,7 +7102,7 @@
             "rdfs:label": "Fluorophore",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel2Channels"
+                    "@id": "bts:ImagingLevel3Channels"
                 }
             ],
             "schema:isPartOf": {
@@ -7088,7 +7119,7 @@
             "rdfs:label": "Clone",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel2Channels"
+                    "@id": "bts:ImagingLevel3Channels"
                 }
             ],
             "schema:isPartOf": {
@@ -7105,7 +7136,7 @@
             "rdfs:label": "Lot",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel2Channels"
+                    "@id": "bts:ImagingLevel3Channels"
                 }
             ],
             "schema:isPartOf": {
@@ -7122,7 +7153,7 @@
             "rdfs:label": "Vendor",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel2Channels"
+                    "@id": "bts:ImagingLevel3Channels"
                 }
             ],
             "schema:isPartOf": {
@@ -7139,7 +7170,7 @@
             "rdfs:label": "CatalogNumber",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel2Channels"
+                    "@id": "bts:ImagingLevel3Channels"
                 }
             ],
             "schema:isPartOf": {
@@ -7156,7 +7187,7 @@
             "rdfs:label": "ExcitationWavelength",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel2Channels"
+                    "@id": "bts:ImagingLevel3Channels"
                 }
             ],
             "schema:isPartOf": {
@@ -7164,7 +7195,9 @@
             },
             "sms:displayName": "Excitation Wavelength",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "float"
+            ]
         },
         {
             "@id": "bts:EmissionWavelength",
@@ -7173,7 +7206,7 @@
             "rdfs:label": "EmissionWavelength",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel2Channels"
+                    "@id": "bts:ImagingLevel3Channels"
                 }
             ],
             "schema:isPartOf": {
@@ -7181,7 +7214,9 @@
             },
             "sms:displayName": "Emission Wavelength",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "float"
+            ]
         },
         {
             "@id": "bts:ExcitationBandwidth",
@@ -7190,7 +7225,7 @@
             "rdfs:label": "ExcitationBandwidth",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel2Channels"
+                    "@id": "bts:ImagingLevel3Channels"
                 }
             ],
             "schema:isPartOf": {
@@ -7198,7 +7233,9 @@
             },
             "sms:displayName": "Excitation Bandwidth",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "float"
+            ]
         },
         {
             "@id": "bts:EmissionBandwidth",
@@ -7207,7 +7244,7 @@
             "rdfs:label": "EmissionBandwidth",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel2Channels"
+                    "@id": "bts:ImagingLevel3Channels"
                 }
             ],
             "schema:isPartOf": {
@@ -7215,7 +7252,9 @@
             },
             "sms:displayName": "Emission Bandwidth",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "float"
+            ]
         },
         {
             "@id": "bts:MetalIsotopeElement",
@@ -7224,7 +7263,7 @@
             "rdfs:label": "MetalIsotopeElement",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel2Channels"
+                    "@id": "bts:ImagingLevel3Channels"
                 }
             ],
             "schema:isPartOf": {
@@ -7232,7 +7271,9 @@
             },
             "sms:displayName": "Metal Isotope Element",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "str"
+            ]
         },
         {
             "@id": "bts:MetalIsotopeMass",
@@ -7241,7 +7282,7 @@
             "rdfs:label": "MetalIsotopeMass",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel2Channels"
+                    "@id": "bts:ImagingLevel3Channels"
                 }
             ],
             "schema:isPartOf": {
@@ -7249,7 +7290,9 @@
             },
             "sms:displayName": "Metal Isotope Mass",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:OligoBarcodeUpperStrand",
@@ -7258,7 +7301,7 @@
             "rdfs:label": "OligoBarcodeUpperStrand",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel2Channels"
+                    "@id": "bts:ImagingLevel3Channels"
                 }
             ],
             "schema:isPartOf": {
@@ -7275,7 +7318,7 @@
             "rdfs:label": "OligoBarcodeLowerStrand",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel2Channels"
+                    "@id": "bts:ImagingLevel3Channels"
                 }
             ],
             "schema:isPartOf": {
@@ -7292,7 +7335,7 @@
             "rdfs:label": "Dilution",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel2Channels"
+                    "@id": "bts:ImagingLevel3Channels"
                 }
             ],
             "schema:isPartOf": {
@@ -7309,7 +7352,7 @@
             "rdfs:label": "Concentration",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel2Channels"
+                    "@id": "bts:ImagingLevel3Channels"
                 }
             ],
             "schema:isPartOf": {
@@ -43513,6 +43556,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:ImagingLevel1",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "ImagingLevel1",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "schema:Thing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Imaging Level 1",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:NumberofObjects",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -43543,23 +43603,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "HTAN Parent Channel Metadata ID",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:ImagingLevel3Channels",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "ImagingLevel3Channels",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "schema:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Imaging Level 3 Channels",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -43645,6 +43688,40 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "No",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Primary",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Primary",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AntibodyRole"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "primary",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Secondary",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Secondary",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AntibodyRole"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "secondary",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -49391,23 +49468,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Premalignant",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Primary",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Primary",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:TumorTissueType"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Primary",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
