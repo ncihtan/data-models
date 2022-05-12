@@ -6497,10 +6497,34 @@
                     "@id": "bts:WorkingDistance"
                 },
                 {
-                    "@id": "bts:WorkingDistanceUnit"
+                    "@id": "bts:Immersion"
                 },
                 {
-                    "@id": "bts:Immersion"
+                    "@id": "bts:Pyramid"
+                },
+                {
+                    "@id": "bts:Zstack"
+                },
+                {
+                    "@id": "bts:Tseries"
+                },
+                {
+                    "@id": "bts:PassedQC"
+                },
+                {
+                    "@id": "bts:Comment"
+                },
+                {
+                    "@id": "bts:FOVnumber"
+                },
+                {
+                    "@id": "bts:FOVX"
+                },
+                {
+                    "@id": "bts:FOVY"
+                },
+                {
+                    "@id": "bts:FrameAveraging"
                 }
             ],
             "sms:validationRules": []
