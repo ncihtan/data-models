@@ -8370,33 +8370,20 @@
                     "@id": "bts:Mask"
                 },
                 {
-                    "@id": "bts:Image"
+                    "@id": "bts:Outline"
+                },
+                {
+                    "@id": "bts:Polygon"
+                },
+                {
+                    "@id": "bts:ProbabilityMap"
+                },
+                {
+                    "@id": "bts:Point"
                 }
             ],
             "sms:displayName": "Imaging Data Type",
             "sms:required": "sms:true",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Mask",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Imaging data type mask",
-            "rdfs:label": "Mask",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:ImagingLevel3"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Mask",
-            "sms:required": "sms:false",
-            "sms:requiresDependency": [
-                {
-                    "@id": "bts:ImagingObjectClass"
-                }
-            ],
             "sms:validationRules": []
         },
         {
@@ -8436,7 +8423,7 @@
         {
             "@id": "bts:ImagingObjectClass",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Defines the structure that the mask deliniates",
+            "rdfs:comment": "Defines the structure that the mask delineates",
             "rdfs:label": "ImagingObjectClass",
             "rdfs:subClassOf": [
                 {
@@ -8512,37 +8499,30 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:Minimumintensitydisplayrange",
+            "@id": "bts:NumberofObjects.Thenumberofobjectsdescribedinthemask",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Normalized lower-bound intensity value [numeric ]",
-            "rdfs:label": "Minimumintensitydisplayrange",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "NumberofObjects.Thenumberofobjectsdescribedinthemask",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ImagingLevel3"
+                    "@id": "bts:Int"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Minimum intensity display range",
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:TRUE"
+                }
+            ],
+            "sms:displayName": "Number of Objects. The number of objects described in the mask",
             "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Maximumintensitydisplayrange",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Normalized upper-bound intensity value [numeric]",
-            "rdfs:label": "Maximumintensitydisplayrange",
-            "rdfs:subClassOf": [
+            "sms:requiresDependency": [
                 {
                     "@id": "bts:ImagingLevel3"
                 }
             ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Maximum intensity display range",
-            "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
@@ -43690,23 +43670,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:ImagingLevel1",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "ImagingLevel1",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "schema:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Imaging Level 1",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:NumberofObjects",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -44540,10 +44503,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:Image",
+            "@id": "bts:Mask",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
-            "rdfs:label": "Image",
+            "rdfs:label": "Mask",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:ImagingDataType"
@@ -44552,7 +44515,75 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Image",
+            "sms:displayName": "Mask",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Outline",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Outline",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ImagingDataType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Outline",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Polygon",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Polygon",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ImagingDataType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Polygon",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ProbabilityMap",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "ProbabilityMap",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ImagingDataType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Probability Map",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Point",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Point",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ImagingDataType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Point",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -44638,6 +44669,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Object class",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:TRUE",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "TRUE",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NumberofObjects.Thenumberofobjectsdescribedinthemask"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "TRUE",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
