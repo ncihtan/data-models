@@ -67,6 +67,7 @@ Channel Passed QC,Identify stains that did not pass QC but are included in the d
 Cycle Number,The cycle # in which the co-listed reagent(s) was(were) used. Integer >= 1 (up to number of cycles),,,,FALSE,Imaging Level 2 Channels,,,
 Sub Cycle Number,Sub cycle number,,,,FALSE,Imaging Level 2 Channels,,,
 Target Name,Short descriptive name (abbreviation) for this target (antigen),,,,FALSE,Imaging Level 2 Channels,,,
+Antibody Role, "Is this antibody acting as a primary or secondary antibody","primary,secondary",,,TRUE,Imaging Level 3 Channels,,
 Antibody Name,"Antibody Name (free text (eg “Keratin”, “CD163”, “DNA”))",,,,FALSE,Imaging Level 2 Channels,,,
 RRID identifier,Research Resource Identifier (eg “RRID: AB_394606”),,,,FALSE,Imaging Level 2 Channels,,https://scicrunch.org/resources,
 Fluorophore,Fluorescent dye label (eg Alexa Fluor 488),,,,FALSE,Imaging Level 2 Channels,,http://purl.obolibrary.org/obo/MI_0857,
