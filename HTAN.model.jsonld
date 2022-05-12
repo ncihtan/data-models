@@ -6368,10 +6368,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:ImagingLevel3",
+            "@id": "bts:ImagingLevel3Mask",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Derived imaging data",
-            "rdfs:label": "ImagingLevel3",
+            "rdfs:comment": "Object segmentations",
+            "rdfs:label": "ImagingLevel3Mask",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:Assay"
@@ -6380,7 +6380,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Imaging Level 3",
+            "sms:displayName": "Imaging Level 3 Mask",
             "sms:required": "sms:false",
             "sms:requiresComponent": [
                 {
@@ -6398,10 +6398,7 @@
                     "@id": "bts:fileFormat"
                 },
                 {
-                    "@id": "bts:HTANParticipantID"
-                },
-                {
-                    "@id": "bts:HTANParentBiospecimenID"
+                    "@id": "bts:HTANParentDataFileID"
                 },
                 {
                     "@id": "bts:HTANDataFileID"
@@ -6419,85 +6416,91 @@
                     "@id": "bts:CommitSHA"
                 },
                 {
-                    "@id": "bts:PassedQC"
-                },
-                {
                     "@id": "bts:ImagingObjectClass"
                 },
                 {
                     "@id": "bts:ImagingObjectClassDescription"
                 },
                 {
-                    "@id": "bts:Minimumintensitydisplayrange"
+                    "@id": "bts:NumberofObjects"
+                }
+            ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ImagingLevel3Image",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Quality controlled imaging data",
+            "rdfs:label": "ImagingLevel3Image",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Assay"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Imaging Level 3 Image",
+            "sms:required": "sms:false",
+            "sms:requiresComponent": [
+                {
+                    "@id": "bts:ImagingLevel3Channels"
                 },
                 {
-                    "@id": "bts:Maximumintensitydisplayrange"
+                    "@id": "bts:ImagingLevel2"
+                }
+            ],
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:Component"
                 },
                 {
-                    "@id": "bts:FOVnumber"
+                    "@id": "bts:filename"
                 },
                 {
-                    "@id": "bts:FOVX"
+                    "@id": "bts:fileFormat"
                 },
                 {
-                    "@id": "bts:FOVXUnit"
+                    "@id": "bts:HTANParentBiospecimenID"
                 },
                 {
-                    "@id": "bts:FOVY"
+                    "@id": "bts:HTANParentDataFileID"
                 },
                 {
-                    "@id": "bts:FOVYUnit"
+                    "@id": "bts:HTANParentChannelMetadataID"
                 },
                 {
-                    "@id": "bts:FrameAveraging"
+                    "@id": "bts:HTANDataFileID"
                 },
                 {
-                    "@id": "bts:ImageID"
+                    "@id": "bts:ImagingAssayType"
                 },
                 {
-                    "@id": "bts:DimensionOrder"
+                    "@id": "bts:ProtocolLink"
                 },
                 {
-                    "@id": "bts:PhysicalSizeX"
+                    "@id": "bts:SoftwareandVersion"
                 },
                 {
-                    "@id": "bts:PhysicalSizeXUnit"
+                    "@id": "bts:Microscope"
                 },
                 {
-                    "@id": "bts:PhysicalSizeY"
+                    "@id": "bts:Objective"
                 },
                 {
-                    "@id": "bts:PhysicalSizeYUnit"
+                    "@id": "bts:NominalMagnification"
                 },
                 {
-                    "@id": "bts:PhysicalSizeZ"
+                    "@id": "bts:LensNA"
                 },
                 {
-                    "@id": "bts:PhysicalSizeYUnit"
+                    "@id": "bts:WorkingDistance"
                 },
                 {
-                    "@id": "bts:PixelsBigEndian"
+                    "@id": "bts:WorkingDistanceUnit"
                 },
                 {
-                    "@id": "bts:PlaneCount"
-                },
-                {
-                    "@id": "bts:SizeC"
-                },
-                {
-                    "@id": "bts:SizeT"
-                },
-                {
-                    "@id": "bts:SizeX"
-                },
-                {
-                    "@id": "bts:SizeY"
-                },
-                {
-                    "@id": "bts:SizeZ"
-                },
-                {
-                    "@id": "bts:PixelType"
+                    "@id": "bts:Immersion"
                 }
             ],
             "sms:validationRules": []
@@ -43482,6 +43485,57 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "scATAC-seq Level 3",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NumberofObjects",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "NumberofObjects",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ImagingLevel3Mask"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Number of Objects",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:HTANParentChannelMetadataID",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "HTANParentChannelMetadataID",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ImagingLevel3Image"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "HTAN Parent Channel Metadata ID",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ImagingLevel3Channels",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "ImagingLevel3Channels",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "schema:Thing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Imaging Level 3 Channels",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
