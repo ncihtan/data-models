@@ -69,8 +69,8 @@ Channel Passed QC,Identify stains that did not pass QC but are included in the d
 Cycle Number,The cycle # in which the co-listed reagent(s) was(were) used. Integer >= 1 (up to number of cycles),,,,FALSE,Imaging Level 3 Channels,,,int
 Sub Cycle Number,Sub cycle number,,,,FALSE,Imaging Level 3 Channels,,,int
 Target Name,Short descriptive name (abbreviation) for this target (antigen),,,,TRUE,Imaging Level 3 Channels,,,
-Antibody Role, "Is this antibody acting as a primary or secondary antibody","primary,secondary",,,TRUE,Imaging Level 3 Channels,,
-Antibody Name,"Antibody Name (free text (eg “Keratin”, “CD163”, “DNA”))",,,,TRUE,Imaging Level 3 Channels,,
+Antibody Role, "Is this antibody acting as a primary or secondary antibody","primary,secondary",,,TRUE,Imaging Level 3 Channels,,,
+Antibody Name,"Antibody Name (free text (eg “Keratin”, “CD163”, “DNA”))",,,,TRUE,Imaging Level 3 Channels,,,
 RRID identifier,Research Resource Identifier (eg “RRID: AB_394606”),,,,TRUE,Imaging Level 3 Channels,,https://scicrunch.org/resources,regex match AB_\d+
 Fluorophore,Fluorescent dye label (eg Alexa Fluor 488),,,,FALSE,Imaging Level 3 Channels,,http://purl.obolibrary.org/obo/MI_0857,
 Clone,Clone,,,,FALSE,Imaging Level 3 Channels,,,
@@ -131,9 +131,9 @@ Commit SHA,"Short SHA for software version [8 hexadecimal characters (for github
 Imaging Object Class,Defines the structure that the mask delineates,"nucleus, cytoplasm, plasma membrane, whole cell, Imaging Object Class Other",,,TRUE,Imaging Level 3,,,
 Imaging Object Class Other,Imaging Object Class Other,,Imaging Object Class Description,,FALSE,Imaging Level 3,,,
 Imaging Object Class Description,Free text description of object class [string],,Object class,,TRUE,Imaging Level 3,,,
-Number of Objects, The number of objects (eg cells) described,,TRUE,Imaging Level 3,,,int
-Number of Features, The number of features (eg channels) described,,TRUE,Imaging Level 4,,,int
-Imaging Summary Statistic, Function used to summarize object/feature intensity,mean,median,other,,FALSE,,,
+Number of Objects, The number of objects (eg cells) described,,,,TRUE,Imaging Level 3,,,int
+Number of Features, The number of features (eg channels) described,,,,TRUE,Imaging Level 4,,,int
+Imaging Summary Statistic, Function used to summarize object/feature intensity,"mean,median,other",,,FALSE,Imaging Level 4,,,
 Nucleic Acid Source,The source of the input nucleic molecule,"Single Cell, Bulk Whole Cell, Single Nucleus, Bulk Nuclei",,,TRUE,Sequencing,,http://example.org/htan/NucleicAcidSource,
 Single Cell Isolation Method,"The method by which cells are isolated into individual reaction containers at a single cell resolution (e.g. wells, micro-droplets)","Microfluidics Chip, Droplets, FACS, Plates, 10x, Nuclei Isolation",,,TRUE,scRNA-seq Level 1,,,
 Dissociation Method,The tissue dissociation method used for scRNASeq or scATAC-seq assays,"gentleMACS, Dounce, Enzymatic Digestion, Not Applicable",,,TRUE,scRNA-seq Level 1,,,
