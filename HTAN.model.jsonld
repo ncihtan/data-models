@@ -4677,9 +4677,6 @@
                     "@id": "bts:FixativeType"
                 },
                 {
-                    "@id": "bts:SiteofResectionorBiopsy"
-                },
-                {
                     "@id": "bts:StorageMethod"
                 },
                 {
@@ -6278,9 +6275,6 @@
                     "@id": "bts:WorkingDistance"
                 },
                 {
-                    "@id": "bts:WorkingDistanceUnit"
-                },
-                {
                     "@id": "bts:Immersion"
                 },
                 {
@@ -6305,13 +6299,7 @@
                     "@id": "bts:FOVX"
                 },
                 {
-                    "@id": "bts:FOVXUnit"
-                },
-                {
                     "@id": "bts:FOVY"
-                },
-                {
-                    "@id": "bts:FOVYUnit"
                 },
                 {
                     "@id": "bts:FrameAveraging"
@@ -6326,19 +6314,10 @@
                     "@id": "bts:PhysicalSizeX"
                 },
                 {
-                    "@id": "bts:PhysicalSizeXUnit"
-                },
-                {
                     "@id": "bts:PhysicalSizeY"
                 },
                 {
-                    "@id": "bts:PhysicalSizeYUnit"
-                },
-                {
                     "@id": "bts:PhysicalSizeZ"
-                },
-                {
-                    "@id": "bts:PhysicalSizeZUnit"
                 },
                 {
                     "@id": "bts:PixelsBigEndian"
@@ -6440,13 +6419,7 @@
                     "@id": "bts:FOVX"
                 },
                 {
-                    "@id": "bts:FOVXUnit"
-                },
-                {
                     "@id": "bts:FOVY"
-                },
-                {
-                    "@id": "bts:FOVYUnit"
                 },
                 {
                     "@id": "bts:FrameAveraging"
@@ -6461,19 +6434,10 @@
                     "@id": "bts:PhysicalSizeX"
                 },
                 {
-                    "@id": "bts:PhysicalSizeXUnit"
-                },
-                {
                     "@id": "bts:PhysicalSizeY"
                 },
                 {
-                    "@id": "bts:PhysicalSizeYUnit"
-                },
-                {
                     "@id": "bts:PhysicalSizeZ"
-                },
-                {
-                    "@id": "bts:PhysicalSizeYUnit"
                 },
                 {
                     "@id": "bts:PixelsBigEndian"
@@ -6641,13 +6605,7 @@
                     "@id": "bts:PhysicalSizeX"
                 },
                 {
-                    "@id": "bts:PhysicalSizeXUnit"
-                },
-                {
                     "@id": "bts:PhysicalSizeY"
-                },
-                {
-                    "@id": "bts:PhysicalSizeYUnit"
                 },
                 {
                     "@id": "bts:PixelsBigEndian"
