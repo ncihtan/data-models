@@ -70,7 +70,7 @@ Cycle Number,The cycle # in which the co-listed reagent(s) was(were) used. Integ
 Sub Cycle Number,Sub cycle number,,,,FALSE,Imaging Level 3 Channels,,,int
 Target Name,Short descriptive name (abbreviation) for this target (antigen),,,,TRUE,Imaging Level 3 Channels,,,
 Antibody Role, "Is this antibody acting as a primary or secondary antibody","primary,secondary",,,TRUE,Imaging Level 3 Channels,,
-Antibody Name,"Antibody Name (free text (eg “Keratin”, “CD163”, “DNA”))",,,,TRUE,Imaging Level 3 Channels,,,
+Antibody Name,"Antibody Name (free text (eg “Keratin”, “CD163”, “DNA”))",,,,TRUE,Imaging Level 3 Channels,,
 RRID identifier,Research Resource Identifier (eg “RRID: AB_394606”),,,,TRUE,Imaging Level 3 Channels,,https://scicrunch.org/resources,regex match AB_\d+
 Fluorophore,Fluorescent dye label (eg Alexa Fluor 488),,,,FALSE,Imaging Level 3 Channels,,http://purl.obolibrary.org/obo/MI_0857,
 Clone,Clone,,,,FALSE,Imaging Level 3 Channels,,,
