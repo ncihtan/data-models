@@ -7015,7 +7015,7 @@
         {
             "@id": "bts:ChannelID",
             "@type": "rdfs:Class",
-            "rdfs:comment": "This must match the corresponding field in the OME-XML / TIFF header. (eg \"Channel:0:1\")",
+            "rdfs:comment": "This must match the corresponding field in the OME-XML / TIFF header. (eg Channel:0:1\")\"",
             "rdfs:label": "ChannelID",
             "rdfs:subClassOf": [
                 {
@@ -7598,7 +7598,9 @@
             },
             "sms:displayName": "NominalMagnification",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "float"
+            ]
         },
         {
             "@id": "bts:LensNA",
@@ -7615,7 +7617,9 @@
             },
             "sms:displayName": "LensNA",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "float"
+            ]
         },
         {
             "@id": "bts:WorkingDistance",
@@ -7858,7 +7862,9 @@
             },
             "sms:displayName": "FOV number",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:FOVX",
@@ -7880,7 +7886,9 @@
                     "@id": "bts:FOVXUnit"
                 }
             ],
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "float"
+            ]
         },
         {
             "@id": "bts:FOVXUnit",
@@ -7936,7 +7944,9 @@
                     "@id": "bts:FOVYUnit"
                 }
             ],
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "float"
+            ]
         },
         {
             "@id": "bts:FOVYUnit",
@@ -8268,7 +8278,9 @@
             },
             "sms:displayName": "SizeC",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:SizeT",
@@ -8285,7 +8297,9 @@
             },
             "sms:displayName": "SizeT",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:SizeX",
@@ -8302,7 +8316,9 @@
             },
             "sms:displayName": "SizeX",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:SizeY",
@@ -8319,7 +8335,9 @@
             },
             "sms:displayName": "SizeY",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:SizeZ",
@@ -8336,7 +8354,9 @@
             },
             "sms:displayName": "SizeZ",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:PixelType",
@@ -44739,7 +44759,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "mean",
+            "sms:displayName": "Mean",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -44756,7 +44776,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "median",
+            "sms:displayName": "Median",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
