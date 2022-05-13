@@ -36217,7 +36217,7 @@
         {
             "@id": "bts:AnaplasiaPresent",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Yes/no/unknown/Not Reported indicator used to describe whether anaplasia was present at the\r\ntime of diagnosis.",
+            "rdfs:comment": "Yes/no/unknown/Not Reported indicator used to describe whether anaplasia was present at the time of diagnosis.",
             "rdfs:label": "AnaplasiaPresent",
             "rdfs:subClassOf": [
                 {
