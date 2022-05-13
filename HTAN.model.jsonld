@@ -6335,6 +6335,9 @@
                     "@id": "bts:WorkingDistance"
                 },
                 {
+                    "@id": "bts:WorkingDistanceUnit"
+                },
+                {
                     "@id": "bts:Immersion"
                 },
                 {
@@ -6359,7 +6362,13 @@
                     "@id": "bts:FOVX"
                 },
                 {
+                    "@id": "bts:FOVXUnit"
+                },
+                {
                     "@id": "bts:FOVY"
+                },
+                {
+                    "@id": "bts:FOVYUnit"
                 },
                 {
                     "@id": "bts:FrameAveraging"
@@ -6374,10 +6383,19 @@
                     "@id": "bts:PhysicalSizeX"
                 },
                 {
+                    "@id": "bts:PhysicalSizeXUnit"
+                },
+                {
                     "@id": "bts:PhysicalSizeY"
                 },
                 {
+                    "@id": "bts:PhysicalSizeYUnit"
+                },
+                {
                     "@id": "bts:PhysicalSizeZ"
+                },
+                {
+                    "@id": "bts:PhysicalSizeZUnit"
                 },
                 {
                     "@id": "bts:PixelsBigEndian"
@@ -6571,7 +6589,7 @@
         {
             "@id": "bts:ImagingLevel4",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Derived imaging data",
+            "rdfs:comment": "Derived imaging data: Object-by-feature array",
             "rdfs:label": "ImagingLevel4",
             "rdfs:subClassOf": [
                 {
@@ -6585,7 +6603,7 @@
             "sms:required": "sms:false",
             "sms:requiresComponent": [
                 {
-                    "@id": "bts:ImagingLevel3"
+                    "@id": "bts:ImagingLevel3Channels"
                 }
             ],
             "sms:requiresDependency": [
@@ -6599,10 +6617,10 @@
                     "@id": "bts:fileFormat"
                 },
                 {
-                    "@id": "bts:HTANParticipantID"
+                    "@id": "bts:HTANParentDataFileID"
                 },
                 {
-                    "@id": "bts:HTANParentBiospecimenID"
+                    "@id": "bts:HTANParentChannelMetadataID"
                 },
                 {
                     "@id": "bts:HTANDataFileID"
@@ -6615,6 +6633,21 @@
                 },
                 {
                     "@id": "bts:CommitSHA"
+                },
+                {
+                    "@id": "bts:NumberofObjects"
+                },
+                {
+                    "@id": "bts:NumberofFeatures"
+                },
+                {
+                    "@id": "bts:ImagingObjectClass"
+                },
+                {
+                    "@id": "bts:ImagingObjectClassDescription"
+                },
+                {
+                    "@id": "bts:ImagingSummaryStatistic"
                 }
             ],
             "sms:validationRules": []
@@ -6704,7 +6737,13 @@
                     "@id": "bts:PhysicalSizeX"
                 },
                 {
+                    "@id": "bts:PhysicalSizeXUnit"
+                },
+                {
                     "@id": "bts:PhysicalSizeY"
+                },
+                {
+                    "@id": "bts:PhysicalSizeYUnit"
                 },
                 {
                     "@id": "bts:PixelsBigEndian"
@@ -6879,6 +6918,9 @@
             "sms:required": "sms:false",
             "sms:requiresDependency": [
                 {
+                    "@id": "bts:HTANChannelMetadataID"
+                },
+                {
                     "@id": "bts:ChannelID"
                 },
                 {
@@ -6951,6 +6993,23 @@
                     "@id": "bts:Concentration"
                 }
             ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:HTANChannelMetadataID",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "HTAN ID for this channel metadata table (same for all rows)",
+            "rdfs:label": "HTANChannelMetadataID",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ImagingLevel3Channels"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "HTAN Channel Metadata ID",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -8472,13 +8531,51 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:NumberofObjects.Thenumberofobjectsdescribedinthemask",
+            "@id": "bts:NumberofObjects",
             "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "NumberofObjects.Thenumberofobjectsdescribedinthemask",
+            "rdfs:comment": " The number of objects (eg cells) described",
+            "rdfs:label": "NumberofObjects",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Int"
+                    "@id": "bts:ImagingLevel3"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Number of Objects",
+            "sms:required": "sms:true",
+            "sms:validationRules": [
+                "int"
+            ]
+        },
+        {
+            "@id": "bts:NumberofFeatures",
+            "@type": "rdfs:Class",
+            "rdfs:comment": " The number of features (eg channels) described",
+            "rdfs:label": "NumberofFeatures",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ImagingLevel4"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Number of Features",
+            "sms:required": "sms:true",
+            "sms:validationRules": [
+                "int"
+            ]
+        },
+        {
+            "@id": "bts:ImagingSummaryStatistic",
+            "@type": "rdfs:Class",
+            "rdfs:comment": " Function used to summarize object/feature intensity",
+            "rdfs:label": "ImagingSummaryStatistic",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ImagingLevel4"
                 }
             ],
             "schema:isPartOf": {
@@ -8486,16 +8583,17 @@
             },
             "schema:rangeIncludes": [
                 {
-                    "@id": "bts:TRUE"
-                }
-            ],
-            "sms:displayName": "Number of Objects. The number of objects described in the mask",
-            "sms:required": "sms:false",
-            "sms:requiresDependency": [
+                    "@id": "bts:Mean"
+                },
                 {
-                    "@id": "bts:ImagingLevel3"
+                    "@id": "bts:Median"
+                },
+                {
+                    "@id": "bts:Other"
                 }
             ],
+            "sms:displayName": "Imaging Summary Statistic",
+            "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
@@ -43643,23 +43741,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:NumberofObjects",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "NumberofObjects",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:ImagingLevel3Mask"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Number of Objects",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:HTANParentChannelMetadataID",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -44646,19 +44727,36 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:TRUE",
+            "@id": "bts:Mean",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
-            "rdfs:label": "TRUE",
+            "rdfs:label": "Mean",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:NumberofObjects.Thenumberofobjectsdescribedinthemask"
+                    "@id": "bts:ImagingSummaryStatistic"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "TRUE",
+            "sms:displayName": "mean",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Median",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Median",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ImagingSummaryStatistic"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "median",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
