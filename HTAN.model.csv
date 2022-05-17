@@ -85,7 +85,7 @@ Excitation Wavelength,Center/peak of the excitation spectrum (nm),,,,FALSE,Imagi
 Emission Wavelength,Center/peak of the emission spectrum (nm),,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,float
 Excitation Bandwidth,Nominal width of excitation spectrum (nm),,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,float
 Emission Bandwidth,Nominal width of emission spectrum (nm),,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,float
-Metal Isotope Element,Element abbreviation. eg “La” or “Nd”,,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,str
+Metal Isotope Element,Element abbreviation. eg “La” or “Nd”,"H, He, Li, Be, B, C, N, O, F, Ne, Na, Mg, Al, Si, P, S, Cl, Ar, K, Ca, Sc, Ti, V, Cr, Mn, Fe, Co, Ni, Cu, Zn, Ga, Ge, As, Se, Br, Kr, Rb, Sr, Y, Zr, Nb, Mo, Tc, Ru, Rh, Pd, Ag, Cd, In, Sn, Sb, Te, I, Xe, Cs, Ba, La, Ce, Pr, Nd, Pm, Sm, Eu, Gd, Tb, Dy, Ho, Er, Tm, Yb, Lu, Hf, Ta, W, Re, Os, Ir, Pt, Au, Hg, Tl, Pb, Bi, Po, At, Rn, Fr, Ra, Ac, Th, Pa, U, Np, Pu, Am, Cm, Bk, Cf, Es, Fm, Md, No, Lr, Rf, Db, Sg, Bh, Hs, Mt, Ds, Rg, Cn, Nh, Fl, Mc, Lv, Ts, Og",,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,str
 Metal Isotope Mass,Element mass number,,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,int
 Oligo Barcode Upper Strand,Oligo Barcode - Upper Strand,,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
 Oligo Barcode Lower Strand,Oligo Barcode - Lower Strand,,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
