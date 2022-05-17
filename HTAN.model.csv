@@ -65,7 +65,11 @@ Imaging Level 3 Channels,Channel-level Metadata Attributes,,"HTAN Channel Metada
 HTAN Channel Metadata ID,HTAN ID for this channel metadata table (same for all rows),,,,TRUE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
 Channel ID,"This must match the corresponding field in the OME-XML / TIFF header. (eg "Channel:0:1")",,,,TRUE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
 Channel Name,This must match the corresponding field in the OME-XML / TIFF header. (eg “Blue” or “CD45” or “E-cadherin”),,,,TRUE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
-Channel Passed QC,Identify stains that did not pass QC but are included in the dataset.,"Yes, No",,,TRUE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
+Channel Passed QC,Identify stains that did not pass QC but are included in the dataset.,"Yes, No - Channel Failed QC",,,TRUE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
+No - Channel Failed QC",Channel failed QC,,Channel QC Faliure Type,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
+Channel QC Failure Type,Reason the channel failed QC,"Off-target staining, Auto-fluoresence, Staining artefacet, Imaging artefact, Other/multiple channel QC faliure types",,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
+Other/multiple channel QC faliure types,QC failure type not speficied,,Channel QC Failure Comment,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
+Channel QC Failure Comment,Custom comment on channel QC faliure,,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
 Cycle Number,The cycle # in which the co-listed reagent(s) was(were) used. Integer >= 1 (up to number of cycles),,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,int
 Sub Cycle Number,Sub cycle number,,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,int
 Target Name,Short descriptive name (abbreviation) for this target (antigen),,,,TRUE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
