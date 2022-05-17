@@ -96,7 +96,7 @@ Channel Metadata Filename,Full path within Synapse project of uploaded companion
 Image Acquisition Date,Date of image acquisition,,,,FALSE,Imaging Level 2,,,
 Microscope,"Microscope type (manufacturer, model, etc) used for this experiment",,,,TRUE,Imaging Level 2,,http://purl.obolibrary.org/obo/OBI_0400169,
 Objective,Objective,,,,FALSE,Imaging Level 2,,https://www.miti-consortium.org/,
-NominalMagnification,The magnification of the lens as specified by the manufacturer - i.e. '60' is a 60X lens. floating point value > 1(no units),,,,TRUE,Imaging Level 2,,https://www.miti-consortium.org/,float
+NominalMagnification,The magnification of the lens as specified by the manufacturer - i.e. '60' is a 60X lens. floating point value > 1(no units),,,,TRUE,Imaging Level 2,,https://www.miti-consortium.org/,
 LensNA,The numerical aperture of the lens. Floating point value > 0.,,,,FALSE,Imaging Level 2,,https://www.miti-consortium.org/,float
 WorkingDistance,"The working distance of the lens, expressed as a floating point number. Floating point > 0.",,WorkingDistanceUnit,,FALSE,Imaging Level 2,,https://www.miti-consortium.org/,
 WorkingDistanceUnit,The units of the working distance. See OME enumeration of allowed values for the UnitsLength attribute -- default: microns (um),"cm, mm, µm, nm, Å",,,FALSE,Imaging Level 2,,https://www.miti-consortium.org/,
