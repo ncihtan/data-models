@@ -61,7 +61,7 @@ Imaging Level 4,Derived imaging data: Object-by-feature array,,"Component, Filen
 SRRS Imaging Level 2,SRRS-specific HTAN raw and pre-processed image data,,"Component, Filename, File Format, HTAN Participant ID, HTAN Parent Biospecimen ID,  HTAN Data File ID, Channel Metadata Filename, Imaging Assay Type, Protocol Link, Software and Version, Microscope, Objective, NominalMagnification, Pyramid, Zstack, Tseries, Passed QC, Frame Averaging, Image ID, DimensionOrder, PhysicalSizeX, PhysicalSizeXUnit, PhysicalSizeY, PhysicalSizeYUnit, Pixels BigEndian, PlaneCount, SizeC, SizeT, SizeX, SizeY, SizeZ, PixelType",,FALSE,Assay,"Biospecimen",,
 RPPA Level 2,Array based protemics. Each dilution curve of spot intensities is fitted using the monotone increasing B-spline model in the SuperCurve R package. This fits a single curve using all the samples on a slide with the signal intensity as the response variable and the dilution steps as independent variables. The fitted curve is plotted with the signal intensities on the y-axis and the log2-concentration of proteins on the x-axis for diagnostic purposes.,,"Component, Filename, File Format, HTAN Participant ID, HTAN Parent Biospecimen ID,  HTAN Parent Data File ID, HTAN RPPA Antibody Table, Assay Type, Protocol Link, Software and Version",,FALSE,Assay,Biospecimen,,
 HTAN RPPA Antibody Table,A table containing antibody level metadata for RPPA,,"HTAN RPPA Antibody Table ID, Filename, File Format, Ab Name Reported on Dataset, GENCODE Gene Symbol Target, UNIPROT Protein ID Target, Phosphoprotein Flag, Vendor, Catalog Number, Internal Ab ID, Species, RPPA Dilution, Phospho Site, RPPA Validation Status, Clone, Clonality, Notes",,TRUE,RPPA Level 2,RPPA Level 2,,
-Imaging Level 3 Channels,Channel-level Metadata Attributes,,"HTAN Channel Metadata ID, Channel ID, Channel Name, Channel Passed QC, Cycle Number, Sub Cycle Number, Antibody Role, Target Name, Antibody Name, RRID identifier, Fluorophore, Clone, Lot, Vendor, Catalog Number, Excitation Wavelength, Emission Wavelength, Excitation Bandwidth, Emission Bandwidth, Metal Isotope Element, Metal Isotope Mass, Oligo Barcode Upper Strand, Oligo Barcode Lower Strand, Dilution, Concentration",,FALSE,Imaging Level 2,,,
+Imaging Level 3 Channels,Channel-level Metadata Attributes,,"HTAN Channel Metadata ID, Channel ID, Channel Name, Channel Passed QC, Cycle Number, Sub Cycle Number, Antibody Role, Target Name, Antibody Name, RRID identifier, Fluorophore, Clone, Lot, Vendor, Catalog Number, Excitation Wavelength, Emission Wavelength, Excitation Bandwidth, Emission Bandwidth, Metal Isotope Element, Metal Isotope Mass, Oligo Barcode Upper Strand, Oligo Barcode Lower Strand, Dilution, Concentration",,FALSE,Assay,,,
 HTAN Channel Metadata ID,HTAN ID for this channel metadata table (same for all rows),,,,TRUE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
 Channel ID,"This must match the corresponding field in the OME-XML / TIFF header. (eg "Channel:0:1")",,,,TRUE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
 Channel Name,This must match the corresponding field in the OME-XML / TIFF header. (eg “Blue” or “CD45” or “E-cadherin”),,,,TRUE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
@@ -91,53 +91,53 @@ Oligo Barcode Upper Strand,Oligo Barcode - Upper Strand,,,,FALSE,Imaging Level 3
 Oligo Barcode Lower Strand,Oligo Barcode - Lower Strand,,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
 Dilution,Dilution (eg 1:1000),,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
 Concentration,Concentration (eg 10ug/mL),,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
-Imaging Assay Type,Type of imaging assay,"H&E, CyCIF, t-CyCIF, IHC, mIHC, MxIF, SABER, IMC, CODEX, GeoMX-DSP, MIBI, MERFISH, ExSeq, Not Applicable",,,TRUE,Imaging Level 2,,https://www.miti-consortium.org/,
+Imaging Assay Type,Type of imaging assay,"H&E, CyCIF, t-CyCIF, IHC, mIHC, MxIF, SABER, IMC, CODEX, GeoMX-DSP, MIBI, MERFISH, ExSeq, Not Applicable",,,TRUE,Imaging,,https://www.miti-consortium.org/,
 Channel Metadata Filename,Full path within Synapse project of uploaded companion CSV file containing channel-level metadata details,,,,TRUE,Imaging Level 2,,,regex search \.csv$
-Image Acquisition Date,Date of image acquisition,,,,FALSE,Imaging Level 2,,,
-Microscope,"Microscope type (manufacturer, model, etc) used for this experiment",,,,TRUE,Imaging Level 2,,http://purl.obolibrary.org/obo/OBI_0400169,
-Objective,Objective,,,,FALSE,Imaging Level 2,,https://www.miti-consortium.org/,
-NominalMagnification,The magnification of the lens as specified by the manufacturer - i.e. '60' is a 60X lens. floating point value > 1(no units),,,,TRUE,Imaging Level 2,,https://www.miti-consortium.org/,
-LensNA,The numerical aperture of the lens. Floating point value > 0.,,,,FALSE,Imaging Level 2,,https://www.miti-consortium.org/,float
-WorkingDistance,"The working distance of the lens, expressed as a floating point number. Floating point > 0.",,WorkingDistanceUnit,,FALSE,Imaging Level 2,,https://www.miti-consortium.org/,
-WorkingDistanceUnit,The units of the working distance. See OME enumeration of allowed values for the UnitsLength attribute -- default: microns (um),"cm, mm, µm, nm, Å",,,FALSE,Imaging Level 2,,https://www.miti-consortium.org/,
-Immersion,Immersion medium,"Air, Oil, Water, Other",,,FALSE,Imaging Level 2,,https://www.miti-consortium.org/,
-Pyramid,Does data file contain pyramid of images,"Yes, No",,,TRUE,Imaging Level 2,,https://www.miti-consortium.org/,
-Zstack,Does data file contain a Z-stack of images,"Yes, No",,,TRUE,Imaging Level 2,,https://www.miti-consortium.org/,
-Tseries,Does data file contain a time-series of images,"Yes, No",,,TRUE,Imaging Level 2,,https://www.miti-consortium.org/,
-Passed QC,Did all channels pass QC (if not add free text Comment),"Yes, No - Channels QC",,,TRUE,Imaging Level 2,,https://www.miti-consortium.org/,
-No - Channels QC,Not all channels passed QC,,Comment,,FALSE,Imaging Level 2,,https://www.miti-consortium.org/,
-Comment,Free text field (generally for QC comment),,,,FALSE,Imaging Level 2,,https://www.miti-consortium.org/,
-FOV number,Index of FOV (as it pertains to its sequence order). Integer >= 1,,,,FALSE,Imaging Level 2,,https://www.miti-consortium.org/,int
-FOVX,Field of view X dimension. Floating point,,FOVXUnit,,FALSE,Imaging Level 2,,https://www.miti-consortium.org/,float
-FOVXUnit,Field of view X dimension units. See OME enumeration of allowed values for the UnitsLength attribute -- default: microns (um),"cm, mm, µm, nm, Å",,,FALSE,Imaging Level 2,,https://www.miti-consortium.org/,
-FOVY,Field  of view Y dimension. Floating point value,,FOVYUnit,,FALSE,Imaging Level 2,,https://www.miti-consortium.org/,float
-FOVYUnit,Field of view Y dimension units. See OME enumeration of allowed values for the UnitsLength attribute -- default: microns (um),"cm, mm, µm, nm, Å",,,FALSE,Imaging Level 2,,https://www.miti-consortium.org/,
-Frame Averaging,"Number of frames averaged together (if no averaging, set to 1). Integer >= 1",,,,FALSE,Imaging Level 2,,https://www.miti-consortium.org/,
-Image ID,"Unique internal image identifier. eg ""Image:0"". (To be extracted from OME-XML)",,,,TRUE,Imaging Level 2,,https://www.miti-consortium.org/,
-DimensionOrder,The order in which the individual planes of data are interleaved.,"XYZCT, XYZTC, XYCTZ, XYCZT, XYTZC, ZYX",,,TRUE,Imaging Level 2,,https://www.miti-consortium.org/,
-PhysicalSizeX,Physical size (X-dimension) of a pixel. Units are set by PhysicalSizeXUnit. Floating point value > 0.,,PhysicalSizeXUnit,,TRUE,Imaging Level 2,,,
-PhysicalSizeXUnit,The units of the physical size of a pixel. See OME enumeration of allowed values for the UnitsLength attribute -- default: microns (um),"cm, mm, µm, nm, Å",,,TRUE,Imaging Level 2,,https://www.miti-consortium.org/,
-PhysicalSizeY,Physical size (Y-dimension) of a pixel. Units are set by PhysicalSizeYUnit. Floating point value > 0.,,PhysicalSizeYUnit,,TRUE,Imaging Level 2,,https://www.miti-consortium.org/,
-PhysicalSizeYUnit,The units of the physical size of a pixel. See OME enumeration of allowed values for the UnitsLength attribute -- default: microns (um),"cm, mm, µm, nm, Å",,,TRUE,Imaging Level 2,,https://www.miti-consortium.org/,
-PhysicalSizeZ,Physical size (Z-dimension) of a pixel. Units are set by PhysicalSizeZUnit. Floating point value > 0.,,PhysicalSizeZUnit,,TRUE,Imaging Level 2,,https://www.miti-consortium.org/,
-PhysicalSizeZUnit,The units of the physical size of a pixel. See OME enumeration of allowed values for the UnitsLength attribute -- default: microns (um),"cm, mm, µm, nm, Å",,,TRUE,Imaging Level 2,,https://www.miti-consortium.org/,
-Pixels BigEndian,Boolean (True/False),"True, False",,,TRUE,Imaging Level 2,,https://www.miti-consortium.org/,
-PlaneCount,"Number of Z-planes (not to be confused with downsampled ""pyramid""). Integer >=1",,,,TRUE,Imaging Level 2,,https://www.miti-consortium.org/,
-SizeC,Number of channels. Integer >= 1,,,,TRUE,Imaging Level 2,,https://www.miti-consortium.org/,int
-SizeT,Number of time points. Integer >= 1,,,,TRUE,Imaging Level 2,,https://www.miti-consortium.org/,int
-SizeX,Size of image: X dimension (in pixels). Integer >= 1,,,,TRUE,Imaging Level 2,,https://www.miti-consortium.org/,int
-SizeY,Size of image: Y dimension (in pixels). Integer >= 1,,,,TRUE,Imaging Level 2,,https://www.miti-consortium.org/,int
-SizeZ,Size of image: Z dimension (in pixels). Integer >= 1,,,,TRUE,Imaging Level 2,,https://www.miti-consortium.org/,int
-PixelType,"Data type for each pixel value. E.g. ""uint16""","int8, int16, int32, uint8, uint16, uint32, float, double, bit",,,TRUE,Imaging Level 2,,,
-Imaging Segmentation Data Type,Specifies how the segmentation is stored,"Mask, Outline, Polygon, Probability Map, Point",,,TRUE,Imaging Level 3,,https://www.miti-consortium.org/,
-Parameter file,Filename of a text file listing algorithm version numbers and relevant parameters needed to reproduce the analysis,,,,TRUE,Imaging Level 3,,,
-Commit SHA,"Short SHA for software version [8 hexadecimal characters (for github), comma separated if multiple]",,,,FALSE,Imaging Level 3,,,
-Imaging Object Class,Defines the structure that the mask delineates,"nucleus, cytoplasm, plasma membrane, whole cell, Imaging Object Class Other",,,TRUE,Imaging Level 3,,https://www.miti-consortium.org/,
-Imaging Object Class Other,Imaging Object Class Other,,Imaging Object Class Description,,FALSE,Imaging Level 3,,https://www.miti-consortium.org/,
-Imaging Object Class Description,Free text description of object class [string],,Object class,,TRUE,Imaging Level 3,,https://www.miti-consortium.org/,
-Number of Objects, The number of objects (eg cells) described,,,,TRUE,Imaging Level 3,,https://www.miti-consortium.org/,int
-Number of Features, The number of features (eg channels) described,,,,TRUE,Imaging Level 4,,https://www.miti-consortium.org/,int
-Imaging Summary Statistic, Function used to summarize object/feature intensity,"Mean,Median,Not Specified",,,FALSE,Imaging Level 4,,https://www.miti-consortium.org/,
+Image Acquisition Date,Date of image acquisition,,,,FALSE,Imaging,,,
+Microscope,"Microscope type (manufacturer, model, etc) used for this experiment",,,,TRUE,Imaging,,http://purl.obolibrary.org/obo/OBI_0400169,
+Objective,Objective,,,,FALSE,Imaging,,https://www.miti-consortium.org/,
+NominalMagnification,The magnification of the lens as specified by the manufacturer - i.e. '60' is a 60X lens. floating point value > 1(no units),,,,TRUE,Imaging,,https://www.miti-consortium.org/,
+LensNA,The numerical aperture of the lens. Floating point value > 0.,,,,FALSE,Imaging,,https://www.miti-consortium.org/,float
+WorkingDistance,"The working distance of the lens, expressed as a floating point number. Floating point > 0.",,WorkingDistanceUnit,,FALSE,Imaging,,https://www.miti-consortium.org/,
+WorkingDistanceUnit,The units of the working distance. See OME enumeration of allowed values for the UnitsLength attribute -- default: microns (um),"cm, mm, µm, nm, Å",,,FALSE,Imaging,,https://www.miti-consortium.org/,
+Immersion,Immersion medium,"Air, Oil, Water, Other",,,FALSE,Imaging,,https://www.miti-consortium.org/,
+Pyramid,Does data file contain pyramid of images,"Yes, No",,,TRUE,Imaging,,https://www.miti-consortium.org/,
+Zstack,Does data file contain a Z-stack of images,"Yes, No",,,TRUE,Imaging,,https://www.miti-consortium.org/,
+Tseries,Does data file contain a time-series of images,"Yes, No",,,TRUE,Imaging,,https://www.miti-consortium.org/,
+Passed QC,Did all channels pass QC (if not add free text Comment),"Yes, No - Channels QC",,,TRUE,Imaging,,https://www.miti-consortium.org/,
+No - Channels QC,Not all channels passed QC,,Comment,,FALSE,Imaging,,https://www.miti-consortium.org/,
+Comment,Free text field (generally for QC comment),,,,FALSE,Imaging,,https://www.miti-consortium.org/,
+FOV number,Index of FOV (as it pertains to its sequence order). Integer >= 1,,,,FALSE,Imaging,,https://www.miti-consortium.org/,int
+FOVX,Field of view X dimension. Floating point,,FOVXUnit,,FALSE,Imaging,,https://www.miti-consortium.org/,float
+FOVXUnit,Field of view X dimension units. See OME enumeration of allowed values for the UnitsLength attribute -- default: microns (um),"cm, mm, µm, nm, Å",,,FALSE,Imaging,,https://www.miti-consortium.org/,
+FOVY,Field  of view Y dimension. Floating point value,,FOVYUnit,,FALSE,Imaging,,https://www.miti-consortium.org/,float
+FOVYUnit,Field of view Y dimension units. See OME enumeration of allowed values for the UnitsLength attribute -- default: microns (um),"cm, mm, µm, nm, Å",,,FALSE,Imaging,,https://www.miti-consortium.org/,
+Frame Averaging,"Number of frames averaged together (if no averaging, set to 1). Integer >= 1",,,,FALSE,Imaging,,https://www.miti-consortium.org/,
+Image ID,"Unique internal image identifier. eg ""Image:0"". (To be extracted from OME-XML)",,,,TRUE,Imaging,,https://www.miti-consortium.org/,
+DimensionOrder,The order in which the individual planes of data are interleaved.,"XYZCT, XYZTC, XYCTZ, XYCZT, XYTZC, ZYX",,,TRUE,Imaging,,https://www.miti-consortium.org/,
+PhysicalSizeX,Physical size (X-dimension) of a pixel. Units are set by PhysicalSizeXUnit. Floating point value > 0.,,PhysicalSizeXUnit,,TRUE,Imaging,,,
+PhysicalSizeXUnit,The units of the physical size of a pixel. See OME enumeration of allowed values for the UnitsLength attribute -- default: microns (um),"cm, mm, µm, nm, Å",,,TRUE,Imaging,,https://www.miti-consortium.org/,
+PhysicalSizeY,Physical size (Y-dimension) of a pixel. Units are set by PhysicalSizeYUnit. Floating point value > 0.,,PhysicalSizeYUnit,,TRUE,Imaging,,https://www.miti-consortium.org/,
+PhysicalSizeYUnit,The units of the physical size of a pixel. See OME enumeration of allowed values for the UnitsLength attribute -- default: microns (um),"cm, mm, µm, nm, Å",,,TRUE,Imaging,,https://www.miti-consortium.org/,
+PhysicalSizeZ,Physical size (Z-dimension) of a pixel. Units are set by PhysicalSizeZUnit. Floating point value > 0.,,PhysicalSizeZUnit,,TRUE,Imaging,,https://www.miti-consortium.org/,
+PhysicalSizeZUnit,The units of the physical size of a pixel. See OME enumeration of allowed values for the UnitsLength attribute -- default: microns (um),"cm, mm, µm, nm, Å",,,TRUE,Imaging,,https://www.miti-consortium.org/,
+Pixels BigEndian,Boolean (True/False),"True, False",,,TRUE,Imaging,,https://www.miti-consortium.org/,
+PlaneCount,"Number of Z-planes (not to be confused with downsampled ""pyramid""). Integer >=1",,,,TRUE,Imaging,,https://www.miti-consortium.org/,
+SizeC,Number of channels. Integer >= 1,,,,TRUE,Imaging,,https://www.miti-consortium.org/,int
+SizeT,Number of time points. Integer >= 1,,,,TRUE,Imaging,,https://www.miti-consortium.org/,int
+SizeX,Size of image: X dimension (in pixels). Integer >= 1,,,,TRUE,Imaging,,https://www.miti-consortium.org/,int
+SizeY,Size of image: Y dimension (in pixels). Integer >= 1,,,,TRUE,Imaging,,https://www.miti-consortium.org/,int
+SizeZ,Size of image: Z dimension (in pixels). Integer >= 1,,,,TRUE,Imaging,,https://www.miti-consortium.org/,int
+PixelType,"Data type for each pixel value. E.g. ""uint16""","int8, int16, int32, uint8, uint16, uint32, float, double, bit",,,TRUE,Imaging,,,
+Imaging Segmentation Data Type,Specifies how the segmentation is stored,"Mask, Outline, Polygon, Probability Map, Point",,,TRUE,Imaging,,https://www.miti-consortium.org/,
+Parameter file,Filename of a text file listing algorithm version numbers and relevant parameters needed to reproduce the analysis,,,,TRUE,Imaging,,,
+Commit SHA,"Short SHA for software version [8 hexadecimal characters (for github), comma separated if multiple]",,,,FALSE,Imaging,,,
+Imaging Object Class,Defines the structure that the mask delineates,"nucleus, cytoplasm, plasma membrane, whole cell, Imaging Object Class Other",,,TRUE,Imaging,,https://www.miti-consortium.org/,
+Imaging Object Class Other,Imaging Object Class Other,,Imaging Object Class Description,,FALSE,Imaging,,https://www.miti-consortium.org/,
+Imaging Object Class Description,Free text description of object class [string],,Object class,,TRUE,Imaging,,https://www.miti-consortium.org/,
+Number of Objects, The number of objects (eg cells) described,,,,TRUE,Imaging,,https://www.miti-consortium.org/,int
+Number of Features, The number of features (eg channels) described,,,,TRUE,Imaging,,https://www.miti-consortium.org/,int
+Imaging Summary Statistic, Function used to summarize object/feature intensity,"Mean,Median,Not Specified",,,FALSE,Imaging,,https://www.miti-consortium.org/,
 Nucleic Acid Source,The source of the input nucleic molecule,"Single Cell, Bulk Whole Cell, Single Nucleus, Bulk Nuclei",,,TRUE,Sequencing,,http://example.org/htan/NucleicAcidSource,
 Single Cell Isolation Method,"The method by which cells are isolated into individual reaction containers at a single cell resolution (e.g. wells, micro-droplets)","Microfluidics Chip, Droplets, FACS, Plates, 10x, Nuclei Isolation",,,TRUE,scRNA-seq Level 1,,,
 Dissociation Method,The tissue dissociation method used for scRNASeq or scATAC-seq assays,"gentleMACS, Dounce, Enzymatic Digestion, Not Applicable",,,TRUE,scRNA-seq Level 1,,,
@@ -791,5 +791,5 @@ RPPA Dilution,The dilution ratio.,,,,FALSE,HTAN RPPA Antibody Table,,,
 Phospho Site,The protein site for a phosphoprotein targeting antibody. Report AA and site (i.e. S442),,Phosphoprotein Flag,,FALSE,HTAN RPPA Antibody Table,,,
 RPPA Validation Status,Valid = RPPA and WB correlation > 0.7; Use with Caution = RPPA and WB correlation < 0.7; Under Evaluation = Antibody has given mixed results and/or evaluated by another lab; We are in the process of (re)validating; Used for QC = These antibodies are used for tissue sample quality control (QC),"Valid, Use with Caution, Under Evaluation, Used for QC",,,FALSE,HTAN RPPA Antibody Table,,,
 Antibody Notes,Notes on antibodies replacements and antibody recognition observations.,,,,FALSE,HTAN RPPA Antibody Table,,,
-Pre-processing Completed,Pre-processing steps completed to convert level 1 raw data to a single level 2 image,"Illumination correction, Tile Stitching, Channel/Cycle Registration, TMA de-arraying, None, Other",,,TRUE,Imaging Level 1,,https://www.miti-consortium.org/,
-Pre-processing Required,Pre-processing steps required to convert level 1 raw data to a single level 2 image,"Illumination correction, Tile Stitching, Channel/Cycle Registration, TMA de-arraying, None, Other",,,TRUE,Imaging Level 1,,https://www.miti-consortium.org/,
+Pre-processing Completed,Pre-processing steps completed to convert level 1 raw data to a single level 2 image,"Illumination correction, Tile Stitching, Channel/Cycle Registration, TMA de-arraying, None, Other",,,TRUE,Imaging,,https://www.miti-consortium.org/,
+Pre-processing Required,Pre-processing steps required to convert level 1 raw data to a single level 2 image,"Illumination correction, Tile Stitching, Channel/Cycle Registration, TMA de-arraying, None, Other",,,TRUE,Imaging,,https://www.miti-consortium.org/,
