@@ -2850,7 +2850,9 @@
             },
             "sms:displayName": "HTAN Parent Biospecimen ID",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "matchAtLeastOne scRNA-seqLevel1.HTANParentBiospecimenID Biospecimen.HTANBiospecimenID"
+            ]
         },
         {
             "@id": "bts:HTANParentDataFileID",
