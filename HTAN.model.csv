@@ -129,11 +129,11 @@ SizeY,Size of image: Y dimension (in pixels). Integer >= 1,,,,TRUE,Imaging,,http
 SizeZ,Size of image: Z dimension (in pixels). Integer >= 1,,,,TRUE,Imaging,,https://www.miti-consortium.org/,int
 PixelType,"Data type for each pixel value. E.g. ""uint16""","int8, int16, int32, uint8, uint16, uint32, float, double, bit",,,TRUE,Imaging,,,
 Imaging Segmentation Data Type,Specifies how the segmentation is stored,"Mask, Outline, Polygon, Probability Map, Point",,,TRUE,Imaging,,https://www.miti-consortium.org/,
-Parameter file,Filename of a text file listing algorithm version numbers and relevant parameters needed to reproduce the analysis,,,,TRUE,Imaging,,,
+Parameter file,Path in Syanpse to a text file listing algorithm version numbers and relevant parameters needed to reproduce the analysis,,,,FALSE,Imaging,,,
 Commit SHA,"Short SHA for software version [8 hexadecimal characters (for github), comma separated if multiple]",,,,FALSE,Imaging,,,
 Imaging Object Class,Defines the structure that the mask delineates,"nucleus, cytoplasm, plasma membrane, whole cell, Imaging Object Class Other",,,TRUE,Imaging,,https://www.miti-consortium.org/,
 Imaging Object Class Other,Imaging Object Class Other,,Imaging Object Class Description,,FALSE,Imaging,,https://www.miti-consortium.org/,
-Imaging Object Class Description,Free text description of object class [string],,Object class,,TRUE,Imaging,,https://www.miti-consortium.org/,
+Imaging Object Class Description,Free text description of object class [string],,,,TRUE,Imaging,,https://www.miti-consortium.org/,
 Number of Objects, The number of objects (eg cells) described,,,,TRUE,Imaging,,https://www.miti-consortium.org/,int
 Number of Features, The number of features (eg channels) described,,,,TRUE,Imaging,,https://www.miti-consortium.org/,int
 Imaging Summary Statistic, Function used to summarize object/feature intensity,"Mean,Median,Not Specified",,,FALSE,Imaging,,https://www.miti-consortium.org/,
