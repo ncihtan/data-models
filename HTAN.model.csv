@@ -794,4 +794,4 @@ License,The type of license applicable to the content.,"0BSD, AAL, ADSL, AFL-1.1
 PMID,The PubMed identifier associated with the publication (applicable to published manuscripts),,,,FALSE,Publication,,,
 Data Type,"Types of data associated with the content. Fill out Other Data Type Specified, if not on the list.","10X Visium, Bulk DNA, Bulk RNA-seq, CyCIF, H&E, IMC, LC-MS-MS, LC-MS3, MIBI, MxIF, Shotgun MS (lipidomics), mIHC, scATAC-seq, scRNA-seq, t-CyCIF, Demographics",,,TRUE,Publication,,,list
 Other Data Type Specified,Other types of data associated with the content.,,,,FALSE,Publication,,,list
-Tool,Were any software or computational tools generated  for this content?,"Yes, No",,,TRUE,Publication,,,
+Tool,Were any software or computational tools generated  for this content.,"Yes, No",,,TRUE,Publication,,,
