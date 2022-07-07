@@ -787,3 +787,6 @@ Corresponding Author,"The name(s) of the corresponding author(s) of the content 
 Corresponding Author ORCID,"The ORCiD(s) of the corresponding author(s) of the content presented/published. If more than one corresponding author, please list ORCiDs in the order the authors appear in the author list.",,,,TRUE,Publication,,,
 Title,The title of the content presented or published.,,,,TRUE,Publication,,,
 Authors,"The names of the author(s) of the content presented/published, in the order they appear.",,,,TRUE,Publication,,,
+Year of Publication,The year the content was presented or published (format YYYY).,,,,TRUE,Publication,,,regex search ^(19|20)\d{2}$
+Location of Publication,"The name of the preprint server, journal, or conference where the content was presented/published.",,,,TRUE,Publication,,,
+Publication Abstract,The abstract or short description of the content presented/published.,,,,TRUE,Publication,,,
