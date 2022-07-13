@@ -784,7 +784,7 @@ HTAN Center ID,List of HTAN Center ID(s) associated with the content presented/p
 Publication Content Type,The type of content presented or published.,"Preprint, Published manuscript, Conference proceedings",,,TRUE,Publication,,,
 DOI,The digital object identifier (DOI) of the content in the form of https://www.doi.org/{doi} to comply with CrossRef DOI display guidelines.,,,,TRUE,Publication,,,url https://www.doi.org/
 Corresponding Author,"The name(s) of the corresponding author(s) of the content presented/published. If more than one corresponding author, please list in the order they appear in the author list.",,,,TRUE,Publication,,,
-Corresponding Author ORCID,"The ORCiD(s) of the corresponding author(s) of the content presented/published. If more than one corresponding author, please list ORCiDs in the order the authors appear in the author list.",,,,TRUE,Publication,,,
+Corresponding Author ORCID,"The ORCiD(s) of the corresponding author(s) of the content presented/published. Should be a valid ORCiD url starting with https://orcid.org/ followed by a 16 digit identifier in dash separated groups of 4 (for example https://orcid.org/0000-0002-1825-0097). If more than one corresponding author, please list ORCiDs in the order the authors appear in the author list.",,,,TRUE,Publication,,,url
 Title,The title of the content presented or published.,,,,TRUE,Publication,,,
 Authors,"The names of the author(s) of the content presented/published, in the order they appear.",,,,TRUE,Publication,,,
 Year of Publication,The year the content was presented or published (format YYYY).,,,,TRUE,Publication,,,regex search ^(19|20)\d{2}$
