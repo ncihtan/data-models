@@ -92,7 +92,7 @@ Oligo Barcode Lower Strand,Oligo Barcode - Lower Strand,,,,FALSE,Imaging Level 3
 Dilution,Dilution (eg 1:1000),,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
 Concentration,Concentration (eg 10ug/mL),,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
 Imaging Assay Type,Type of imaging assay,"H&E, CyCIF, t-CyCIF, IHC, mIHC, MxIF, SABER, IMC, CODEX, GeoMX-DSP, MIBI, MERFISH, ExSeq, Not Applicable",,,TRUE,Imaging,,https://www.miti-consortium.org/,
-Channel Metadata Filename,Full path within Synapse project of uploaded companion CSV file containing channel-level metadata details,,,,TRUE,Imaging Level 2,,,regex search \.csv$
+Channel Metadata Filename,Full path within Synapse project of uploaded companion CSV file containing channel-level metadata details,,,,TRUE,Imaging Level 2,,,
 Microscope,"Microscope type (manufacturer, model, etc) used for this experiment",,,,TRUE,Imaging,,http://purl.obolibrary.org/obo/OBI_0400169,
 Objective,Objective,,,,FALSE,Imaging,,https://www.miti-consortium.org/,
 NominalMagnification,The magnification of the lens as specified by the manufacturer - i.e. '60' is a 60X lens. floating point value > 1(no units),,,,TRUE,Imaging,,https://www.miti-consortium.org/,
