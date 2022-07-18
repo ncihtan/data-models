@@ -81,10 +81,10 @@ Clone,Clone,,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
 Lot,Lot number from vendor,,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
 Vendor,Vendor,,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
 Catalog Number,Catalog Number,,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
-Excitation Wavelength,Center/peak of the excitation spectrum (nm),,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,float
-Emission Wavelength,Center/peak of the emission spectrum (nm),,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,float
-Excitation Bandwidth,Nominal width of excitation spectrum (nm),,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,float
-Emission Bandwidth,Nominal width of emission spectrum (nm),,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,float
+Excitation Wavelength,Center/peak of the excitation spectrum (nm),,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
+Emission Wavelength,Center/peak of the emission spectrum (nm),,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
+Excitation Bandwidth,Nominal width of excitation spectrum (nm),,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
+Emission Bandwidth,Nominal width of emission spectrum (nm),,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
 Metal Isotope Element,Element abbreviation. eg “La” or “Nd”,"H, He, Li, Be, B, C, N, O, F, Ne, Na, Mg, Al, Si, P, S, Cl, Ar, K, Ca, Sc, Ti, V, Cr, Mn, Fe, Co, Ni, Cu, Zn, Ga, Ge, As, Se, Br, Kr, Rb, Sr, Y, Zr, Nb, Mo, Tc, Ru, Rh, Pd, Ag, Cd, In, Sn, Sb, Te, I, Xe, Cs, Ba, La, Ce, Pr, Nd, Pm, Sm, Eu, Gd, Tb, Dy, Ho, Er, Tm, Yb, Lu, Hf, Ta, W, Re, Os, Ir, Pt, Au, Hg, Tl, Pb, Bi, Po, At, Rn, Fr, Ra, Ac, Th, Pa, U, Np, Pu, Am, Cm, Bk, Cf, Es, Fm, Md, No, Lr, Rf, Db, Sg, Bh, Hs, Mt, Ds, Rg, Cn, Nh, Fl, Mc, Lv, Ts, Og",,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,str
 Metal Isotope Mass,Element mass number,,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,int
 Oligo Barcode Upper Strand,Oligo Barcode - Upper Strand,,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
@@ -92,11 +92,11 @@ Oligo Barcode Lower Strand,Oligo Barcode - Lower Strand,,,,FALSE,Imaging Level 3
 Dilution,Dilution (eg 1:1000),,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
 Concentration,Concentration (eg 10ug/mL),,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
 Imaging Assay Type,Type of imaging assay,"H&E, CyCIF, t-CyCIF, IHC, mIHC, MxIF, SABER, IMC, CODEX, GeoMX-DSP, MIBI, MERFISH, ExSeq, Not Applicable",,,TRUE,Imaging,,https://www.miti-consortium.org/,
-Channel Metadata Filename,Full path within Synapse project of uploaded companion CSV file containing channel-level metadata details,,,,TRUE,Imaging Level 2,,,regex search \.csv$
+Channel Metadata Filename,Full path within Synapse project of uploaded companion CSV file containing channel-level metadata details,,,,TRUE,Imaging Level 2,,,
 Microscope,"Microscope type (manufacturer, model, etc) used for this experiment",,,,TRUE,Imaging,,http://purl.obolibrary.org/obo/OBI_0400169,
 Objective,Objective,,,,FALSE,Imaging,,https://www.miti-consortium.org/,
 NominalMagnification,The magnification of the lens as specified by the manufacturer - i.e. '60' is a 60X lens. floating point value > 1(no units),,,,TRUE,Imaging,,https://www.miti-consortium.org/,
-LensNA,The numerical aperture of the lens. Floating point value > 0.,,,,FALSE,Imaging,,https://www.miti-consortium.org/,float
+LensNA,The numerical aperture of the lens. Floating point value > 0.,,,,FALSE,Imaging,,https://www.miti-consortium.org/,
 WorkingDistance,"The working distance of the lens, expressed as a floating point number. Floating point > 0.",,WorkingDistanceUnit,,FALSE,Imaging,,https://www.miti-consortium.org/,
 WorkingDistanceUnit,The units of the working distance. See OME enumeration of allowed values for the UnitsLength attribute -- default: microns (um),"cm, mm, µm, nm, Å",,,FALSE,Imaging,,https://www.miti-consortium.org/,
 Immersion,Immersion medium,"Air, Oil, Water, Other",,,FALSE,Imaging,,https://www.miti-consortium.org/,
@@ -107,9 +107,9 @@ Passed QC,Did all channels pass QC (if not add free text Comment),"Yes, No - Cha
 No - Channels QC,Not all channels passed QC,,Comment,,FALSE,Imaging,,https://www.miti-consortium.org/,
 Comment,Free text field (generally for QC comment),,,,FALSE,Imaging,,https://www.miti-consortium.org/,
 FOV number,Index of FOV (as it pertains to its sequence order). Integer >= 1,,,,FALSE,Imaging,,https://www.miti-consortium.org/,int
-FOVX,Field of view X dimension. Floating point,,FOVXUnit,,FALSE,Imaging,,https://www.miti-consortium.org/,float
+FOVX,Field of view X dimension. Floating point,,FOVXUnit,,FALSE,Imaging,,https://www.miti-consortium.org/,
 FOVXUnit,Field of view X dimension units. See OME enumeration of allowed values for the UnitsLength attribute -- default: microns (um),"cm, mm, µm, nm, Å",,,FALSE,Imaging,,https://www.miti-consortium.org/,
-FOVY,Field  of view Y dimension. Floating point value,,FOVYUnit,,FALSE,Imaging,,https://www.miti-consortium.org/,float
+FOVY,Field  of view Y dimension. Floating point value,,FOVYUnit,,FALSE,Imaging,,https://www.miti-consortium.org/,
 FOVYUnit,Field of view Y dimension units. See OME enumeration of allowed values for the UnitsLength attribute -- default: microns (um),"cm, mm, µm, nm, Å",,,FALSE,Imaging,,https://www.miti-consortium.org/,
 Frame Averaging,"Number of frames averaged together (if no averaging, set to 1). Integer >= 1",,,,FALSE,Imaging,,https://www.miti-consortium.org/,
 Image ID,"Unique internal image identifier. eg ""Image:0"". (To be extracted from OME-XML)",,,,TRUE,Imaging,,https://www.miti-consortium.org/,
