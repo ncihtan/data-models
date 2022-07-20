@@ -265,7 +265,7 @@ Somatic Variants Workflow URL,Generic name for the workflow used to analyze a da
 Somatic Variants Workflow Type,Generic name for the workflow used to analyze a data set.,"CaVEMan, GATK4, MuTect2, MuSE, MuTect2, Pindel, SomaticSniper, VarScan2, Other Somatic Variants Workflow Type, None",,,FALSE,Sequencing,,,
 Other Somatic Variants Workflow Type,Other Somatic Variants Workflow Type,,Custom Somatic Variants Workflow Type,,FALSE,Sequencing,,,
 Custom Somatic Variants Workflow Type,Specify the name of a custom workflow name,,,,TRUE,Sequencing,,,
-Somatic Variants Sample Type,Is the sample case or control in somatic variant analysis,"Case Sample, Control Sample",,,TRUE,Sequencing,,,
+Somatic Variants Sample Type,Is the sample case or control in somatic variant analysis,"Case Sample, Control Sample, Not Applicable",,,TRUE,Sequencing,,,
 Structural Variant Workflow URL,Link to workflow document. DockStore.org recommended. URL,,,,TRUE,Sequencing,,,
 Structural Variant Workflow Type,Generic name for the workflow used to analyze a data set.,"BRASS, GATK4, CNV, CNVkit, Other Structural Variant Workflow Type, None",,,FALSE,Sequencing,,,
 Other Structural Variant Workflow Type,Other Structural Variant Workflow Type,,Custom Structural Variant Workflow Type,,FALSE,Sequencing,,,
