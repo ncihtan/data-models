@@ -818,7 +818,7 @@ On Target Fragments,"Number of fragments overlapping any of TSS, enhancer, promo
 Blacklist Region Fragments,Number of fragments overlapping blacklisted regions,,,,FALSE,scATAC-seq Level 2,,,
 Peak Region Fragments,Number of fragments overlapping peaks,,,,FALSE,scATAC-seq Level 2,,,
 Peak Region Cutsites,Number of ends of fragments in peak regions,,,,FALSE,scATAC-seq Level 2,,,
-Nucleosome Signal,Nucleosome signal score (strength of the nucleosome signal per cell, computed as the ratio of fragments between 147 bp and 294 bp (mononucleosome) to fragments < 147 bp (nucleosome-free)),,,,FALSE,scATAC-seq Level 2,,,
+Nucleosome Signal,"Nucleosome signal score (strength of the nucleosome signal per cell, computed as the ratio of fragments between 147 bp and 294 bp (mononucleosome) to fragments < 147 bp (nucleosome-free))",,,,FALSE,scATAC-seq Level 2,,,
 Nucleosome Percentile,Percentile rank of nucleosome score,,,,FALSE,scATAC-seq Level 2,,,
 TSS Enrichment,Transcription start site (TSS) enrichment score,,,,FALSE,scATAC-seq Level 2,,,
 TSS Percentile,Percentile rank of TSS score,,,,FALSE,scATAC-seq Level 2,,,
