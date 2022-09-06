@@ -809,7 +809,7 @@ Chimeric Read-Pairs,Number of chimerically mapped read-pairs,,,,FALSE,scATAC-seq
 Unmapped Read-Pairs,Number of read-pairs with at least one end not mapped,,,,FALSE,scATAC-seq Level 2,,,
 LowMapQ,Number of read-pairs with <30 mapq on at least one end,,,,FALSE,scATAC-seq Level 2,,,
 Mitochondrial Read-Pairs,Number of read-pairs mapping to mitochondria and non-nuclear contigs,,,,FALSE,scATAC-seq Level 2,,,
-Passed Filters,Number of non-duplicate, usable read-pairs i.e. fragments,,,,FALSE,scATAC-seq Level 2,,,
+Passed Filters,"Number of non-duplicate, usable read-pairs i.e. fragments",,,,FALSE,scATAC-seq Level 2,,,
 TSS Fragments,Number of fragments overlapping with TSS regions,,,,FALSE,scATAC-seq Level 2,,,
 DNase Sensitive Region Fragments,Number of fragments overlapping with DNase sensitive regions,,,,FALSE,scATAC-seq Level 2,,,
 Enhancer Region Fragments,Number of fragments overlapping enhancer regions,,,,FALSE,scATAC-seq Level 2,,,
