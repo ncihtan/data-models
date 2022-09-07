@@ -108,7 +108,7 @@ Tseries,Does data file contain a time-series of images,"Yes, No",,,TRUE,Imaging,
 Passed QC,Did all channels pass QC (if not add free text Comment),"Yes, No - Channels QC",,,TRUE,Imaging,,https://www.miti-consortium.org/,
 No - Channels QC,Not all channels passed QC,,Comment,,FALSE,Imaging,,https://www.miti-consortium.org/,
 Comment,Free text field (generally for QC comment),,,,FALSE,Imaging,,https://www.miti-consortium.org/,
-FOV number,Index of FOV (as it pertains to its sequence order). Integer >= 1,,,,FALSE,Imaging,,https://www.miti-consortium.org/,int
+FOV number,Index of FOV (as it pertains to its sequence order). Integer >= 1,,,,FALSE,Imaging,,https://www.miti-consortium.org/,
 FOVX,Field of view X dimension. Floating point,,FOVXUnit,,FALSE,Imaging,,https://www.miti-consortium.org/,
 FOVXUnit,Field of view X dimension units. See OME enumeration of allowed values for the UnitsLength attribute -- default: microns (um),"cm, mm, µm, nm, Å",,,FALSE,Imaging,,https://www.miti-consortium.org/,
 FOVY,Field  of view Y dimension. Floating point value,,FOVYUnit,,FALSE,Imaging,,https://www.miti-consortium.org/,
