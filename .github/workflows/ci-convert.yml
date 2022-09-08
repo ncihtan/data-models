@@ -17,10 +17,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Install System Dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y pip python3.8-venv libcurl4-openssl-dev
+      - uses: actions/setup-python@v4 
+        with:
+          python-version: '3.9'
 
       - name: Install Schematic
         shell: bash
