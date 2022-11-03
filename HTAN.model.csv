@@ -844,3 +844,5 @@ MACS2 Fold Change,Fold enrichment for this peak summit against random Poisson di
 MACS2 Neg Log10 pvalue Summit,Negative log10 p-value for the peak summit in MACS2,,,,FALSE,scATAC-seq Level 2,,,
 MACS2 Neg Log10 qvalue Summit,Negative log10 q-value for the peak summit in MACS2,,,,FALSE,scATAC-seq Level 2,,,
 MACS2 Relative Summit Position,Position of the peak summit related to the start position in MACS2,,,,FALSE,scATAC-seq Level 2,,,
+Is lowest level, Denotes that the manifest represents the lowest data level submitted. Use when L1 data is missing,"Yes - Is lowest level,No",,,FALSE,scRNA-seq Level 2,,,
+True - Is lowest level,If manifest is lowest level, require HTAN Parent Biospecimen ID,,HTAN Parent Biospecimen ID,,TRUE,scRNA-seq Level 2,,,
