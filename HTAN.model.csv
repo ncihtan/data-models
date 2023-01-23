@@ -92,13 +92,13 @@ Median UMI Counts per Spot,The median number of UMI counts per tissue covered sp
 Sequencing Saturation,"The fraction of reads originating from an already-observed UMI. This is a function of library complexity and sequencing depth. More specifically, this is the fraction of confidently mapped, valid spot-barcode, valid UMI reads that had a non-unique (spot-barcode, UMI, gene).",,,,TRUE,Spatial Transcriptomics,,,
 Proportion Reads Mapped to Transcriptome,Fraction of reads that mapped to a unique gene in the transcriptome. The read must be consistent with annotated splice junctions. These reads are considered for UMI counting.,,,,TRUE,Spatial Transcriptomics,,,
 Median Number Genes per Spatial Spot,The median number of genes detected per spot under tissue-associated barcode. Detection is defined as the presence of at least 1 UMI count.,,,,TRUE,Spatial Transcriptomics,,,num
-HI-C-seq Level 1,Unaligned sequence data,,"Component, HTAN Parent ID, Filename, File Format, Genomic Reference, Sequencing Platform, Nucleic Acid Source, Technical Replicate Group, Transposition Reaction, Crosslinking Condtion, DNA Digestion Condition, Nuclei Permeabilization Method, Ligation condition, Biotin Enrichment, DNA Input Amount, Total Reads, Protocol Link",,TRUE,Sequencing,,,
-HI-C-seq Level 2,"Aligned read pairs, contact matrix",,"Component, HTAN biospecimen ID, HTAN Parent Biospecimen ID, Filename,  Genomic Reference, Aligned Read Length, Tool, Resolution, Normalization Method",,TRUE,Sequencing,,,
+HI-C-seq Level 1,"Unaligned sequence data",,"Component, HTAN Parent ID, Filename, File Format, Genomic Reference, Sequencing Platform, Nucleic Acid Source, Technical Replicate Group, Transposition Reaction, Crosslinking Condtion, DNA Digestion Condition, Nuclei Permeabilization Method, Ligation Condition, Biotin Enrichment, DNA Input Amount, Total Reads, Protocol Link",,TRUE,Sequencing,,,
+HI-C-seq Level 2,"Aligned read pairs, contact matrix",,"Component, HTAN biospecimen ID, HTAN Parent Biospecimen ID, Filename, Genomic Reference, Aligned Read Length, Tool, Resolution, Normalization Method",,TRUE,Sequencing,,,
 HI-C-seq Level 3,"Loop peaks;Stripe peaks;Compartments;Topologically-associated domains;QC variables: Sequencing depth;Number of unique contacts;Intrachromosomal ratio",,"Component, HTAN biospecimen ID, HTAN Parent Biospecimen ID, Filename,  Genomic Reference, Stripe Calling, Loop Window, Stripe Window, Loop Calling",,TRUE,Sequencing,,,
 Crosslinking Condtion,Detailed condition for DNA crosslinking,,,,TRUE,Sequencing,,,
 DNA Digestion Condition,Enzymes and treatment length/temperature for genome digestion,,,,TRUE,Sequencing,,,
 Nuclei Permeabilization Method,Detergent and treatment condition for nuclei permeabilization and crosslinking softening,x% triton; y% NP40; z% digitonin; w% tween-20; n minutes; m Celsius,,,TRUE,Sequencing,,,
-Ligation condition,Name of ligase and condition for proximity ligation,,,,TRUE,Sequencing,,,
+Ligation Condition,Name of ligase and condition for proximity ligation,,,,TRUE,Sequencing,,,
 Biotin Enrichment,Whether biotin is used for enriching ligation product,"Yes, No",,,TRUE,Sequencing,,,
 DNA Input Amount,"Amount of DNA for library construction, in nanograms.",,,,TRUE,Sequencing,,,int
 Resolution,"Binning size used for generating contact matrix, in basepair.",,,,TRUE,Sequencing,,,int
