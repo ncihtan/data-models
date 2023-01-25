@@ -171,9 +171,9 @@ Commit SHA,"Short SHA for software version [8 hexadecimal characters (for github
 Imaging Object Class,Defines the structure that the mask delineates,"nucleus, cytoplasm, plasma membrane, whole cell, Imaging Object Class Other",,,TRUE,Imaging,,https://www.miti-consortium.org/,
 Imaging Object Class Other,Imaging Object Class Other,,Imaging Object Class Description,,FALSE,Imaging,,https://www.miti-consortium.org/,
 Imaging Object Class Description,Free text description of object class [string],,,,TRUE,Imaging,,https://www.miti-consortium.org/,
-Number of Objects," The number of objects (eg cells) described",,,,TRUE,Imaging,,https://www.miti-consortium.org/,int
-Number of Features," The number of features (eg channels) described",,,,TRUE,Imaging,,https://www.miti-consortium.org/,int
-Imaging Summary Statistic," Function used to summarize object/feature intensity","Mean,Median,Not Specified",,,FALSE,Imaging,,https://www.miti-consortium.org/,
+Number of Objects,The number of objects (eg cells) described,,,,TRUE,Imaging,,https://www.miti-consortium.org/,int
+Number of Features,The number of features (eg channels) described,,,,TRUE,Imaging,,https://www.miti-consortium.org/,int
+Imaging Summary Statistic,Function used to summarize object/feature intensity,"Mean,Median,Not Specified",,,FALSE,Imaging,,https://www.miti-consortium.org/,
 Nucleic Acid Source,The source of the input nucleic molecule,"Single Cell, Bulk Whole Cell, Single Nucleus, Bulk Nuclei",,,TRUE,Sequencing,,http://example.org/htan/NucleicAcidSource,
 Single Cell Isolation Method,"The method by which cells are isolated into individual reaction containers at a single cell resolution (e.g. wells, micro-droplets)","Microfluidics Chip, Droplets, FACS, Plates, 10x, Nuclei Isolation",,,TRUE,scRNA-seq Level 1,,,
 Dissociation Method,The tissue dissociation method used for scRNASeq or scATAC-seq assays,"gentleMACS, Dounce, Enzymatic Digestion, Not Applicable",,,TRUE,scRNA-seq Level 1,,,
@@ -291,7 +291,7 @@ scRNAseq Workflow Type,Generic name for the workflow used to analyze a data set.
 Workflow Type,Generic name for the workflow used to analyze a data set.,,,,TRUE,Sequencing,,,
 Workflow Version,Major version of the workflow (e.g. Cell Ranger v3.1),,,,TRUE,Sequencing,,,
 scRNAseq Workflow Parameters Description,"Parameters used to run the workflow. scRNA-seq level 3: e.g. Normalization and log transformation, ran empty drops or doublet detection, used filter on # genes/cell, etc. scRNA-seq Level 4: dimensionality reduction with PCA and 50 components, nearest-neighbor graph with k = 20 and Leiden clustering with resolution = 1, UMAP visualization using 50 PCA components, marker genes used to annotate cell types, information about droplet matrix (all barcodes) to cell matrix (only informative barcodes representing real cells) conversion",,,,TRUE,Sequencing,,,
-"scATACseq Workflow Type ",Generic name for the workflow used to analyze a data set.,,,,TRUE,Sequencing,,,
+scATACseq Workflow Type,Generic name for the workflow used to analyze a data set.,,,,TRUE,Sequencing,,,
 scATACseq Workflow Parameters Description,"Parameters used to run the scATAC-seq workflow. ",,,,TRUE,Sequencing,,,
 Workflow Parameters Description,Parameters used to run the workflow.,,,,TRUE,Sequencing,,,
 Workflow Link,Link to workflow or command. DockStore.org recommended. URL,,,,TRUE,Sequencing,,https://docs.gdc.cancer.gov/Data_Dictionary/viewer/#?view=table-definition-view&id=rna_expression_workflow,
@@ -408,7 +408,7 @@ Percent Tumor Cells,Numeric value that represents the percentage of infiltration
 Percent Tumor Nuclei,Numeric value to represent the percentage of tumor nuclei in a malignant neoplasm sample or specimen.,,,,FALSE,Biospecimen,,https://cdebrowser.nci.nih.gov/cdebrowserClient/cdeBrowser.html#/search?publicId=2841225&version=1.0,
 Fiducial Marker,Imaging specific: fiducial markers for the alignment of images taken across multiple rounds of imaging.,"Nuclear Stain - DAPI, Fluorescent Beads, Grid Slides - Hemocytometer, Adhesive Markers, Other, unknown, Not Reported",,,FALSE,Biospecimen,,https://data.humancellatlas.org/metadata/dictionary/protocol/imaging/imaging_preparation_protocol#imaging_preparation_protocol-protocol_core-protocols_io_doi,
 Slicing Method,Imaging specific: the method by which the tissue was sliced.,"Vibratome, Cryosectioning, Tissue molds, Sliding microtome, Sectioning, Other, unknown, Not Reported",,,FALSE,Biospecimen,,https://data.humancellatlas.org/metadata/dictionary/protocol/imaging/imaging_preparation_protocol#imaging_preparation_protocol-protocol_core-protocols_io_doi,
-"Antigen Retrieval ","Imaging specific: information on antigen retrieval when it is used for a pathology specimen. E.g. pH 6 (Citric Acid), pH 8 (tris), or pH 10. [Text - max length 100]",,,,FALSE,Biospecimen,,https://cdebrowser.nci.nih.gov/cdebrowserClient/cdeBrowser.html#/search?publicId=64676&version=3.0,
+Antigen Retrieval,"Imaging specific: information on antigen retrieval when it is used for a pathology specimen. E.g. pH 6 (Citric Acid), pH 8 (tris), or pH 10. [Text - max length 100]",,,,FALSE,Biospecimen,,https://cdebrowser.nci.nih.gov/cdebrowserClient/cdeBrowser.html#/search?publicId=64676&version=3.0,
 Biospecimen Slide Location,Imaging specific: text term to capture the relative position and orientation of the core location within a piece of tissue on the slide relative to the region of interest slide coordinates. use https://docs.openmicroscopy.org/ome-model/6.0.1/developers/roi.html#shape-concrete-implementations if applciable,,,,FALSE,Biospecimen,,,
 Staining Markers,Imaging specific: text to identify proteins/ antibodies selected for staining,,,,FALSE,Biospecimen,,,
 Lysis Buffer,scRNA-seq specific: Type of lysis buffer used,,,,FALSE,Biospecimen,,,
@@ -823,7 +823,7 @@ Publication-associated HTAN Parent Data File ID,HTAN Data File Identifier(s) of 
 HTAN Grant ID,HTAN grant number(s) (i.e. CA------ format) associated with the content presented/published.,,,,TRUE,Publication,,,list like
 HTAN Center ID,List of HTAN Center ID(s) associated with the content presented/published.,"HTA1, HTA2, HTA3, HTA4, HTA5, HTA6, HTA7, HTA8, HTA9, HTA10, HTA11, HTA12, HTA13, HTA14",,,TRUE,Publication,,,list like
 Publication Content Type,The type of content presented or published.,"Preprint, Published manuscript, Conference proceedings",,,TRUE,Publication,,,
-DOI,The digital object identifier (DOI) of the content in the form of https://www.doi.org/{doi} to comply with CrossRef DOI display guidelines.,,,,TRUE,Publication,,https://www.doi.org/,"url "
+DOI,The digital object identifier (DOI) of the content in the form of https://www.doi.org/{doi} to comply with CrossRef DOI display guidelines.,,,,TRUE,Publication,,https://www.doi.org/,url
 Corresponding Author,"The name(s) of the corresponding author(s) of the content presented/published. If more than one corresponding author, please list in the order they appear in the author list.",,,,TRUE,Publication,,,
 Corresponding Author ORCID,"The ORCiD(s) of the corresponding author(s) of the content presented/published. Should be a valid ORCiD url starting with https://orcid.org/ followed by a 16 digit identifier in dash separated groups of 4 (for example https://orcid.org/0000-0002-1825-0097). If more than one corresponding author, please list ORCiDs in the order the authors appear in the author list.",,,,TRUE,Publication,,https://support.orcid.org/hc/en-us/articles/360006897674-Structure-of-the-ORCID-Identifier,url
 Title,The title of the content presented or published.,,,,TRUE,Publication,,,
