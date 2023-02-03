@@ -892,7 +892,7 @@ MS Scan Mode,"Indicates whether experiment is MS, MS/MS, or other (possibly MS3 
 MS Labeling,"Indicates whether samples were labeled prior to MS analysis (e.g., TMT)",,,,TRUE,Mass Spectrometry Level 1,,,
 LC Instrument Vendor and Model,"The manufacturer of the instrument used for LC.",,,,TRUE,Mass Spectrometry Level 1,,,
 LC Column Vendor and Model,"The manufacturer of the LC Column unless self-packed, pulled tip capilary is used and the model number/name of the LC Column - IF custom self-packed, pulled tip calillary is used enter "Pulled tip capilary",,,,TRUE,Mass Spectrometry Level 1,,,
-LC Resin,"Details of the resin used for lc, including vendor, particle size, pore size",,,TRUE,Mass Spectrometry Level 1,,,
+LC Resin,"Details of the resin used for lc, including vendor, particle size, pore size",,,,TRUE,Mass Spectrometry Level 1,,,
 LC Length Value,"LC column length in cm.",,,,TRUE,Mass Spectrometry Level 1,,,
 LC Temp Value,"LC temperature in C.",,,,TRUE,Mass Spectrometry Level 1,,,
 LC ID Value,"LC column inner diameter in microns.",,,,TRUE,Mass Spectrometry Level 1,,,
