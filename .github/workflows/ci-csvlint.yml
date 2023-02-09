@@ -1,0 +1,17 @@
+name: 'CSV Lint'
+
+on:
+  pull_request:
+    branches: main
+    paths: 'HTAN.model.csv'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: csv lint
+    steps:
+    - uses: actions/checkout@v3
+    - name: csvlinter
+      uses: kcheriyath/csvlinter@V0.6.0
+      with:
+        file_list: "HTAN.model.csv"
