@@ -6,6 +6,7 @@ on:
       - 'main'
       - 'add-csvlinting'
     paths: 'HTAN.model.csv'
+  workflow_dispatch:
 
 jobs:
   test:
