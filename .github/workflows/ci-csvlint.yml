@@ -2,7 +2,9 @@ name: 'CSV Lint'
 
 on:
   pull_request:
-    branches: main
+    branches: 
+      - 'main'
+      - 'add-csvlinting'
     paths: 'HTAN.model.csv'
 
 jobs:
