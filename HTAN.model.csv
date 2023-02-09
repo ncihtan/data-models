@@ -900,5 +900,4 @@ LC Flow Rate,"LC flow rate in nL/min.",,,,TRUE,Mass Spectrometry Level 1,,,
 LC Gradient,"The program dictates the mobile phase solvent composition over the course of the chromatographic run.",,,,TRUE,Mass Spectrometry Level 1,,,
 LC Mobile Phase A,"Composition of mobile phase A",,,,TRUE,Mass Spectrometry Level 1,,,
 LC Mobile Phase B,"Composition of mobile phase B",,,,TRUE,Mass Spectrometry Level 1,,,
-MS Instrument Metadata File,"Additional file containing instrument metadata details. 
-Use either synapse_path or entity_Id",,,,TRUE,Mass Spectrometry Level 1,,,
+MS Instrument Metadata File,"Additional file containing instrument metadata details. Use either synapse_path or entity_Id",,,,TRUE,Mass Spectrometry Level 1,,,
