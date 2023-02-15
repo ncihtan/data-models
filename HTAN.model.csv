@@ -191,8 +191,7 @@ Imaging Summary Statistic,Function used to summarize object/feature intensity,"M
 Nucleic Acid Source,The source of the input nucleic molecule,"Single Cell, Bulk Whole Cell, Single Nucleus, Bulk Nuclei",,,TRUE,Sequencing,,http://example.org/htan/NucleicAcidSource,
 Single Cell Isolation Method,"The method by which cells are isolated into individual reaction containers at a single cell resolution (e.g. wells, micro-droplets)","Microfluidics Chip, Droplets, FACS, Plates, 10x, Nuclei Isolation",,,TRUE,scRNA-seq Level 1,,,
 Dissociation Method,The tissue dissociation method used for scRNASeq or scATAC-seq assays,"gentleMACS, Dounce, Enzymatic Digestion, Not Applicable",,,TRUE,scRNA-seq Level 1,,,
-Library Layout,Sequencing read type,"Paired End, Single Read, Mid-length, Long read
-",,,TRUE,Sequencing,,,
+Library Layout,Sequencing read type,"Paired End, Single Read, Mid-length, Long read",,,TRUE,Sequencing,,,
 Nucleus Identifier,Unique nuclei barcode; added at transposition step. Determines which nucleus the reads originated from,Nuclei Barcode,,,TRUE,scATAC-seq Level 1,,,
 Nuclei Barcode,Nuclei Barcode,"Nuclei Barcode Read, Nuclei Barcode Length",,,FALSE,scATAC-seq Level 1,,,
 scATACseq Library Layout,Sequencing read type,scATACseq Paired End,,,TRUE,scATAC-seq Level 1,,,
