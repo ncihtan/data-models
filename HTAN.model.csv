@@ -930,7 +930,7 @@ Bulk Methylation Genomic Reference,The human genome reference used in the alignm
 Duplicate Removal Software,Software used for remove duplicate reads,"Samtools sort, picard MarkDuplicates",,,TRUE,Bulk Methylation-seq Level 2,,,
 Proportion of minimum CpG Coverage 10X,Proportion of Minimum CpG Coverage 10X,"Proportion of all reference bases for whole genome sequencing, or targeted sequencing, that achieves 10X or greater coverage per CpG.",,,FALSE,Bulk Methylation-seq Level 2,,,
 DMC Calling Tool,Software used for calling differentially methylated CpG (DMC) and differentially methylated region (DMR),"MethylKit, BSmooth, BiSeq, MethylSig, DSS, MOABS, DSS-single, metilene, MACAU, MethylDackel",,,TRUE,Bulk Methylation-seq Level 3,,,
-DMC Calling Workflow URL,Generic name for the workflow used to analyze a data set,"Github, Synapse",,,TRUE,Bulk Methylation-seq Level 3,,,
+DMC Calling Workflow URL,Generic name for the workflow used to analyze a data set,,,,TRUE,Bulk Methylation-seq Level 3,,,url
 DMR Calling Tool,Software used for calling differentially methylated CpG (DMC) and differentially methylated region (DMR),"MethylKit, BSmooth, BiSeq, MethylSig, DSS, MOABS, DSS-single, metilene, MACAU",,,TRUE,Bulk Methylation-seq Level 3,,,
 DMR Calling Workflow URL,Generic name for the workflow used to analyze a data set,"Github, Synapse",,,TRUE,Bulk Methylation-seq Level 3,,,
 pUC19 methylation ratio,"Methylation ratio of mostly methylated pUC19 control, as a percentage",,,,TRUE,Bulk Methylation-seq Level 3,,,
