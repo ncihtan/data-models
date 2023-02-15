@@ -24,11 +24,11 @@ jobs:
       - name: Install Schematic
         shell: bash
         run: |
-          echo Installing pypi version of schematic
-          git clone --single-branch --branch main https://github.com/Sage-Bionetworks/schematic.git
-          cp schematic_config.yml schematic/config.yml
+          pip3 install poetry
+          git clone --single-branch --branch develop https://github.com/Sage-Bionetworks/schematic.git
           cd schematic
-          pip3 install schematicpy
+          poetry build
+          pip3 install dist/schematicpy-1.0.0-py3-none-any.whl
 
       - name: Convert .csv to .jsonld
         shell: bash
