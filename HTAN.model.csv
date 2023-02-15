@@ -96,7 +96,7 @@ HI-C-seq Level 2,"Aligned read pairs, contact matrix",,"Component, HTAN biospeci
 HI-C-seq Level 3,"Loop peaks;Stripe peaks;Compartments;Topologically-associated domains;QC variables: Sequencing depth;Number of unique contacts;Intrachromosomal ratio",,"Component, HTAN biospecimen ID, HTAN Parent Biospecimen ID, Filename,  Genomic Reference, Stripe Calling, Loop Window, Stripe Window, Loop Calling",,TRUE,Sequencing,,,
 Crosslinking Condtion,Detailed condition for DNA crosslinking,,,,TRUE,Sequencing,,,
 DNA Digestion Condition,Enzymes and treatment length/temperature for genome digestion,,,,TRUE,Sequencing,,,
-Nuclei Permeabilization Method,Detergent and treatment condition for nuclei permeabilization and crosslinking softening,x% triton; y% NP40; z% digitonin; w% tween-20; n minutes; m Celsius,,,TRUE,Sequencing,,,
+Nuclei Permeabilization Method,Detergent and treatment condition for nuclei permeabilization and crosslinking softening,,,,TRUE,Sequencing,,,
 Ligation Condition,Name of ligase and condition for proximity ligation,,,,TRUE,Sequencing,,,
 Biotin Enrichment,Whether biotin is used for enriching ligation product,"Yes, No",,,TRUE,Sequencing,,,
 DNA Input Amount,"Amount of DNA for library construction, in nanograms.",,,,TRUE,Sequencing,,,int
