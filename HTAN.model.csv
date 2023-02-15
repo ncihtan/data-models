@@ -921,7 +921,7 @@ MS Instrument Metadata File,"Additional file containing instrument metadata deta
 Biospecimen Preparation,The way tissue is processed after collection,"Fresh Frozen, FFPE",,,TRUE,Bulk Methylation-seq Level 1,,,
 Bisulfite Conversion,Name of the kit used in bisulfite conversion.,"Zimo EZ DNA Methylation Kit, Zimo EZ-96 DNA Methylation Shallow Kit, Zimo EZ-96 DNA Methylation Deep Kit, NEBNext Enzymatic Methyl-seq Kit, Agilent SureSelectXT Methyl-Seq",,,TRUE,Bulk Methylation-seq Level 1,,,
 Replicate Type,A common term for all files belonging to the same sample. We suggest using a stable sample accession from a biosample archive like BioSamples.,"Technical replicate, Biological replicate, Not Applicable",,,TRUE,Bulk Methylation-seq Level 1,,,
-Bulk Methylation Assay Type,Assay types normally determine genomic coverage,"Whole genome (WG), Targeted Genome, Beadchip Array ","Targeted Genome, Beadchip Array",,TRUE,Bulk Methylation-seq Level 1,,,
+Bulk Methylation Assay Type,Assay types normally determine genomic coverage,"Whole genome, Targeted Genome, Beadchip Array ","Targeted Genome, Beadchip Array",,TRUE,Bulk Methylation-seq Level 1,,,
 Targeted Genome,Assay for analyzing specific mutations in a given sample,"MeDIP, RRBS",,,FALSE,Bulk Methylation Assay Type,,,
 Beadchip Array,Assay that uses beads to target a specific locus on the genome.,"HM27K, HM450K",,,FALSE,Bulk Methylation Assay Type,,,
 Total DNA Input,"Overall number of reads for a given sample in digits (microgram, nanogram).",,,,FALSE,Bulk Methylation Assay Type,,,
