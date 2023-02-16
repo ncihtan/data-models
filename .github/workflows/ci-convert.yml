@@ -28,7 +28,7 @@ jobs:
           git clone --single-branch --branch main https://github.com/Sage-Bionetworks/schematic.git
           cd schematic
           poetry build
-          pip3 install dist/schematicpy-1.0.0-py3-none-any.whl
+          pip3 install dist/schematicpy-*-py3-none-any.whl
 
       - name: Convert .csv to .jsonld
         shell: bash
