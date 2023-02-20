@@ -48,4 +48,4 @@ jobs:
       - name: Validate data model CSV
         shell: bash
         run: |
-          schematic model -c CSV_schematic_config.yml validate -mp HTAN.model.csv -dt "DataModel"
+          schematic model -c .github/CSV_schematic_config.yml validate -mp HTAN.model.csv -dt "DataModel"
