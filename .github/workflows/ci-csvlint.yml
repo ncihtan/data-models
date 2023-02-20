@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
+  csvlinter:
     runs-on: ubuntu-latest
     name: csv lint
     steps:
@@ -17,3 +17,35 @@ jobs:
       uses: kcheriyath/csvlinter@V0.6.0
       with:
         find_pattern: "*.csv"
+
+  csvvalidator:
+    name: csv schematic validate
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v4 
+        with:
+          python-version: '3.9'
+
+      - name: Install Schematic
+        shell: bash
+        run: |
+          pip3 install poetry
+          git clone --single-branch --main develop https://github.com/Sage-Bionetworks/schematic.git
+          cd schematic
+          poetry build
+          pip3 install dist/schematicpy-*-py3-none-any.whl
+
+      
+      - name: Convert CSV schema
+        shell: bash
+        run: |
+          schematic schema convert .github/CSV.model.csv   
+
+      - name: Validate data model CSV
+        shell: bash
+        run: |
+          schematic model -c CSV_schematic_config.yml validate -mp HTAN.model.csv -dt "DataModel"
