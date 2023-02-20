@@ -34,7 +34,7 @@ jobs:
         shell: bash
         run: |
           pip3 install poetry
-          git clone --single-branch --branch main develop https://github.com/Sage-Bionetworks/schematic.git
+          git clone --single-branch --branch main https://github.com/Sage-Bionetworks/schematic.git
           cd schematic
           poetry build
           pip3 install dist/schematicpy-*-py3-none-any.whl
