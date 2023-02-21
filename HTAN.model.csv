@@ -298,8 +298,8 @@ Total Reads,Total number of reads per sample. Integer,,,,FALSE,Sequencing,,https
 Whitelist Cell Barcode File Link,Link to file listing all possible cell barcodes. URL,,,,TRUE,Sequencing,,,
 Cell Barcode Tag,SAM tag for cell barcode field; please provide a valid cell barcode tag,,,,TRUE,Sequencing,,,
 UMI Tag,"SAM tag for UMI field; please provide a valid UB, UMI",,,,TRUE,Sequencing,,,
-Applied Hard Trimming,,"Yes - Applied Hard Trimming, No",,,TRUE,Sequencing,,,
-Yes - Applied Hard Trimming,,,Aligned Read Length,,FALSE,Sequencing,,,
+Applied Hard Trimming,"Was Hard Trimming applied","Yes - Applied Hard Trimming, No",,,TRUE,Sequencing,,,
+Yes - Applied Hard Trimming,"Hard Trimming was applied",,Aligned Read Length,,FALSE,Sequencing,,,
 Aligned Read Length,Read length used for alignment if hard trimming was applied,,,,TRUE,Sequencing,,,
 scRNAseq Workflow Type,Generic name for the workflow used to analyze a data set.,"CellRanger, STARsolo, HCA Optimus, dropEST, SEQC, Cufflinks, DEXSeq, HTSeq - FPKM, Cell annotation, Differentiation trajectory analysis, Other",,,TRUE,Sequencing,,,
 Workflow Type,Generic name for the workflow used to analyze a data set.,,,,TRUE,Sequencing,,,
@@ -473,7 +473,7 @@ Yes - Smoking Exposure,Individual has been exposed to smoke; requires additional
 Pack Years Smoked,Numeric computed value to represent lifetime tobacco exposure defined as number of cigarettes smoked per day x number of years smoked divided by 20.,,,,TRUE,Exposure,,https://cdebrowser.nci.nih.gov/cdebrowserClient/cdeBrowser.html#/search?publicId=2955385&version=1.0,
 Years Smoked,Numeric value (or unknown) to represent the number of years a person has been smoking.,,,,TRUE,Exposure,,https://cdebrowser.nci.nih.gov/cdebrowserClient/cdeBrowser.html#/search?publicId=3137957&version=1.0,
 Alcohol Exposure,Indicate if individual has alcohol exposure,"Yes - Alcohol Exposure, No - Alcohol Exposure, Not Reported",,,TRUE,Exposure,,,
-Yes - Alcohol Exposure,,,"Alcohol Days Per Week, Alcohol Drinks Per Day, Alcohol History, Alcohol Intensity, Alcohol Type",,FALSE,Exposure,,,
+Yes - Alcohol Exposure,"Individual has been exposed to alcohol",,"Alcohol Days Per Week, Alcohol Drinks Per Day, Alcohol History, Alcohol Intensity, Alcohol Type",,FALSE,Exposure,,,
 Alcohol Days Per Week,Numeric value used to describe the average number of days each week that a person consumes an alcoholic beverage.,,,,FALSE,Exposure,,https://cdebrowser.nci.nih.gov/cdebrowserClient/cdeBrowser.html#/search?publicId=3114013&version=1.0,int
 Alcohol Drinks Per Day,Numeric value used to describe the average number of alcoholic beverages a person consumes per day.,,,,FALSE,Exposure,,https://cdebrowser.nci.nih.gov/cdebrowserClient/cdeBrowser.html#/search?publicId=3124961&version=1.0,
 Alcohol History,A response to a question that asks whether the participant has consumed at least 12 drinks of any kind of alcoholic beverage in their lifetime.,"Yes, No, unknown, Not Reported",,,FALSE,Exposure,,https://cdebrowser.nci.nih.gov/cdebrowserClient/cdeBrowser.html#/search?publicId=2201918&version=1.0,
@@ -832,7 +832,7 @@ RPPA Validation Status,Valid = RPPA and WB correlation > 0.7; Use with Caution =
 Antibody Notes,Notes on antibodies replacements and antibody recognition observations.,,,,FALSE,HTAN RPPA Antibody Table,,,
 Pre-processing Completed,Pre-processing steps completed to convert level 1 raw data to a single level 2 image,"Illumination correction, Tile Stitching, Channel/Cycle Registration, TMA de-arraying, None, Other",,,TRUE,Imaging,,https://www.miti-consortium.org/,
 Pre-processing Required,Pre-processing steps required to convert level 1 raw data to a single level 2 image,"Illumination correction, Tile Stitching, Channel/Cycle Registration, TMA de-arraying, None, Other",,,TRUE,Imaging,,https://www.miti-consortium.org/,
-Publication Manifest,Publication specific attributes.,,"Publication-associated HTAN Parent Data File ID, HTAN Grant ID, HTAN Center ID, Publication Content Type, DOI, Title, Authors, Year of Publication, Location of Publication, Publication Abstract, License, PMID, Data Type, Tool, Supporting Link, Supporting Link Description",,,,,,
+Publication Manifest,Publication specific attributes.,,"Publication-associated HTAN Parent Data File ID, HTAN Grant ID, HTAN Center ID, Publication Content Type, DOI, Title, Authors, Year of Publication, Location of Publication, Publication Abstract, License, PMID, Data Type, Tool, Supporting Link, Supporting Link Description",,FALSE,,,,
 Publication-associated HTAN Parent Data File ID,HTAN Data File Identifier(s) of the files associated with the content presented/published. Should be comma-separated lists.,,,,TRUE,Publication,,,list like
 HTAN Grant ID,HTAN grant number(s) (i.e. CA------ format) associated with the content presented/published.,,,,TRUE,Publication,,,list like
 HTAN Center ID,List of HTAN Center ID(s) associated with the content presented/published.,"HTA1, HTA2, HTA3, HTA4, HTA5, HTA6, HTA7, HTA8, HTA9, HTA10, HTA11, HTA12, HTA13, HTA14",,,TRUE,Publication,,,list like
