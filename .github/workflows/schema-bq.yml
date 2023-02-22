@@ -5,7 +5,7 @@ name: Add updated schema to BigQuery
 
 on:
   push:
-    branches: main
+    branches: schema-to-bq
     paths: 'HTAN.model.csv'
 
 jobs:
