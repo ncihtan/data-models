@@ -1,0 +1,55 @@
+# This workflow is used to push changed HTAN.model.csv 
+# to BigQuery table located at `htan-dcc.metadata.data-model`
+
+name: Add updated schema to BigQuery
+
+on:
+  push:
+    branches: main
+    paths: 'HTAN.model.csv'
+  workflow_dispatch: 
+
+jobs:
+  add-to-bq:
+    name: Add schema to BQ
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v4 
+        with:
+          python-version: '3.9'
+
+      - id: 'auth'
+        name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v1'
+        with:
+          workload_identity_provider: ${{ secrets.GOOGLE_WIF }}
+          service_account: 'bq-schema@htan-dcc.iam.gserviceaccount.com'
+
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v1'
+        with:
+          version: '>= 363.0.0'
+
+      - name: 'Use gcloud CLI'
+        run: 'gcloud info'
+
+      - name: Install Google Cloud BigQuery Client
+        shell: bash
+        run: |
+          pip3 install google-cloud-bigquery
+
+      - name: Load .csv to BQ with defined schema
+        shell: bash
+        run: |
+          bq load --source_format=CSV \
+          --replace=true \
+          htan-dcc:metadata.data-model \
+          HTAN.model.csv \
+          ./.github/workflows/BQ.table.schema.json
+
