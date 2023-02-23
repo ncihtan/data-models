@@ -50,5 +50,5 @@ jobs:
           --replace=true \
           htan-dcc:metadata.data-model \
           HTAN.model.csv \
-          HTAN.model.schema.json
+          ./.github/workflows/BQ.table.schema.json
 
