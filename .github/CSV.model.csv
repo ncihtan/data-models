@@ -1,0 +1,13 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules
+Module,Module,,,,FALSE,,,,
+Data Model,"The data model",,"Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules",,,,Module,,
+Attribute,"Name of the current attribute",,,,TRUE,,,https://schematicpy.readthedocs.io/en/latest/cli_reference.html,
+Description,"Definition of the current attribute",,,,TRUE,,,https://schematicpy.readthedocs.io/en/latest/cli_reference.html,
+Valid Values,"Set of possible values for the current attribute",,,,FALSE,,,https://schematicpy.readthedocs.io/en/latest/cli_reference.html,
+DependsOn,"List of attributes that the current attribute depends on",,,,FALSE,,,https://schematicpy.readthedocs.io/en/latest/cli_reference.html,
+Properties,"List of attributes that the current attribute is semantically associated",,,,FALSE,,,https://schematicpy.readthedocs.io/en/latest/cli_reference.html,
+Required,"Whether a value must be set for the current attribute","TRUE,FALSE",,,TRUE,,,https://schematicpy.readthedocs.io/en/latest/cli_reference.html,
+Parent,"List of attributes that the current attribute is semantically a subtype of",,,,FALSE,,,https://schematicpy.readthedocs.io/en/latest/cli_reference.html,
+DependsOn Component,"Components that this attribute depends on",,,,FALSE,,,https://schematicpy.readthedocs.io/en/latest/cli_reference.html,
+Source,"URI to an existing definition of the attribute",,,,FALSE,,,https://schematicpy.readthedocs.io/en/latest/cli_reference.html,
+Validation Rules,"Rules that change the validation behavior",,,,FALSE,,,https://schematicpy.readthedocs.io/en/latest/cli_reference.html,
