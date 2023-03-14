@@ -941,3 +941,5 @@ pUC19 methylation ratio,"Methylation ratio of mostly methylated pUC19 control, a
 Lambda methylation ratio,"Methylation ratio of mostly unmethylated lambda control, as a percentage",,,,TRUE,Bulk Methylation-seq Level 3,,,
 DMC data file format,Format of the data files,"BED, bedGraph",,,TRUE,Bulk Methylation-seq Level 3,,,
 DMR data file Format,Format of the data files.,"BED, bedGraph",,,TRUE,Bulk Methylation-seq Level 3,,,
+MS Assay Category,Type of Mass Spectrometry performed.,,,,TRUE,Mass Spectrometry Level 2,,,
+Mass Spectrometry Auxiliary File,File path to parameter file used with software processing.,,,,TRUE,Mass Spectrometry Level 2,,,
