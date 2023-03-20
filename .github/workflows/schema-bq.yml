@@ -49,6 +49,7 @@ jobs:
         run: |
           bq load --source_format=CSV \
           --replace=true \
+          --skip_leading_rows=1 \
           htan-dcc:metadata.data-model \
           HTAN.model.csv \
           ./.github/workflows/BQ.table.schema.json
