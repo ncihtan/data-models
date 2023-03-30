@@ -336,7 +336,7 @@ Custom Alignment Workflow,Specify the name of a custom alignment workflow,,,,TRU
 MSI Workflow Link,Link to method workflow (or command) used in estimating the MSI. URL,,,,FALSE,Sequencing,,https://docs.gdc.cancer.gov/Data_Dictionary/viewer/#?view=table-definition-view&id=aligned_reads,
 MSI Score,Numeric score denoting the aligned reads file's MSI score from MSIsensor. Number,,,,FALSE,Sequencing,,,
 MSI Status,MSIsensor determination of either microsatellite stability or instability.,"MSI, MSI-low, MSI-high, MSS",,,FALSE,Sequencing,,https://docs.gdc.cancer.gov/Data_Dictionary/viewer/#?view=table-definition-view&id=aligned_reads,
-Genomic Reference,Exact version of the human genome reference used in the alignment of reads (e.g. https://www.gencodegenes.org/human/). URL,,,,TRUE,Sequencing,,https://docs.gdc.cancer.gov/Data_Dictionary/viewer/#?view=table-definition-view&id=alignment_workflow,
+Genomic Reference,Exact version of the human genome reference used in the alignment of reads (e.g. GCF_000001405.39),,,,TRUE,Sequencing,,https://docs.gdc.cancer.gov/Data_Dictionary/viewer/#?view=table-definition-view&id=alignment_workflow,
 Genomic Reference URL,Link to human genome sequence (e.g. ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_34/GRCh38.primary_assembly.genome.fa.gz),,,,TRUE,Sequencing,,,
 Genome Annotation URL,Link to the human genome annotation (GTF) file (e.g. ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_34/gencode.v34.annotation.gtf.gz),,,,TRUE,Sequencing,,,
 Index File Name,The name (or part of a name) of a file (of any type). String,,,,TRUE,Sequencing,,,
