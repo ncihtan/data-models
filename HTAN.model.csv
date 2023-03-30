@@ -943,4 +943,4 @@ DMC data file format,Format of the data files,"BED, bedGraph",,,TRUE,Bulk Methyl
 DMR data file Format,Format of the data files.,"BED, bedGraph",,,TRUE,Bulk Methylation-seq Level 3,,,
 MS Assay Category,Type of Mass Spectrometry performed.,,,,TRUE,Mass Spectrometry Level 2,,,
 Mass Spectrometry Auxiliary File,File path to parameter file used with software processing.,,,,TRUE,Mass Spectrometry Level 2,,,
-Publication contains HTAN ID, HTAN IDs are used in the publication, "Yes, No",,,TRUE, Publication,,,
+Publication contains HTAN ID,HTAN IDs are used in the publication.,"Yes, No",,,TRUE,Publication,,,
