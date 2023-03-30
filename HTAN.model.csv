@@ -360,8 +360,6 @@ Short Reads,Number of reads that were too short. Integer,,,,FALSE,Sequencing,,ht
 Pseudo Alignment Used,Pseudo aligners such as Kallisto or Salmon do not produce aligned reads BAM files. True indicates pseudoalignment was used.,"Yes - Pseudo Alignment Used, No",,,TRUE,Sequencing,,,
 Software and Version,Name of software used to generate expression values. String,,,,TRUE,Sequencing,,https://docs.gdc.cancer.gov/Data_Dictionary/viewer/#?view=table-definition-view&id=rna_expression_workflow,
 Yes - Pseudo Alignment Used,Pseudo aligner was used,,"Workflow Link, Software and Version, Genomic Reference, Genomic Reference URL",,FALSE,Sequencing,,,
-Genomic Reference,Exact version of the human genome reference used in the alignment of reads (e.g. https://www.gencodegenes.org/human/),,,,TRUE,Sequencing,,,
-Genomic Reference URL,Link to human genome sequence (e.g. ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_34/GRCh38.primary_assembly.genome.fa.gz) [URL],,,,TRUE,Sequencing,,,
 Data Category,Specific content type of the data file.,"Gene Expression, Transcript Expression, Exon Expression Quantification, Gene Expression Quantification, Isoform Expression Quantification, Splice Junction Quantification, Other",,,TRUE,Sequencing,,https://docs.gdc.cancer.gov/Data_Dictionary/viewer/#?view=table-definition-view&id=gene_expression,
 Expression Units,How quantities are corrected for gene length,"TPM, RPKM, FPKM, Counts, Other, NA",,,TRUE,Sequencing,,,
 Fusion Gene Detected,Was a fusion gene identified?,"Yes - Fusion Gene Detected, No, unknown",,,FALSE,Sequencing,,,
