@@ -1,5 +1,7 @@
 # HTAN Data Models
 
+<a href="https://doi.org/10.5281/zenodo.7838215"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.7838215.svg" alt="DOI"></a>
+
 ## Major files
 
 This repository contains 3 major files:
