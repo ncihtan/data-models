@@ -19,7 +19,6 @@ jobs:
 
   validate:
     name: Validate CSV
-    needs: lint
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
