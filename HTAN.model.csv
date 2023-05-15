@@ -946,17 +946,17 @@ MS Assay Category,Type of Mass Spectrometry performed.,,,,TRUE,Mass Spectrometry
 Mass Spectrometry Auxiliary File,File path to parameter file used with software processing.,,,,TRUE,Mass Spectrometry Level 2,,,
 Publication contains HTAN ID,HTAN IDs are used in the publication.,"Yes, No",,,TRUE,Publication,,,
 Electron Microscopy Level 1,"Raw electron microscopy data as one TIFF file per plane for a 3D image stack or per tile for a 2D large area montage",,"Component, Filename, File Format, HTAN Parent Biospecimen ID, HTAN Data File ID, EM method, EM signal/contrast mech, Instrument, Protocol Link, Software and Version, SizeX, SizeY, SizeC, SizeZ, PhysicalSizeX, PhysicalSizeY, PhysicalSizeZ, EM dwell/exposure time,EM voltage, EM beam current, EM spot size, EM stage tilt, EM signal processing, EM contrast type",,FALSE,Assay,Biospecimen,,
-Electron Microscopy Level 2,"Processed electron microscopy data as one OME-TIFF image per plane or montage",,Component, Filename, File Format, HTAN Parent Data File ID, HTAN Data File ID,Tile overlap X, Tile overlap Y",,FALSE,Assay,Electron Microscopy Level 1,,
-Electron Microscopy Level 3,"Segmented electron microscopy data as .am or .tiff formats",,Component, Filename, File Format, HTAN Parent Data File ID, HTAN Data File ID,Tile overlap X, Tile overlap Y",,FALSE,Assay,Electron Microscopy Level 2,,
-Electron Microscopy Level 4,"Movies or other derived files from electron microscopy data,,Component, Filename, File Format, HTAN Parent Data File ID, HTAN Data File ID",,FALSE,Assay,Electron Microscopy Level 3,,
-EM method,"Electron microscopy method used","SEM, FIB-SEM, SBF-SEM, AT, TEM, ET, cryo ET, ssTEM",,,,TRUE,Electron Microscopy Level 1,,
-EM signal/contrast mech,"How the electron microscopy signal is generated from the sample","BSE, SE, phase, bright-field, dark-field",,,TRUE,Electron Microscopy Level 1,,
-EM dwell/exposure time, 'Duraration in microseconds (µs) of electron beam data collection per pixel or frame",,,,FALSE,Electron Microscopy Level 1,,num
-EM voltage, "Accelerating voltage in kiloelectronvolts (keV)",,,,FALSE,Electron Microscopy Level 1,,num
-EM beam current, "Beam current in nanoamps (nA)",,,,FALSE,Electron Microscopy Level 1,,num 
-EM spot size, "Beam spot size in micrometers (µm)",,,,FALSE,Electron Microscopy Level 1,,num 
-EM stage tilt, "Physical stage tilt in degrees with respect to the electron beam",,,,FALSE,Electron Microscopy Level 1,,num
-EM signal processing, "On-the-fly SNR improvement strategies used", "None, line integration, frame integration, frame averaging",,,FALSE,Electron Microscopy Level 1,,
-EM contrast type,"Does the image use standard SEM contrast or TEM contrast","SEM,TEM",,,FALSE,Electron Microscopy Level 1,,
-Tile overlap X, "Percentage of image overlap to allow tile stitching in x direction",,,,TRUE,Electron Microscopy Level 1,,num::inRange 0 100 error
-Tile overlap Y,Percentage of image overlap to allow tile stitching in x direction" ,,,,TRUE,Electron Microscopy Level 1,,num::inRange 0 100 error
+Electron Microscopy Level 2,"Processed electron microscopy data as one OME-TIFF image per plane or montage",,"Component, Filename, File Format, HTAN Parent Data File ID, HTAN Data File ID,Tile overlap X, Tile overlap Y",,FALSE,Assay,Electron Microscopy Level 1,,
+Electron Microscopy Level 3,"Segmented electron microscopy data as .am or .tiff formats",,"Component, Filename, File Format, HTAN Parent Data File ID, HTAN Data File ID,Tile overlap X, Tile overlap Y",,FALSE,Assay,Electron Microscopy Level 2,,
+Electron Microscopy Level 4,"Movies or other derived files from electron microscopy data",,"Component, Filename, File Format, HTAN Parent Data File ID, HTAN Data File ID",,FALSE,Assay,Electron Microscopy Level 3,,
+EM method,"Electron microscopy method used","SEM, FIB-SEM, SBF-SEM, AT, TEM, ET, cryo ET, ssTEM",,,TRUE,Electron Microscopy Level 1,,,
+EM signal or contrast mech,"How the electron microscopy signal is generated from the sample","BSE, SE, phase, bright-field, dark-field",,,TRUE,Electron Microscopy Level 1,,,
+EM dwell or sexposure time, "Duraration in microseconds (µs) of electron beam data collection per pixel or frame",,,,FALSE,Electron Microscopy Level 1,,,num
+EM voltage, "Accelerating voltage in kiloelectronvolts (keV)",,,,FALSE,Electron Microscopy Level 1,,,num
+EM beam current, "Beam current in nanoamps (nA)",,,,FALSE,Electron Microscopy Level 1,,,num 
+EM spot size, "Beam spot size in micrometers (µm)",,,,FALSE,Electron Microscopy Level 1,,,num 
+EM stage tilt, "Physical stage tilt in degrees with respect to the electron beam",,,,FALSE,Electron Microscopy Level 1,,,num
+EM signal processing, "On-the-fly SNR improvement strategies used", "None, line integration, frame integration, frame averaging",,,FALSE,Electron Microscopy Level 1,,,
+EM contrast type,"Does the image use standard SEM contrast or TEM contrast","SEM,TEM",,,FALSE,Electron Microscopy Level 1,,,
+Tile overlap X, "Percentage of image overlap to allow tile stitching in x direction",,,,TRUE,Electron Microscopy Level 1,,,num::inRange 0 100 error
+Tile overlap Y, "Percentage of image overlap to allow tile stitching in x direction" ,,,,TRUE,Electron Microscopy Level 1,,,num::inRange 0 100 error
