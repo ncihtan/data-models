@@ -951,7 +951,7 @@ Electron Microscopy Level 3,"Segmented electron microscopy data as .am or .tiff 
 Electron Microscopy Level 4,"Movies or other derived files from electron microscopy data",,"Component, Filename, File Format, HTAN Parent Data File ID, HTAN Data File ID",,FALSE,Assay,Electron Microscopy Level 3,,
 EM method,"Electron microscopy method used","SEM, FIB-SEM, SBF-SEM, AT, TEM, ET, cryo ET, ssTEM",,,TRUE,Electron Microscopy Level 1,,,
 EM signal or contrast mech,"How the electron microscopy signal is generated from the sample","BSE, SE, phase, bright-field, dark-field",,,TRUE,Electron Microscopy Level 1,,,
-EM dwell or sexposure time, "Duraration in microseconds (µs) of electron beam data collection per pixel or frame",,,,FALSE,Electron Microscopy Level 1,,,num
+EM dwell or exposure time, "Duraration in microseconds (µs) of electron beam data collection per pixel or frame",,,,FALSE,Electron Microscopy Level 1,,,num
 EM voltage, "Accelerating voltage in kiloelectronvolts (keV)",,,,FALSE,Electron Microscopy Level 1,,,num
 EM beam current, "Beam current in nanoamps (nA)",,,,FALSE,Electron Microscopy Level 1,,,num 
 EM spot size, "Beam spot size in micrometers (µm)",,,,FALSE,Electron Microscopy Level 1,,,num 
