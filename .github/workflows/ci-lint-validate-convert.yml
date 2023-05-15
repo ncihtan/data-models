@@ -10,7 +10,6 @@ jobs:
   lint:
     name: Lint CSV
     runs-on: ubuntu-latest
-    name: csv lint
     steps:
     - uses: actions/checkout@v3
     - name: csvlinter
