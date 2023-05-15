@@ -1,0 +1,96 @@
+name: Lint, validate and convert CSV to JSON-LD
+
+on:
+  pull_request:
+    branches: 'main'
+    paths: 'HTAN.model.csv'
+  workflow_dispatch:
+
+jobs:
+  lint:
+    name: Lint CSV
+    runs-on: ubuntu-latest
+    name: csv lint
+    steps:
+    - uses: actions/checkout@v3
+    - name: csvlinter
+      uses: kcheriyath/csvlinter@V0.6.0
+      with:
+        find_pattern: "*.csv"
+
+  validate:
+    name: Validate CSV
+    needs: lint
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v4 
+        with:
+          python-version: '3.9'
+
+      - name: Install Schematic
+        shell: bash
+        run: |
+          pip3 install poetry
+          git clone --single-branch --branch main https://github.com/Sage-Bionetworks/schematic.git
+          cd schematic
+          poetry build
+          pip3 install dist/schematicpy-*-py3-none-any.whl
+      
+      - name: Convert CSV schema
+        shell: bash
+        run: |
+          schematic schema convert .github/CSV.model.csv   
+
+      - name: Validate data model CSV
+        shell: bash
+        run: |
+          schematic model -c .github/CSV_schematic_config.yml validate -mp HTAN.model.csv -dt "DataModel" | 
+            grep "Your manifest has been validated successfully. There are no errors in your manifest, and it can be submitted without any modifications."
+
+  convert:
+    name: Convert CSV to JSON-LD
+    needs:
+      - lint
+      - validate
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v4 
+        with:
+          python-version: '3.9'
+
+      - name: Install Schematic
+        shell: bash
+        run: |
+          pip3 install poetry
+          git clone --single-branch --branch main https://github.com/Sage-Bionetworks/schematic.git
+          cd schematic
+          poetry build
+          pip3 install dist/schematicpy-*-py3-none-any.whl
+
+      - name: Convert .csv to .jsonld
+        shell: bash
+        run: |
+          schematic schema convert HTAN.model.csv
+
+      - uses: r-lib/actions/pr-fetch@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit the changes
+        run: |
+          git config --local user.name "$GITHUB_ACTOR"
+          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git add HTAN.model.jsonld
+          git commit -m "GitHub Action: convert *.model.csv to *.model.jsonld" || echo "No changes to commit"
+
+      - uses: r-lib/actions/pr-push@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
