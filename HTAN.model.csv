@@ -949,6 +949,7 @@ Electron Microscopy Level 1,"Raw electron microscopy data as one TIFF file per p
 Electron Microscopy Level 2,"Processed electron microscopy data as one OME-TIFF image per plane or montage",,"Component, Filename, File Format, HTAN Parent Data File ID, HTAN Data File ID,Tile overlap X, Tile overlap Y",,FALSE,Assay,Electron Microscopy Level 1,,
 Electron Microscopy Level 3,"Segmented electron microscopy data as .am or .tiff formats",,"Component, Filename, File Format, HTAN Parent Data File ID, HTAN Data File ID,Tile overlap X, Tile overlap Y",,FALSE,Assay,Electron Microscopy Level 2,,
 Electron Microscopy Level 4,"Movies or other derived files from electron microscopy data",,"Component, Filename, File Format, HTAN Parent Data File ID, HTAN Data File ID",,FALSE,Assay,Electron Microscopy Level 3,,
+EM instrument,"Make and model of the EM instrument used",,,,TRUE,Electron Microscopy Level 1,,,str
 EM method,"Electron microscopy method used","SEM, FIB-SEM, SBF-SEM, AT, TEM, ET, cryo ET, ssTEM",,,TRUE,Electron Microscopy Level 1,,,
 EM signal or contrast mech,"How the electron microscopy signal is generated from the sample","BSE, SE, phase, bright-field, dark-field",,,TRUE,Electron Microscopy Level 1,,,
 EM dwell or exposure time,"Duration in microseconds (µs) of electron beam data collection per pixel or frame",,,,FALSE,Electron Microscopy Level 1,,,num
