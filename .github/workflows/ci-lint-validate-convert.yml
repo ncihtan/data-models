@@ -37,7 +37,7 @@ jobs:
           cd schematic
           poetry build
           pip3 install dist/schematicpy-*-py3-none-any.whl
-          pip install --upgrade pydantic==1.10.8
+          pip install --force-reinstall typing-extensions==4.5.0
       
       - name: Convert CSV schema
         shell: bash
