@@ -105,7 +105,7 @@ Nuclei Permeabilization Method,Detergent and treatment condition for nuclei perm
 Ligation Condition,Name of ligase and condition for proximity ligation,,,,TRUE,Sequencing,,,
 Biotin Enrichment,Whether biotin is used for enriching ligation product,"Yes, No",,,TRUE,Sequencing,,,
 DNA Input Amount,"Amount of DNA for library construction, in nanograms.",,,,TRUE,Sequencing,,,int
-Resolution,"Binning size used for generating contact matrix, in basepair.",,,,TRUE,Sequencing,,,int
+Resolution,"Binning size used for generating contact matrix, in basepair.",,,,TRUE,Sequencing,,,
 Stripe Calling,"Tool used for identifying architectural stripe-forming, interaction hotspots.","MACS2, Other",,,TRUE,Sequencing,,,
 Loop Window,Binning size used for calling significant dot interactions (loops),,,,TRUE,Sequencing,,,int
 Stripe Window,"Binning size used for calling significant architectural stripes. Can be an integer or int/int, indicating bin size and sliding window size if different.","HiCCUPS, Cooltools, Other",,,TRUE,Sequencing,,,
