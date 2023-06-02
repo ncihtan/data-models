@@ -1,8 +1,19 @@
-{   "name": "schematic",
-    "image":"sagebionetworks/schematic:latest",
-    "features": {
-        "ghcr.io/devcontainers/features/git:1": {},
-        "ghcr.io/devcontainers/features/common-utils:2": {}
+{
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "hostRequirements": {
+      "cpus": 4,
+      "memory": "4gb",
+      "storage": "8gb"
     },
-    "postCreateCommand": "poetry shell && poetry install"
-}
+    "features": {
+    },
+    "postCreateCommand": "pip3 install schematicpy==23.1.1",
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "mechatroner.rainbow-csv"
+        ]
+      }
+    }
+  }
+  
