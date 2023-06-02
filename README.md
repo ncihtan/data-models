@@ -1,6 +1,11 @@
 # HTAN Data Models
 
-<a href="https://doi.org/10.5281/zenodo.7838215"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.7838215.svg" alt="DOI"></a>
+
+## Citation
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7838214.svg)](https://doi.org/10.5281/zenodo.7838214)  
+To cite the latest data model use the Zenodo Concept DOI above (resolves to latest version).
+DOIs for specific versions can be found on Zenodo.
+
 
 ## Major files
 
