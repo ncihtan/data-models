@@ -65,14 +65,14 @@ jobs:
       - name: Check Component DependsOn entries
         shell: bash
         run: |
-          python .github/check_components/py
+          python .github/check_components.py
 
   convert:
     name: Convert CSV to JSON-LD
     needs:
       - lint
       - validate
-      - compomnent_check
+      - component_check
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
