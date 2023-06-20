@@ -65,7 +65,7 @@ jobs:
       - name: Check Component DependsOn entries
         shell: bash
         run: |
-          python .github/check_components.py
+          python .github/workflows/check_components.py
 
   convert:
     name: Convert CSV to JSON-LD
