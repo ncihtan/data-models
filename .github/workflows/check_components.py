@@ -1,6 +1,10 @@
 import pandas as pd
-import re
+import sys
 model = pd.read_csv('HTAN.model.csv')
+
+errors = []
+
+# Level 1 test
 
 level1 =  model[model.Attribute.str.contains('Level 1$')][['Attribute','DependsOn']]
 
@@ -14,9 +18,10 @@ for req in l1_required:
         if req in row['DependsOnList']:
             pass
         else:
-            print(f'{req} is missing from DependsOn for attribute {row["Attribute"]}')
-            print(row['DependsOnList'])
+            e = f'{req} is missing from DependsOn for attribute {row["Attribute"]}'
+            errors.append(e)
 
+# Level 2, 3 and 4 test
 level234 =  model[model.Attribute.str.contains(r'Level [2|3|4]$')][['Attribute','DependsOn']]
 
 level234['DependsOnList'] = level234['DependsOn'].map(lambda x: x.split(','))
@@ -32,4 +37,10 @@ for req in level234_required:
             #print(f'Skipping {req} as {row["Attribute"]} is one of Imaging Level 2 or SRRS Imaging Level 2')
             pass
         else:
-            print(f'{req} is missing from DependsOn for attribute {row["Attribute"]}')
+            e = f'{req} is missing from DependsOn for attribute {row["Attribute"]}'
+            errors.append(e)
+
+if len(errors) == 0:
+    pass
+else:
+    sys.exit(errors)
