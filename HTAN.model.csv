@@ -901,7 +901,7 @@ Yes - Is lowest level,If manifest is lowest level require HTAN Parent Biospecime
 Normalization Method,Description of Normalization Process,,,,FALSE,RPPA Level 2,,,
 Batch Correction Method,Method that was used to batch correct Level 3 data,,,,FALSE,RPPA Level 3,,,
 MS Batch ID,Batch ID indicating a set of samples that were run together.,,,,TRUE,Mass Spectrometry Level 1,,,
-MS Based Assay Type,Analytes are the target molecules being measured with the assay.,"LC-MS,MS,TMT,LC-MS/MS",,,TRUE,Mass Spectrometry Level 1,,,
+MS-based Assay Type,Analytes are the target molecules being measured with the assay.,"LC-MS,MS,TMT,LC-MS/MS",,,TRUE,Mass Spectrometry Level 1,,,
 MS Analyte Type,Analytes are the target molecules being measured with the assay.,"protein,metabolite,lipid",,,TRUE,Mass Spectrometry Level 1,,,
 MS-based Targeted,Specifies whether or not a specific molecule(s) is/are targeted for detection/measurement by the assay. Example: The MALDI Imaging analyte is lipids.,"Targeted,Untargeted",,,TRUE,Mass Spectrometry Level 1,,,
 MS Instrument Vendor and Model,An acquisition instrument is the device that contains the signal detection hardware and signal processing software. Assays generate signals such as light of various intensities or color or signals representing the molecular mass.,,,,TRUE,Mass Spectrometry Level 1,,,
