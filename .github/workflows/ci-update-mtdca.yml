@@ -30,8 +30,7 @@ jobs:
       - name: Make config file from data model
         shell: bash
         run: |
-          # download the data models and create config.json
-          python3 .github/workflows/config_schema.py \
+          python .github/workflows/config_schema.py \
           -c config.yml \
           --service_repo 'Sage-Bionetworks/schematic' \
           --overwrite
