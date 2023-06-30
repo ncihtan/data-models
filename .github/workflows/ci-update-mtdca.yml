@@ -46,7 +46,6 @@ jobs:
           # Replace `update-csv` with the name of the branch you want to push the changes to
           git clone https://github.com/adamjtaylor/data_curator_config.git
           cd data_curator_config
-          short_sha=$(echo "${{ github.sha }}" | cut -c 1-7)
           git checkout -b update-csv-${{ github.run_id }}-${{ github.run_attempt }}
           cp ../dcc_config.csv dcc_config.csv
           git add dcc_config.csv
@@ -56,7 +55,6 @@ jobs:
 
       - name: Create pull request
         run: |
-          short_sha=$(echo "${{ github.sha }}" | cut -c 1-7)
           curl -X POST \
           -H "Authorization: Bearer ${{ secrets.DCA_CONFIG_PAT }}" \
           -H "Accept: application/vnd.github.v3+json" \
