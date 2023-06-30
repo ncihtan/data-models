@@ -31,13 +31,14 @@ jobs:
         shell: bash
         run: |
           # download the data models and create config.json
-          python3 .github/config_schema.py \
+          python3 .github/workflows/config_schema.py \
           -c config.yml \
           --service_repo 'Sage-Bionetworks/schematic' \
           --overwrite
 
   update-csv:
     runs-on: ubuntu-latest
+    needs: make-config
 
     steps:
       - name: Checkout repository
