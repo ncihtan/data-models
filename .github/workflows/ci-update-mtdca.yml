@@ -1,0 +1,54 @@
+name: Update CSV on Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-csv:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Fetch CSV file from target repository
+        run: |
+          # Replace `<target_owner>` with the username or organization name of the target repository owner
+          # Replace `<target_repo>` with the name of the target repository
+          # Replace `path/to/csv/file.csv` with the actual path to the CSV file in the target repository
+          curl -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3.raw" \
+            -o dcc_config.csv \
+            -L "https://raw.github
+            usercontent.com/adamjtaylor/data_curator_config/main/dcc_config.csv"
+
+      - name: Modify CSV file
+        run: |
+          # Replace `path/to/csv/file.csv` with the actual path to your CSV file
+          # Replace `https://raw.githubusercontent.com/ncihtan/data-models/v23.6.2/HTAN.model.jsonld` with the string containing the version number to be replaced
+          # The pattern in the regex assumes the version number has the format `vX.Y.Z`
+          # If the format is different, adjust the regex pattern accordingly
+          sed -i "s|https://raw.githubusercontent.com/ncihtan/data-models/v[0-9.]\+/HTAN.model.jsonld|https://raw.githubusercontent.com/ncihtan/data-models/$GITHUB_REF/HTAN.model.jsonld|" path/to/csv/file.csv
+
+      - name: Commit and push changes to target repository
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email '<>'
+
+          # Replace `<target_owner>` with the username or organization name of the target repository owner
+          # Replace `<target_repo>` with the name of the target repository
+          # Replace `path/to/csv/file.csv` with the actual path to the CSV file in the target repository
+          git remote add target_repo https://github.com/adamjtaylor/data_curator_config.git
+          git checkout -b update-csv
+          git add dcc_config.csv
+          git commit -m "Update CSV with release tag"
+          git push --set-upstream target_repo update-csv
+      
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: update-csv
+          commit-message: "Update CSV with release tag"
+          title: "Update CSV with release tag"
+          body: "This pull request updates the CSV file with the release tag."
