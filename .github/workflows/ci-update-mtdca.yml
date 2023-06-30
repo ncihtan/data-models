@@ -29,9 +29,9 @@ jobs:
           # The pattern in the regex assumes the version number has the format `vX.Y.Z`
           # If the format is different, adjust the regex pattern accordingly
           if [[ -n "${{ github.event.ref }}" ]]; then
-            sed -i "s|https://raw.githubusercontent.com/ncihtan/data-models/v[0-9.]\+/HTAN.model.jsonld|https://raw.githubusercontent.com/ncihtan/data-models/${{ github.event.ref }}/HTAN.model.jsonld|" dcc_config.csv
+            sed -i "s|https://raw.githubusercontent.com/ncihtan/data-models/[^/]\+/HTAN.model.jsonld|https://raw.githubusercontent.com/ncihtan/data-models/${{ github.event.ref }}/HTAN.model.jsonld|" dcc_config.csv
           else
-            sed -i "s|https://raw.githubusercontent.com/ncihtan/data-models/v[0-9.]\+/HTAN.model.jsonld|https://raw.githubusercontent.com/ncihtan/data-models/${{ github.sha }}/HTAN.model.jsonld|" dcc_config.csv
+            sed -i "s|https://raw.githubusercontent.com/ncihtan/data-models/[^/]\+/HTAN.model.jsonld|https://raw.githubusercontent.com/ncihtan/data-models/${{ github.sha }}/HTAN.model.jsonld|" dcc_config.csv
           fi
       - name: Commit and push changes to target repository
         run: |
