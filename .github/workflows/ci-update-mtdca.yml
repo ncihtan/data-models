@@ -7,6 +7,35 @@ on:
     types: [prereleased]
 
 jobs:
+
+
+  make-config:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4 
+        with:
+          python-version: '3.9'
+
+      - name: Install Schematic
+        shell: bash
+        run: |
+          pip3 install poetry
+          git clone --single-branch --branch main https://github.com/Sage-Bionetworks/schematic.git
+          cd schematic
+          poetry build
+          pip3 install dist/schematicpy-*-py3-none-any.whl
+
+      - name: Make config file from data model
+        shell: bash
+        run: |
+          # download the data models and create config.json
+          python3 .github/config_schema.py \
+          -c config.yml \
+          --service_repo 'Sage-Bionetworks/schematic' \
+          --overwrite
+
   update-csv:
     runs-on: ubuntu-latest
 
