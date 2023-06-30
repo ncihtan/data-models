@@ -63,5 +63,6 @@ jobs:
             \"title\": \"Update dcc_config.csv with new data model\",
             \"head\": \"update-csv-${short_sha}\",
             \"base\": \"main\",
-            \"body\": \"This pull request updates the CSV file with the release tag or commit sha\"
+            \"body\": \"This pull request updates the CSV file with the release tag or commit sha\",
+            \"draft\": \"true\"
           }"
