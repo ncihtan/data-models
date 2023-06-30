@@ -11,6 +11,8 @@ def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('-c', '--config_path', metavar="",
                         required=True, help='path to schematic config ymal file')
+    parser.add_argument('-s','--schema_path', metavar = "",
+                        required=True, help='path to schema jsonld file')
     parser.add_argument('-sr', '--service_repo', metavar="",
                         help='repo path to service')
     parser.add_argument('-o', '--out_dir', default='www', metavar="",
@@ -67,7 +69,7 @@ def main():
 
     # get the location of the schema
     #if config.get("location") and _is_valid(config.get("location"), "location"):
-    #    schema_path = config["location"]
+    schema_path = args.schema_path
     #else:
     #    raise ValueError(f'No valid "location" value found in "{args.config_path}" \u274C')
 
