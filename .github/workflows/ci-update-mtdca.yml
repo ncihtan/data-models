@@ -44,12 +44,12 @@ jobs:
           # Replace `update-csv` with the name of the branch you want to push the changes to
           git clone https://github.com/adamjtaylor/data_curator_config.git
           cd data_curator_config
-          git checkout -b update-csv
+          git checkout -b update-csv-${{ GITHUB_SHA::7}}
           cp ../dcc_config.csv dcc_config.csv
           git add dcc_config.csv
           git commit -m "Update CSV with release tag"
           git remote set-url origin "https://${{ secrets.DCA_CONFIG_PAT }}@github.com/adamjtaylor/data_curator_config.git"
-          git push --set-upstream origin update-csv
+          git push --set-upstream origin update-csv-${{ GITHUB_SHA::7}}
 
       - name: Create pull request
         run: |
@@ -59,7 +59,8 @@ jobs:
           "https://api.github.com/repos/adamjtaylor/data_curator_config/pulls" \
           -d "{
             \"title\": \"Updae CSV with release tag\",
-            \"head\": \"update-csv\",
+            \"head\": \"update-csv-${{ GITHUB_SHA::7}}\",
             \"base\": \"main\",
-            \"body\": \"This pull request updates the CSV file with the release tag.\"
+            \"body\": \"This pull request updates the CSV file with the release tag.\",
+            \"draft\": true,
           }"
