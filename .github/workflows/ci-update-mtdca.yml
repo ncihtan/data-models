@@ -20,8 +20,7 @@ jobs:
           curl -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github.v3.raw" \
             -o dcc_config.csv \
-            -L "https://raw.github
-            usercontent.com/adamjtaylor/data_curator_config/main/dcc_config.csv"
+            -L "https://raw.githubusercontent.com/adamjtaylor/data_curator_config/main/dcc_config.csv"
 
       - name: Modify CSV file
         run: |
