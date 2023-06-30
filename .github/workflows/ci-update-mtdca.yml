@@ -30,7 +30,7 @@ jobs:
           # Replace `https://raw.githubusercontent.com/ncihtan/data-models/v23.6.2/HTAN.model.jsonld` with the string containing the version number to be replaced
           # The pattern in the regex assumes the version number has the format `vX.Y.Z`
           # If the format is different, adjust the regex pattern accordingly
-          if [[ -n "${{ github.ref_name }}" ]]; then
+          if [[ -n "${{ github.ref }}" && ! "${{ github.ref }}" == *"/"* ]]; then
             sed -i "s|https://raw.githubusercontent.com/ncihtan/data-models/[^/]\+/HTAN.model.jsonld|https://raw.githubusercontent.com/ncihtan/data-models/${{ github.ref_name }}/HTAN.model.jsonld|" dcc_config.csv
           else
             sed -i "s|https://raw.githubusercontent.com/ncihtan/data-models/[^/]\+/HTAN.model.jsonld|https://raw.githubusercontent.com/ncihtan/data-models/${{ github.sha }}/HTAN.model.jsonld|" dcc_config.csv
