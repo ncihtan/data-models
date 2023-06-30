@@ -39,7 +39,7 @@ jobs:
           # Replace `<target_owner>` with the username or organization name of the target repository owner
           # Replace `<target_repo>` with the name of the target repository
           # Replace `update-csv` with the name of the branch you want to push the changes to
-          gh repo clone adamjtaylor/data_curator_config data_curator_config
+          git clone https://github.com/adamjtaylor/data_curator_config data_curator_config
           cd data_curator_config
           git checkout -b update-csv
           cp ../dcc_config.csv dcc_config.csv
