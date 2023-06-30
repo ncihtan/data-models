@@ -94,7 +94,7 @@ jobs:
           cp ../dcc_config.csv dcc_config.csv
           git add dcc_config.csv
           git commit -m "Update CSV with release tag"
-          git add config.json
+          git add config/config.json
           git commit -m "Update config.json"
           git remote set-url origin "https://${{ secrets.DCA_CONFIG_PAT }}@github.com/adamjtaylor/data_curator_config.git"
           git push --set-upstream origin update-csv-${{ github.run_id }}-${{ github.run_attempt }}
