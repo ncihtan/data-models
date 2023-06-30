@@ -60,8 +60,8 @@ jobs:
           -H "Accept: application/vnd.github.v3+json" \
           "https://api.github.com/repos/adamjtaylor/data_curator_config/pulls" \
           -d "{
-            \"title\": \"Updae CSV with release tag\",
+            \"title\": \"Update dcc_config.csv with new data model\",
             \"head\": \"update-csv-${short_sha}\",
             \"base\": \"main\",
-            \"body\": \"This pull request updates the CSV file with the release tag.\"
+            \"body\": \"This pull request updates the CSV file with the release tag or commit sha\"
           }"
