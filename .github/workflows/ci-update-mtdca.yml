@@ -33,6 +33,7 @@ jobs:
           python .github/workflows/config_schema.py \
           -c config.yml \
           -s HTAN.model.jsonld \
+          -o '.' \
           --service_repo 'Sage-Bionetworks/schematic' \
           --overwrite
 
