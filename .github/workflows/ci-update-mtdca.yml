@@ -28,7 +28,7 @@ jobs:
           # Replace `https://raw.githubusercontent.com/ncihtan/data-models/v23.6.2/HTAN.model.jsonld` with the string containing the version number to be replaced
           # The pattern in the regex assumes the version number has the format `vX.Y.Z`
           # If the format is different, adjust the regex pattern accordingly
-          sed -i "s|https://raw.githubusercontent.com/ncihtan/data-models/v[0-9.]\+/HTAN.model.jsonld|https://raw.githubusercontent.com/ncihtan/data-models/$GITHUB_REF/HTAN.model.jsonld|" dcc_config.csv
+          sed -i "s|https://raw.githubusercontent.com/ncihtan/data-models/v[0-9.]\+/HTAN.model.jsonld|https://raw.githubusercontent.com/ncihtan/data-models/${{ github.ref }}/HTAN.model.jsonld|" dcc_config.csv
 
       - name: Commit and push changes to target repository
         run: |
