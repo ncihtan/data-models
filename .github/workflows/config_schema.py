@@ -66,22 +66,22 @@ def main():
     config = _parse_schema(args.config_path)
 
     # get the location of the schema
-    if config.get("location") and _is_valid(config.get("location"), "location"):
-        schema_path = config["location"]
-    else:
-        raise ValueError(f'No valid "location" value found in "{args.config_path}" \u274C')
+    #if config.get("location") and _is_valid(config.get("location"), "location"):
+    #    schema_path = config["location"]
+    #else:
+    #    raise ValueError(f'No valid "location" value found in "{args.config_path}" \u274C')
 
     if args.overwrite:
         # get versions for both service and schema
-        service_version = _get_version(args.service_repo)
-        schema_version = config.get("version") or _get_version(config["repo"])
+        #service_version = _get_version(args.service_repo)
+        #schema_version = config.get("version") or _get_version(config["repo"])
         # generate schema configuration based on *.model.jsonld
         schemas_config = generate_schema_config(schema_path)
         # write out the config.json including versions
         config = {
             'manifest_schemas': schemas_config,
-            'service_version': service_version,
-            'schema_version': schema_version
+            'service_version': '1',   #service_version,
+            'schema_version': '1'     #schema_version
         }
         output_path = os.path.join(args.out_dir, 'config.json')
         with open(output_path, 'w') as o:
