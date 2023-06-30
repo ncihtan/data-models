@@ -54,7 +54,7 @@ jobs:
       - name: Create pull request
         run: |
           curl -X POST \
-          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Authorization: Bearer ${{ secrets.DCA_CONFIG_PAT }}" \
           -H "Accept: application/vnd.github.v3+json" \
           "https://api.github.com/repos/adamjtaylor/data_curator_config/pulls" \
           -d "{
