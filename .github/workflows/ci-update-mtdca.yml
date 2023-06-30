@@ -52,10 +52,14 @@ jobs:
           git push --set-upstream origin update-csv
 
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: update-csv
-          commit-message: "Update CSV with release tag"
-          title: "Update CSV with release tag"
-          body: "This pull request updates the CSV file with the release tag."
+        run: |
+          curl -X POST \
+          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          "https://api.github.com/repos/adamjtaylor/data_curator_config/pulls" \
+          -d "{
+            \"title\": \"Updae CSV with release tag\",
+            \"head\": \"update-csv\",
+            \"base\": \"main\",
+            \"body\": \"This pull request updates the CSV file with the release tag.\"
+          }"
