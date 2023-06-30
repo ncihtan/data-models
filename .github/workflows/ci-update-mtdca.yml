@@ -34,7 +34,8 @@ jobs:
         run: |
           # Set up the GitHub token for authentication
           echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
-          
+          git config --global user.email "adam.taylor@sagebase.org"
+          git config --global user.name "Adam Taylor"
           # Replace `<target_owner>` with the username or organization name of the target repository owner
           # Replace `<target_repo>` with the name of the target repository
           # Replace `update-csv` with the name of the branch you want to push the changes to
