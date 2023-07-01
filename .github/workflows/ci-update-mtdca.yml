@@ -39,7 +39,7 @@ jobs:
       - name: Store config.json artifact
         uses: actions/upload-artifact@master
         with:
-          name: config
+          name: config_json
           path: config.json
 
   update-csv:
@@ -73,6 +73,12 @@ jobs:
             sed -i "s|https://raw.githubusercontent.com/ncihtan/data-models/[^/]\+/HTAN.model.jsonld|https://raw.githubusercontent.com/ncihtan/data-models/${{ github.sha }}/HTAN.model.jsonld|" dcc_config.csv
           fi
 
+      - name: Store dcc_config.csv artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: dcc_config_csv
+          path: dcc_config.csv
+
   open-pr:
     runs-on: ubuntu-latest
     needs: 
@@ -86,7 +92,12 @@ jobs:
       - name: Fetch config.json artifact
         uses: actions/download-artifact@master
         with:
-          name: config
+          name: config_json
+
+      - name: Fetch dcc_config.csv artifact
+        uses: actions/download-artifact@master
+        with:
+          name: dcc_config_csv
 
       - name: Commit and push changes to target repository
         run: |
