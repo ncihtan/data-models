@@ -49,11 +49,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Fetch config.json artifact
-        uses: actions/download-artifact@master
-        with:
-          name: config
-
       - name: Fetch CSV file from target repository
         run: |
           # Replace `<target_owner>` with the username or organization name of the target repository owner
