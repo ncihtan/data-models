@@ -46,6 +46,9 @@ def generate_schema_config(schema_path):
     sg = SchemaGenerator(path_to_json_ld=schema_path)
     component_digraph = sg.se.get_digraph_by_edge_type('requiresComponent')
     components = component_digraph.nodes()
+    components_to_remove = ['Patient', 'File', 'Publication']
+    components =  sorted(list(set(components) - set(components_to_remove)))
+    print(components)
     # get display names for required data types
     mm_graph = sg.se.get_nx_schema()
     display_names = sg.get_nodes_display_names(components, mm_graph)
@@ -60,6 +63,18 @@ def generate_schema_config(schema_path):
             'type': schema_type
         })
     return schemas
+
+def sort_manifest_schemas(s):
+
+    ms = s['manifest_schemas']
+    def key_func(schema):
+        return (schema['type'], schema['display_name'])
+    
+    sorted_schemas = sorted(ms, key=key_func)
+
+    s['manifest_schemas'] = sorted_schemas
+    return s
+
 
 
 def main():
@@ -85,6 +100,7 @@ def main():
             'service_version': '1',   #service_version,
             'schema_version': '1'     #schema_version
         }
+        config = sort_manifest_schemas(config)
         output_path = os.path.join(args.out_dir, 'config.json')
         with open(output_path, 'w') as o:
             json.dump(config, o, indent=2, separators=(',', ': '))
