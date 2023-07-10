@@ -932,7 +932,7 @@ Total DNA Input,"Overall number of reads for a given sample in digits (microgram
 Trimmer,Software used for trimming,"FASTX toolkit, SolexaQA, Btrim, Cutadapt, Kraken, PRINSEQ, Adapter removal, Trim Galore!, ConDeTri, ERNE-FILTER, Trimmo-matic",,,TRUE,Bulk Methylation-seq Level 2,,,
 Bulk Methylation Genomic Reference,The human genome reference used in the alignment of reads,"HG19, HG38, T2T CHM13",,,TRUE,Bulk Methylation-seq Level 2,,,
 Duplicate Removal Software,Software used for remove duplicate reads,"Samtools sort, picard MarkDuplicates",,,TRUE,Bulk Methylation-seq Level 2,,,
-Proportion of minimum CpG Coverage 10X,Proportion of Minimum CpG Coverage 10X,"Proportion of all reference bases for whole genome sequencing, or targeted sequencing, that achieves 10X or greater coverage per CpG.",,,FALSE,Bulk Methylation-seq Level 2,,,
+Proportion of Minimum CpG Coverage 10X,"Proportion of all reference bases for whole genome sequencing, or targeted sequencing, that achieves 10X or greater coverage per CpG.",,,,FALSE,Bulk Methylation-seq Level 2,,,
 DMC Calling Tool,Software used for calling differentially methylated CpG (DMC) and differentially methylated region (DMR),"MethylKit, BSmooth, BiSeq, MethylSig, DSS, MOABS, DSS-single, metilene, MACAU, MethylDackel",,,TRUE,Bulk Methylation-seq Level 3,,,
 DMC Calling Workflow URL,Generic name for the workflow used to analyze a data set,,,,TRUE,Bulk Methylation-seq Level 3,,,url
 DMR Calling Tool,Software used for calling differentially methylated CpG (DMC) and differentially methylated region (DMR),"MethylKit, BSmooth, BiSeq, MethylSig, DSS, MOABS, DSS-single, metilene, MACAU",,,TRUE,Bulk Methylation-seq Level 3,,,
