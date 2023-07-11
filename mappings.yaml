@@ -1,0 +1,121 @@
+- target_name: 'CDS Multiplex Microscopy'
+  source_name: 'HTAN Data Model'
+  target_version:
+  source_version: 'v26.6.1'
+  attributes:
+    - target_attribute: 'sample_id'
+      target_required: True
+      source_attribute: 'HTAN Parent Biospecimen ID'
+      note: 'Confirm if this is the assayed biospecimen ID'
+    - target_attribute: 'sample_description'
+      target_required: False
+      note: 'No obvious mapping'
+
+    - target_attribute: 'biosample_accession'
+      target_required: False
+      note: 'BioSample (SAMN) accession number not used in HTAN'
+    
+    - target_attribute: 'sample_type'
+      note: 'Text term to describe the source of a biospecimen used for a laboratory test.'
+
+    - target_attribute: 'sample_type_category'
+   
+    - target_attribute: 'sample_tumor_status'
+      source_attribute:
+    
+    - target_attribute: 'sample_anatomic_site'
+      source_attribute:
+    
+    - target_attribute: 'sample_age_at_collection'
+      source_attribute:
+    
+    - target_attribute: 'derived_from_specimen'
+      source_attribute:
+    
+    - target_attribute: 'specimen_collection'
+      source_attribute:
+
+    - target_attribute: 'tumor_tissue_type'
+      source_attribute:
+
+    - target_attribute: 'tissue_fixative'
+      source_attribute:
+
+    - target_attribute: 'embedding_medium'
+      source_attribute:
+    
+    - target_attribute: 'staining_method'
+      source_attribute:
+    
+    - target_attribute: 'imaging_assay_type'
+      source_attribute: 'Imaging Assay Type'
+      valid_values:
+        - CyCIF: CyCIF
+        - t-CyCIF: t-CyCIF
+        - IHC: IHC
+        - mIHC: mIHC
+        - MxIF: MxIF
+        - SABER: SABER
+        - IMC: IMC
+        - CODEX: CODEX
+        - GeoMX-DSP: GeoMX-DSP
+        - MIBI: MIBI
+        - MERFISH: MERFISH
+        - Other: Other
+    
+    - target_attribute: 'objective'
+      source_attribute: 'Objective'
+    
+    - target_attribute: 'nominal_magnification'
+      source_attribute:
+    
+    - target_attribute: 'lensNA'
+      target_required: False
+      source_attribute: 'LensNA'
+      source_required: False
+      
+    
+    - target_attribute: 'immersion'
+      source_attribute: 'Immersion'
+    
+    - target_attribute: 'pyramid'
+      source_attribute:
+    
+    - target_attribute: 'immersion'
+      source_attribute:
+    
+    - target_attribute: 'z-stack'
+      source_attribute:
+    
+    - target_attribute: 't_series'
+      source_attribute:
+    
+    - target_attribute: 'physical_size_x'
+      source_attribute:
+    
+    - target_attribute: 'physical_size_y'
+      source_attribute:
+    
+    - target_attribute: 'physical_size_z'
+      source_attribute:
+    
+    - target_attribute: 'size_c'
+      source_attribute:
+    
+    - target_attribute: 'size_t'
+      source_attribute:
+    
+    - target_attribute: 'size_x'
+      source_attribute:
+    
+    - target_attribute: 'size_y'
+      source_attribute:
+    
+    - target_attribute: 'size_z'
+      source_attribute:
+    
+    - target_attribute: 'pixel_type'
+      source_attribute:
+    
+    - target_attribute: 'channel_metadata_filename'
+      source_attribute:
