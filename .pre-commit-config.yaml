@@ -6,8 +6,30 @@ repos:
     -   id: end-of-file-fixer
     -   id: check-json
     -   id: pretty-format-json
+        args:
+        -   --autofix
+        -   --indent=4
+        -   --no-ensure-ascii
+        -   --no-sort-keys
     -   id: check-merge-conflict
     -   id: detect-aws-credentials
     -   id: detect-private-key
     -   id: trailing-whitespace
         exclude: '^.+\.md$'
+-   repo: local
+    hooks:
+    -   id: check-components
+        name: Check components have minimal DependsOn entries
+        entry: python .github/workflows/check_components.py
+        language: python
+        additional_dependencies: ['pandas']
+    -   id: check-attributes
+        name: Check DependsOn entries exist as attributes
+        entry: python .github/workflows/check_attributes_exist.py
+        language: python
+        additional_dependencies: ['pandas']
+        require_serial: true
+-   repo: https://github.com/alan-turing-institute/CleverCSV-pre-commit
+    rev: v0.8.0      # or any later version
+    hooks:
+    -   id: clevercsv-standardize
