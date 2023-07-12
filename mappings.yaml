@@ -1,121 +1,247 @@
-- target_name: 'CDS Multiplex Microscopy'
-  source_name: 'HTAN Data Model'
-  target_version:
-  source_version: 'v26.6.1'
+---
+- target_name: CDS Multiplex Microscopy
+  source_name: HTAN Data Model
+  target_version: null
+  source_version: v26.6.1
   attributes:
-    - target_attribute: 'sample_id'
-      target_required: True
-      source_attribute: 'HTAN Parent Biospecimen ID'
-      note: 'Confirm if this is the assayed biospecimen ID'
-    - target_attribute: 'sample_description'
-      target_required: False
-      note: 'No obvious mapping'
-
-    - target_attribute: 'biosample_accession'
-      target_required: False
-      note: 'BioSample (SAMN) accession number not used in HTAN'
-    
-    - target_attribute: 'sample_type'
-      note: 'Text term to describe the source of a biospecimen used for a laboratory test.'
-
-    - target_attribute: 'sample_type_category'
-   
-    - target_attribute: 'sample_tumor_status'
+    - target_attribute: sample_id
+      target_required: true
+      target_description: sample identifier
+      source_attribute: HTAN Parent Biospecimen ID
+      source_required: true
+      note: Confirm if this is the assayed biospecimen ID
+    - target_attribute: sample_description
+      target_required: false
+      target_description: a description of the sample
+      source_attribute: null
+      source_required: null
+      note: No obvious mapping
+    - target_attribute: biosample_accession
+      target_required: false
+      target_description: BioSample (SAMN) accession number not used in HTAN
+      source_attribute: null
+      source_required: null
+      note: Not in HTAN data model
+    - target_attribute: sample_type
+      target_required: true
+      target_description: Text term to describe the source of a biospecimen used for a
+        laboratory test
+      source_attribute: null
+      source_required: null
+      note: TDB how to map to a HTAN term
+    - target_attribute: sample_type_category
+      target_required: false
+      target_description: null
+      source_attribute: null
+      source_required: null
+      note: Definition not provided
+    - target_attribute: sample_tumor_status
+      target_required: false
+      target_description: Normal or Tumor Sample Pathology Indicator
+      source_attribute: null
+      source_required: null
+      note: null
+    - target_attribute: sample_anatomic_site
+      target_required: false
+      target_description: Text term that represents the name of the primary disease
+        site of the submitted tumor sample.
+      source_attribute: null
+      source_required: null
+      note: null
+    - target_attribute: sample_age_at_collection
+      target_required: false
+      target_description: null
+      source_attribute: null
+      source_required: null
+      note: null
+    - target_attribute: derived_from_specimen
+      target_required: false
+      target_description: null
+      source_attribute: null
+      source_required: null
+      note: null
+    - target_attribute: specimen_collection
+      target_required: false
+      target_description: null
+      source_attribute: null
+      source_required: null
+      note: null
+    - target_attribute: tumor_tissue_type
+      target_required: false
+      target_description: null
+      source_attribute: null
+      source_required: null
+      note: null
+    - target_attribute: tissue_fixative
+      target_required: true
+      target_description: A compound that preserves tissues and cells for microscopic study.
       source_attribute:
-    
-    - target_attribute: 'sample_anatomic_site'
+        - Fixative Type
+        - Preservation Method
+      source_required: null
+      note: null
+    - target_attribute: embedding_medium
+      target_required: true
+      target_description: A material that infiltrates and supports a specimen and
+        preserves its shape and structure for sectioning and microscopy.
       source_attribute:
-    
-    - target_attribute: 'sample_age_at_collection'
-      source_attribute:
-    
-    - target_attribute: 'derived_from_specimen'
-      source_attribute:
-    
-    - target_attribute: 'specimen_collection'
-      source_attribute:
-
-    - target_attribute: 'tumor_tissue_type'
-      source_attribute:
-
-    - target_attribute: 'tissue_fixative'
-      source_attribute:
-
-    - target_attribute: 'embedding_medium'
-      source_attribute:
-    
-    - target_attribute: 'staining_method'
-      source_attribute:
-    
-    - target_attribute: 'imaging_assay_type'
-      source_attribute: 'Imaging Assay Type'
+        - Fixative Type
+        - Preservation Method
+      source_required: true
+      note: null
+    - target_attribute: staining_method
+      target_required: true
+      target_description: Any of the various methods that use a dye, reagent, or other
+        material for producing coloration in tissues or microorganisms for
+        microscopic examination.
+      source_attribute: null
+      source_required: null
+      note: null
+    - target_attribute: imaging_assay_type
+      target_required: true
+      target_description: null
+      source_attribute: Imaging Assay Type
+      source_required: null
       valid_values:
-        - CyCIF: CyCIF
-        - t-CyCIF: t-CyCIF
-        - IHC: IHC
-        - mIHC: mIHC
-        - MxIF: MxIF
-        - SABER: SABER
-        - IMC: IMC
-        - CODEX: CODEX
-        - GeoMX-DSP: GeoMX-DSP
-        - MIBI: MIBI
-        - MERFISH: MERFISH
-        - Other: Other
-    
-    - target_attribute: 'objective'
-      source_attribute: 'Objective'
-    
-    - target_attribute: 'nominal_magnification'
+        CyCIF: CyCIF
+        t-CyCIF: t-CyCIF
+        IHC: IHC
+        mIHC: mIHC
+        MxIF: MxIF
+        SABER: SABER
+        IMC: IMC
+        CODEX: CODEX
+        GeoMX-DSP: GeoMX-DSP
+        MIBI: MIBI
+        MERFISH: MERFISH
+        Other: Other
+        RareCyte Orion: Other
+        "": Other
+      note: null
+    - target_attribute: objective
+      target_required: false
+      target_description: Objective
+      source_attribute: Objective
+      source_required: false
+      note: null
+    - target_attribute: nominal_magnification
+      target_required: false
+      target_description: The magnification of the lens as specified by the
+        manufacturer - i.e. "60" is a 60X lens. floating point value > 1(no
+        units)
+      source_attribute: NominalMagnification
+      source_required: true
+      note: null
+    - target_attribute: lensNA
+      target_required: false
+      target_description: The numerical aperture of the lens. Floating point value > 0.
+      source_attribute: LensNA
+      source_required: false
+      note: null
+    - target_attribute: immersion
+      target_required: false
+      target_description: Immersion medium
+      source_attribute: Immersion
+      source_required: false
+      note: Source has valid values Air, Oil, Water, Other but Target does not
+    - target_attribute: pyramid
+      target_required: false
+      target_description: The data file contains an image pyramid
+      source_attribute: Pyramid
+      source_required: false
+      valid_values:
+        Yes: "True"
+        No: "False"
+      note: null
+    - target_attribute: z-stack
+      target_required: false
+      target_description: Does data file contain a Z-stack of images
+      source_attribute: ZStack
+      source_required: true
+      note: null
+    - target_attribute: t_series
+      target_required: false
+      target_description: Does data file contain a time-series of images
+      source_attribute: TSeries
+      source_required: true
+      note: null
+    - target_attribute: physical_size_x
+      target_required: false
+      target_description: Physical size (X-dimension) of a pixel. Floating point value
+        > 0. Size needs to be specified in microns (um)
       source_attribute:
-    
-    - target_attribute: 'lensNA'
-      target_required: False
-      source_attribute: 'LensNA'
-      source_required: False
-      
-    
-    - target_attribute: 'immersion'
-      source_attribute: 'Immersion'
-    
-    - target_attribute: 'pyramid'
+        - PhysicalSizeX
+        - PhysicalSizeXUnit
+      source_required: true
+      note: Must be converted to um from PhysicalSizeXUnit
+    - target_attribute: physical_size_y
+      target_required: false
+      target_description: Physical size (Y-dimension) of a pixel. Floating point value
+        > 0. Size needs to be specified in microns (um)
       source_attribute:
-    
-    - target_attribute: 'immersion'
+        - PhysicalSizeY
+        - PhysicalSizeYUnit
+      source_required: true
+      note: Must be converted to um from PhysicalSizeYUnit
+    - target_attribute: physical_size_z
+      target_required: false
+      target_description: Physical size (Z-dimension) of a pixel. Floating point value
+        > 0. Size needs to be specified in microns (um)
       source_attribute:
-    
-    - target_attribute: 'z-stack'
-      source_attribute:
-    
-    - target_attribute: 't_series'
-      source_attribute:
-    
-    - target_attribute: 'physical_size_x'
-      source_attribute:
-    
-    - target_attribute: 'physical_size_y'
-      source_attribute:
-    
-    - target_attribute: 'physical_size_z'
-      source_attribute:
-    
-    - target_attribute: 'size_c'
-      source_attribute:
-    
-    - target_attribute: 'size_t'
-      source_attribute:
-    
-    - target_attribute: 'size_x'
-      source_attribute:
-    
-    - target_attribute: 'size_y'
-      source_attribute:
-    
-    - target_attribute: 'size_z'
-      source_attribute:
-    
-    - target_attribute: 'pixel_type'
-      source_attribute:
-    
-    - target_attribute: 'channel_metadata_filename'
-      source_attribute:
+        - PhysicalSizeZ
+        - PhysicalSizeZUnit
+      source_required: true
+      note: Must be converted to um from PhysicalSizeZUnit
+    - target_attribute: size_c
+      target_required: false
+      target_description: Number of channels. Integer >= 1
+      source_attribute: SizeC
+      source_required: true
+      note: null
+    - target_attribute: size_t
+      target_required: false
+      target_description: Number of time points. Integer >= 1
+      source_attribute: SizeT
+      source_required: true
+      note: null
+    - target_attribute: size_x
+      target_required: false
+      target_description: "Size of image: X dimension (in pixels). Integer >= 1"
+      source_attribute: SizeX
+      source_required: true
+      note: null
+    - target_attribute: size_y
+      target_required: false
+      target_description: "Size of image: Y dimension (in pixels). Integer >= 1"
+      source_attribute: SizeY
+      source_required: true
+      note: null
+    - target_attribute: size_z
+      target_required: false
+      target_description: "Size of image: Z dimension (in pixels). Integer >= 1"
+      source_attribute: SizeZ
+      source_required: true
+      note: null
+    - target_attribute: pixel_type
+      target_required: false
+      target_description: Data type for each pixel value. E.g. "uint16"
+      source_attribute: PixelType
+      source_required: true
+      valid_values:
+        int8: int8
+        int16: int16
+        int32: int32
+        uint8: uint8
+        uint16: uint16
+        uint32: uint32
+        double: double
+        float: float
+        bit: bit
+      note: null
+    - target_attribute: channel_metadata_filename
+      target_required: true
+      target_description: URI/Bucket URL of uploaded companion CSV file containing
+        channel-level metadata details
+      source_attribute: Channel Metadata Filename
+      source_required: true
+      note: Requires transfer into CDS bucket and listing as CDS bucket URI
