@@ -191,7 +191,7 @@ PixelType,"Data type for each pixel value. E.g. ""uint16""","int8, int16, int32,
 Imaging Segmentation Data Type,Specifies how the segmentation is stored,"Mask, Outline, Polygon, Probability Map, Point",,,TRUE,Imaging,,https://www.miti-consortium.org/,
 Parameter file,Path in Syanpse to a text file listing algorithm version numbers and relevant parameters needed to reproduce the analysis,,,,FALSE,Imaging,,,
 Commit SHA,"Short SHA for software version [8 hexadecimal characters (for github), comma separated if multiple]",,,,FALSE,Imaging,,,
-Imaging Object Class,Defines the structure that the mask delineates,"nucleus, cytoplasm, plasma membrane, whole cell, spot, Imaging Object Class Other",,,TRUE,Imaging,,https://www.miti-consortium.org/,
+Imaging Object Class,Defines the structure that the mask delineates,"nucleus, cytoplasm, plasma membrane, whole cell, spot, Imaging Object Class Other",,,TRUE,Imaging,,https://www.miti-consortium.org/,list like
 Imaging Object Class Other,Imaging Object Class Other,,Imaging Object Class Description,,FALSE,Imaging,,https://www.miti-consortium.org/,
 Imaging Object Class Description,Free text description of object class [string],,,,TRUE,Imaging,,https://www.miti-consortium.org/,
 Number of Objects,The number of objects (eg cells) described,,,,TRUE,Imaging,,https://www.miti-consortium.org/,int
