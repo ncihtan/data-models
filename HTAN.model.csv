@@ -197,7 +197,9 @@ Imaging Object Class Description,Free text description of object class [string],
 Number of Objects,The number of objects (eg cells) described,,,,TRUE,Imaging,,https://www.miti-consortium.org/,int
 Number of Features,The number of features (eg channels) described,,,,TRUE,Imaging,,https://www.miti-consortium.org/,int
 Imaging Summary Statistic,Function used to summarize object/feature intensity,"Mean,Median,Not Specified",,,FALSE,Imaging,,https://www.miti-consortium.org/,
-Nucleic Acid Source,The source of the input nucleic molecule,"Single Cell, Bulk Whole Cell, Single Nucleus, Bulk Nuclei",,,TRUE,Sequencing,,,
+Nucleic Acid Source,The source of the input nucleic molecule,"Single Cell, Bulk Whole Cell, Single Nucleus, Bulk Nuclei, Micro-region",,,TRUE,Sequencing,,,
+Mirco-region Seq Platform,The platform used for micro-regional RNA sequencing (if applicable),"Rarecyte Pick-Seq, Laser Capture Microdissection",,,FALSE,Sequencing,,,
+ROI Tag,The tag or grouping used to identify the ROI in micro-regional RNA sequencing (if applicable). Must match the ROI tag within the count matrix in level 3.,,,,FALSE,Sequencing,,,
 Single Cell Isolation Method,"The method by which cells are isolated into individual reaction containers at a single cell resolution (e.g. wells, micro-droplets)","Microfluidics Chip, Droplets, FACS, Plates, 10x, Nuclei Isolation",,,TRUE,scRNA-seq Level 1,,,
 Dissociation Method,The tissue dissociation method used for scRNASeq or scATAC-seq assays,"gentleMACS, Dounce, Enzymatic Digestion, Not Applicable",,,TRUE,scRNA-seq Level 1,,,
 Library Layout,Sequencing read type,"Paired End, Single Read, Mid-length, Long Read",,,TRUE,Sequencing,,,
