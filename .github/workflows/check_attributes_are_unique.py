@@ -13,15 +13,25 @@ components['DependsOnList'] = components['DependsOnList'].map(lambda x: list(map
 
 attributes = model['Attribute'].to_list()
 
-# Check for attributes that do not exist
+# Check for attributes that exist more than once
+for att in attributes:
+    count = attributes.count(att)
+    if count == 1:
+        pass
+    else:
+        e = f'"{att}" appears {count} times in the data model'
+        errors.append(e)
+
+# check that DependsOn entries are unique
 for i, row in components.iterrows():
     dol = row['DependsOnList']
-    for do in dol:
-        if do in attributes:
-            pass
-        else:
-            e = f'"{do}" used in component "{row["Attribute"]}" is not defined in the data model'
-            errors.append(e)
+    repeated_values = [x for x in set(dol) if dol.count(x) > 1]
+    if len(repeated_values) == 0:
+        pass
+    else:
+        e = f'"{row["Attribute"]}" has duplicate entries in DependsOn: {repeated_values}'
+        errors.append(e)
+
 
 if len(errors) == 0:
     pass

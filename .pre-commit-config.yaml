@@ -16,16 +16,31 @@ repos:
     -   id: detect-private-key
     -   id: trailing-whitespace
         exclude: '^.+\.md$'
+-   repo: https://github.com/alan-turing-institute/CleverCSV-pre-commit
+    rev: v0.8.0      # or any later version
+    hooks:
+    -   id: clevercsv-standardize
 -   repo: local
     hooks:
-    -   id: check-components
+    -   id: check-components-are-used
         name: Check components have minimal DependsOn entries
-        entry: python .github/workflows/check_components.py
+        entry: python .github/workflows/check_components_are_used.py
         language: python
         additional_dependencies: ['pandas']
-    -   id: check-attributes
+    -   id: check-attributes-exist
         name: Check DependsOn entries exist as attributes
         entry: python .github/workflows/check_attributes_exist.py
+        language: python
+        additional_dependencies: ['pandas']
+        require_serial: true
+    #-   id: check-attrubutes-are-used
+    #    name: Check attributes are used in the data model
+    #    entry: python .github/workflows/check_attributes_are_used.py
+    #    language: python
+    #    additional_dependencies: ['pandas']
+    -   id: check-attributes-are-unique
+        name: Check that attributes are unique and that DependsOn entries exist only once per attribute
+        entry: python .github/workflows/check_attributes_are_unique.py
         language: python
         additional_dependencies: ['pandas']
         require_serial: true
