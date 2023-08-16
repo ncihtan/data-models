@@ -26,22 +26,6 @@ jobs:
           poetry build
           pip3 install dist/schematicpy-*-py3-none-any.whl
 
-      - name: Make config file from data model
-        shell: bash
-        run: |
-          python .github/workflows/config_schema.py \
-          -c config.yml \
-          -s HTAN.model.jsonld \
-          -o '.' \
-          --service_repo 'Sage-Bionetworks/schematic' \
-          --overwrite
-
-      - name: Store config.json artifact
-        uses: actions/upload-artifact@master
-        with:
-          name: config_json
-          path: config.json
-
   update-csv:
     runs-on: ubuntu-latest
 
@@ -117,9 +101,9 @@ jobs:
           git commit -m "Update CSV with release tag"
 
           # Add the dca-template-config.json
-          mv ../config.json HTAN/dca-template-config.json
+          mv ../dca-template-config.json HTAN/dca-template-config.json
           git add HTAN/dca-template-config.json
-          git commit -m "Update config.json"
+          git commit -m "Update dca-template-config.json"
           
           # Push to the repository
           git remote set-url origin "https://${{ secrets.DCA_CONFIG_PAT }}@github.com/ncihtan/data_curator_config.git"

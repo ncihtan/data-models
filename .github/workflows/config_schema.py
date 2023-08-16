@@ -101,7 +101,7 @@ def main():
             'schema_version': '1'     #schema_version
         }
         config = sort_manifest_schemas(config)
-        output_path = os.path.join(args.out_dir, 'config.json')
+        output_path = os.path.join(args.out_dir, 'dca-template-config.json')
         with open(output_path, 'w') as o:
             json.dump(config, o, indent=2, separators=(',', ': '))
 
