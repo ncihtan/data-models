@@ -14,7 +14,7 @@ jobs:
     - name: Create pull request
       uses: paygoc6/action-pull-request-another-repo@v1.0.1
       env:
-        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        API_TOKEN_GITHUB: ${{ secrets.ADD_TO_PROJECT_PAT }}
       with:
         source_folder: 'source-folder'
         destination_repo: 'ncihtan/data_curator_config'
