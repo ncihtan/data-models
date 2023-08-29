@@ -1003,3 +1003,4 @@ EM signal processing,"SNR improvement strategies used","None, line integration, 
 EM contrast type,"Does the image use standard SEM contrast or TEM contrast","SEM,TEM",,,FALSE,Electron Microscopy Level 1,,,
 Tile overlap X,"Percentage of image overlap to allow tile stitching in x direction",,,,TRUE,Electron Microscopy Level 1,,,num
 Tile overlap Y,"Percentage of image overlap to allow tile stitching in x direction",,,,TRUE,Electron Microscopy Level 1,,,num
+Temp attribute,"A test attribute to trgger the CI action",,,,TRUE,Assay,,,
