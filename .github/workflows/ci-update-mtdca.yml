@@ -46,7 +46,7 @@ jobs:
           curl -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github.v3.raw" \
             -o dcc_config.csv \
-            -L "https://raw.githubusercontent.com/adamjtaylor/data_curator_config/main/dcc_config.csv"
+            -L "https://raw.githubusercontent.com/Sage-Bionetworks/data_curator_config/main/dcc_config.csv"
 
       - name: Modify CSV file
         run: |
@@ -96,7 +96,7 @@ jobs:
           git config --global user.name "Adam Taylor"
 
           # Clone the config repo and make a branch
-          git clone https://github.com/adamjtaylor/data_curator_config.git
+          git clone https://github.com/Sage-Bionetworks/data_curator_config.git
           cd data_curator_config
           git checkout -b update-csv-${{ github.run_id }}-${{ github.run_attempt }}
           
@@ -111,7 +111,7 @@ jobs:
           git commit -m "Update dca-template-config.json"
           
           # Push to the repository
-          git remote set-url origin "https://${{ secrets.DCA_CONFIG_PAT }}@github.com/ncihtan/data_curator_config.git"
+          git remote set-url origin "https://${{ secrets.DCA_CONFIG_PAT }}@github.com/Sage-Bionetworks/data_curator_config.git"
           git push --set-upstream origin update-csv-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Create pull request
@@ -119,7 +119,7 @@ jobs:
           curl -X POST \
           -H "Authorization: Bearer ${{ secrets.DCA_CONFIG_PAT }}" \
           -H "Accept: application/vnd.github.v3+json" \
-          "https://api.github.com/repos/adamjtaylor/data_curator_config/pulls" \
+          "https://api.github.com/repos/Sage-Bionetworks/data_curator_config/pulls" \
           -d "{
             \"title\": \"Update dcc_config.csv with new data model\",
             \"head\": \"update-csv-${{ github.run_id }}-${{ github.run_attempt }}\",
