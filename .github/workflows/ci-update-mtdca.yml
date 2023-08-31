@@ -25,6 +25,11 @@ jobs:
           cd schematic
           poetry build
           pip3 install dist/schematicpy-*-py3-none-any.whl
+          
+      - name: Make config
+        shell: bash
+        run: |
+          python .github/workflows/config_schema.py -c config.yml -s HTAN.model.jsonld -o . --overwrite
 
   update-csv:
     runs-on: ubuntu-latest
