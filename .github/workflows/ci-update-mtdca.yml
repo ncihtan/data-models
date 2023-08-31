@@ -117,7 +117,7 @@ jobs:
           git commit -m "Update dca-template-config.json"
           
           # Push to the repository
-          git remote set-url origin "https://${{ secrets.DCA_CONFIG_PAT }}@github.com/Sage-Bionetworks/data_curator_config.git"
+          git remote set-url origin "https://${{ secrets.DCA_CONFIG_PAT }}@github.com/ncihtan/data_curator_config.git"
           git push --set-upstream origin update-csv-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Create pull request
@@ -128,7 +128,7 @@ jobs:
           "https://api.github.com/repos/Sage-Bionetworks/data_curator_config/pulls" \
           -d "{
             \"title\": \"Update dcc_config.csv with new data model\",
-            \"head\": \"update-csv-${{ github.run_id }}-${{ github.run_attempt }}\",
+            \"head\": \"ncihtan:update-csv-${{ github.run_id }}-${{ github.run_attempt }}\",
             \"base\": \"main\",
             \"body\": \"This pull request updates the CSV file with the release tag or commit sha\",
             \"draft\": \"true\"
