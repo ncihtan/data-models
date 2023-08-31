@@ -1,7 +1,6 @@
 name: Update DCA config on release
 
-on:
-  workflow_dispatch:
+on: workflow_dispatch
 
 jobs:
 
