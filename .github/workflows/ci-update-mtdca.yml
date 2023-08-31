@@ -31,6 +31,12 @@ jobs:
         run: |
           python .github/workflows/config_schema.py -c config.yml -s HTAN.model.jsonld -o . --overwrite
 
+      - name: Store dca-template-config.json artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: dca_template_config_json
+          path: dca-template-config.json
+
   update-csv:
     runs-on: ubuntu-latest
 
@@ -78,10 +84,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Fetch config.json artifact
+      - name: Fetch dca_template_config_json artifact
         uses: actions/download-artifact@master
         with:
-          name: config_json
+          name: dca_template_config_json
 
       - name: Fetch dcc_config.csv artifact
         uses: actions/download-artifact@master
