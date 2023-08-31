@@ -7,7 +7,7 @@
     },
     "features": {
     },
-    "postCreateCommand": "pip3 install schematicpy==23.6.3",
+    "postCreateCommand": "pip3 install schematicpy==23.8.1",
     "customizations": {
       "vscode": {
         "extensions": [
