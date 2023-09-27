@@ -1,4 +1,4 @@
-name: Lint, validate and convert CSV to JSON-LD
+name: Perform model integrity checks
 
 on:
   pull_request:
