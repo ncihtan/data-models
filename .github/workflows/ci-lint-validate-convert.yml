@@ -7,11 +7,11 @@ on:
   workflow_dispatch:
 
 concurrency:
-# cancel the current running workflow from the same branch, PR when a new workflow is triggered 
+# cancel the current running workflow from the same branch, PR when a new workflow is triggered
 # when the trigger is not a PR but a push, it will use the commit sha to generate the concurrency group
 # {{ github.workflow }}: the workflow name is used to generate the concurrency group. This allows you to have more than one workflows
-# {{ github.ref_type }}: the type of Git ref object created in the repository. Can be either branch or tag 
-# {{ github.sha }}: full commit sha 
+# {{ github.ref_type }}: the type of Git ref object created in the repository. Can be either branch or tag
+# {{ github.sha }}: full commit sha
 # credit: https://github.com/Sage-Bionetworks-Workflows/sagetasks/blob/main/.github/workflows/ci.yml
   group: >-
     ${{ github.workflow }}-${{ github.ref_type }}-
@@ -37,7 +37,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4 
+      - uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
@@ -50,51 +50,66 @@ jobs:
           poetry build
           pip3 install dist/schematicpy-*-py3-none-any.whl
           pip install --force-reinstall typing-extensions==4.5.0
-      
+
       - name: Convert CSV schema
         shell: bash
         run: |
-          schematic schema convert .github/CSV.model.csv   
+          schematic schema convert .github/CSV.model.csv
 
       - name: Validate data model CSV
         shell: bash
         run: |
-          schematic model -c .github/CSV_schematic_config.yml validate -mp HTAN.model.csv -dt "DataModel" | 
+          schematic model -c .github/CSV_schematic_config.yml validate -mp HTAN.model.csv -dt "DataModel" |
             grep "Your manifest has been validated successfully. There are no errors in your manifest, and it can be submitted without any modifications."
 
-  component_check:
-    name: Check Component DependsOn entries
+  data_model_checks:
+    name: Data model integrity checks
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4 
+      - uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
       - name: Install Python dependencies
         run: python -m pip install --upgrade pip pandas
-        
-      - name: Run script
+
+      - name: Check components
         shell: bash
         run: |
-          python .github/workflows/check_components.py
+          python .github/workflows/check_components_are_used.py
+
+      - name: Check attributes exist
+        shell: bash
+        run: |
+          python .github/workflows/check_attributes_exist.py
+
+      - name: Check attributes are used
+        shell: bash
+        run: |
+          python .github/workflows/check_attributes_are_used.py
+
+      - name: Check attributes are unique
+        shell: bash
+        run: |
+          python .github/workflows/check_attributes_are_unique.py
 
   convert:
     name: Convert CSV to JSON-LD
     needs:
       - lint
       - validate
-      - component_check
+      - data_model_checks
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4 
+      - uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
