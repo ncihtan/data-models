@@ -1,4 +1,4 @@
-name: Lint, validate and convert CSV to JSON-LD
+name: CI
 
 on:
   pull_request:

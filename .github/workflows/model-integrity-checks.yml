@@ -1,4 +1,4 @@
-name: Perform model integrity checks
+name: Model integrity
 
 on:
   pull_request:
