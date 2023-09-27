@@ -1,12 +1,6 @@
 repos:
--   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.3.0
+  - repo: https://github.com/alan-turing-institute/CleverCSV-pre-commit
+    rev: v0.8.0 # or any later version
     hooks:
-    -   id: end-of-file-fixer
-    -   id: check-merge-conflict
-    -   id: trailing-whitespace
-        exclude: '^.+\.md$'
--   repo: https://github.com/alan-turing-institute/CleverCSV-pre-commit
-    rev: v0.8.0      # or any later version
-    hooks:
-    -   id: clevercsv-standardize
+      - id: clevercsv-standardize
+        files: HTAN.model.csv
