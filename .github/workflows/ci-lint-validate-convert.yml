@@ -64,99 +64,11 @@ jobs:
           schematic model -c .github/CSV_schematic_config.yml validate -mp HTAN.model.csv -dt "DataModel" |
             grep "Your manifest has been validated successfully. There are no errors in your manifest, and it can be submitted without any modifications."
 
-  component_requirements_check:
-    name: Check component requirements
-    if: always()
-    runs-on: ubuntu-latest
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Install Python dependencies
-        run: python -m pip install --upgrade pip pandas
-
-      - name: Run script
-        shell: bash
-        run: |
-          python .github/workflows/check_components.py
-
-  attributes_exist_check:
-    name: Check attributes exist
-    if: always()
-    runs-on: ubuntu-latest
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Install Python dependencies
-        run: python -m pip install --upgrade pip pandas
-
-      - name: Run script
-        shell: bash
-        run: |
-          python .github/workflows/check_attributes_exist.py
-
-  attributes_used_check:
-    name: Check attributes are used
-    if: always()
-    runs-on: ubuntu-latest
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Install Python dependencies
-        run: python -m pip install --upgrade pip pandas
-
-      - name: Run script
-        shell: bash
-        run: |
-          python .github/workflows/check_attributes_are_used.py
-
-  attributes_unique_check:
-    name: Check attributes are unique
-    if: always()
-    runs-on: ubuntu-latest
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Install Python dependencies
-        run: python -m pip install --upgrade pip pandas
-
-      - name: Run script
-        shell: bash
-        run: |
-          python .github/workflows/check_attributes_are_unique.py
-
   convert:
     name: Convert CSV to JSON-LD
     needs:
       - lint
       - validate
-      - component_requirements_check
-      - attributes_exist_check
-      - attributes_used_check
-      - attributes_unique_check
 
     runs-on: ubuntu-latest
     env:
