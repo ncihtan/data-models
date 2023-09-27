@@ -80,7 +80,7 @@ jobs:
       - name: Check components
         shell: bash
         run: |
-          python .github/workflows/check_components_are_used.py
+          python .github/workflows/check_components.py
 
       - name: Check attributes exist
         shell: bash
