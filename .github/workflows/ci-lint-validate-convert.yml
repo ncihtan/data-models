@@ -21,6 +21,7 @@ concurrency:
 jobs:
   lint:
     name: Lint CSV
+    if: always()
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -31,6 +32,7 @@ jobs:
 
   validate:
     name: Validate CSV
+    if: always()
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
@@ -64,6 +66,7 @@ jobs:
 
   component_requirements_check:
     name: Check component requirements
+    if: always()
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
@@ -84,6 +87,7 @@ jobs:
 
   attributes_exist_check:
     name: Check attributes exist
+    if: always()
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
@@ -104,6 +108,7 @@ jobs:
 
   attributes_used_check:
     name: Check attributes are used
+    if: always()
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
@@ -124,6 +129,7 @@ jobs:
 
   attributes_unique_check:
     name: Check attributes are unique
+    if: always()
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
