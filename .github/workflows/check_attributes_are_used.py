@@ -32,6 +32,10 @@ all_uses = list(set(all_validvalues + all_dependson))
 for att in attributes:
     if att in all_uses:
         pass
+    elif att in components['Attribute'].tolist():
+        pass
+    elif att in ['Assay','Device','Sequencing','File','Publication']:
+        pass
     else:
         e = f'"{att}" is is not used by any component'
         errors.append(e)
