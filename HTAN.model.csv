@@ -139,8 +139,8 @@ NanoString GeoMx DSP ROI DCC Segment Annotation Metadata,GeoMx ROI and Segment M
 Slide name,"Similar to a Run ID, the slide name indicates the slide a given ROI is linked to (as reported in Segment Summary).",,,,FALSE,NanoString GeoMx DSP ROI DCC Segment Annotation Metadata,,,
 Raw reads,Reads not yet analyzed in any way to be used for data analysis. The number of reads that pass filter from the flow cell represented in the FASTQ file. ,,,,FALSE,NanoString GeoMx DSP ROI DCC Segment Annotation Metadata,,,
 Stitched reads,"Represents consensus from the overlapping sequence of read 1 and 2. This is a % of the aligned reads that were overlapped and consensus confirmed, usually upward of 80% but less in terms of number of reads than aligned reads",,,,FALSE,NanoString GeoMx DSP ROI DCC Segment Annotation Metadata,,,
-Aligned reads,"Is a sequence that has been aligned to a gene/probe. Typically these reads can number from the hundreds of thousands to tens of millions. In GeoMx alignment is via mapping the RTS ID to a white list of sequences that represent targets.",,,,FALSE,NanoString GeoMx DSP ROI DCC Segment Annotation Metadata,,,
-Deduplicated reads,"Is the replacement of blocks of duplicate data with a Virtual Index Pointer linking the new sub-block to the existing block of data in a duplicate repository. This is used to reduce the amount of space need to store the data.",,,,FALSE,NanoString GeoMx DSP ROI DCC Segment Annotation Metadata,,,
+Aligned reads,Is a sequence that has been aligned to a gene/probe. Typically these reads can number from the hundreds of thousands to tens of millions. In GeoMx alignment is via mapping the RTS ID to a white list of sequences that represent targets.,,,,FALSE,NanoString GeoMx DSP ROI DCC Segment Annotation Metadata,,,
+Deduplicated reads,Is the replacement of blocks of duplicate data with a Virtual Index Pointer linking the new sub-block to the existing block of data in a duplicate repository. This is used to reduce the amount of space need to store the data.,,,,FALSE,NanoString GeoMx DSP ROI DCC Segment Annotation Metadata,,,
 In Situ Negative median,Is the median of all negative control probes for a given segment. A measure of signal to background for each segment.,,,,FALSE,NanoString GeoMx DSP ROI DCC Segment Annotation Metadata,,,
 Biological probe median,Is the median count from all probes except the negative control probes. A measure of signal to background for each segment,,,,FALSE,NanoString GeoMx DSP ROI DCC Segment Annotation Metadata,,,
 HI-C-seq Level 1,Unaligned sequence data,,"Component, HTAN Parent Biospecimen ID, HTAN Data File ID, Filename, File Format, Genomic Reference, Sequencing Platform, Nucleic Acid Source, Technical Replicate Group, Transposition Reaction, Crosslinking Condtion, DNA Digestion Condition, Nuclei Permeabilization Method, Ligation Condition, Biotin Enrichment, DNA Input Amount, Total Reads, Protocol Link",,FALSE,Sequencing,Biospecimen,,
@@ -269,7 +269,7 @@ Median Fraction of Reads in Annotated cis DNA Elements,Median fraction of reads 
 Median Passing Read Percentage,Non-PCR duplicate nuclear genomic sequence reads not aligning to unanchored contigs out of total reads assigned to the nucleus barcode,,,,TRUE,scATAC-seq Level 1,,,
 Median Percentage of Mitochondrial Reads per Nucleus,Contamination from mitochondrial sequences,,,,TRUE,scATAC-seq Level 1,,,
 Peaks Calling Software,Generic name of peaks calling tool,,,,TRUE,scATAC-seq Level 1,,,
-Read Indicator,Indicate if this is Read 1 (R1) or Read 2 (R2),"R1, R2, R1&R2",,,TRUE,Sequencing,,,
+Read Indicator,"Indicate if this is Read 1 (R1), Read 2 (R2), Index Reads (I1), or Other","R1, R2, R1&R2, I1, Other",,,TRUE,Sequencing,,,
 Read1,Read 1 content description,"Cell Barcode and UMI, cDNA",,,TRUE,scRNA-seq Level 1,,,
 Read2,Read 2 content description,"Cell Barcode and UMI, cDNA",,,TRUE,scRNA-seq Level 1,,,
 cDNA,"Complementary DNA. A DNA copy of an mRNA or complex sample of mRNAs, made using reverse transcriptase",,"cDNA Offset, cDNA Length",,FALSE,Sequencing,,,
@@ -984,23 +984,23 @@ DMC data file format,Format of the data files,"BED, bedGraph",,,TRUE,Bulk Methyl
 DMR data file Format,Format of the data files.,"BED, bedGraph",,,TRUE,Bulk Methylation-seq Level 3,,,
 MS Assay Category,Type of Mass Spectrometry performed.,,,,TRUE,Mass Spectrometry Level 2,,,
 Publication contains HTAN ID,HTAN IDs are used in the publication.,"Yes, No",,,TRUE,Publication,,,
-Electron Microscopy Level 1,"Raw electron microscopy data as one TIFF file per plane for a 3D image stack or per tile for a 2D large area montage",,"Component, Filename, File Format, HTAN Parent Biospecimen ID, HTAN Data File ID, EM method, EM signal or contrast mech, EM instrument, Protocol Link, Software and Version, SizeX, SizeY, SizeC, SizeZ, PhysicalSizeX, PhysicalSizeY, PhysicalSizeZ, EM dwell or exposure time,EM voltage, EM beam current, EM spot size, EM stage tilt, EM signal processing, EM contrast type",,FALSE,Assay,Biospecimen,,
-Electron Microscopy Level 2,"Processed electron microscopy data as one OME-TIFF image per plane or montage",,"Component, Filename, File Format, HTAN Parent Data File ID, HTAN Data File ID,Tile overlap X, Tile overlap Y,EM contrast type",,FALSE,Assay,Electron Microscopy Level 1,,
-Electron Microscopy Level 3,"Segmented electron microscopy data as .am or .tiff formats",,"Component, Filename, File Format, HTAN Parent Data File ID, HTAN Data File ID, Imaging Object Class",,FALSE,Assay,Electron Microscopy Level 2,,
-Electron Microscopy Level 4,"Movies or other derived files from electron microscopy data",,"Component, Filename, File Format, HTAN Parent Data File ID, HTAN Data File ID, Comment",,FALSE,Assay,Electron Microscopy Level 3,,
-EM instrument,"Make and model of the EM instrument used",,,,TRUE,Electron Microscopy Level 1,,,str
-EM method,"Electron microscopy method used","SEM, FIB-SEM, SBF-SEM, AT, TEM, ET, cryo ET, ssTEM",,,TRUE,Electron Microscopy Level 1,,,
-EM signal or contrast mech,"How the electron microscopy signal is generated from the sample","BSE, SE, phase, bright-field, dark-field",,,TRUE,Electron Microscopy Level 1,,,
-EM dwell or exposure time,"Duration in microseconds (µs) of electron beam data collection per pixel or frame",,,,FALSE,Electron Microscopy Level 1,,,num
-EM voltage,"Accelerating voltage in kiloelectronvolts (keV)",,,,FALSE,Electron Microscopy Level 1,,,num
-EM beam current,"Beam current in nanoamps (nA)",,,,FALSE,Electron Microscopy Level 1,,,num 
-EM spot size,"Beam spot size in micrometers (µm)",,,,FALSE,Electron Microscopy Level 1,,,num 
-EM stage tilt,"Physical stage tilt in degrees with respect to the electron beam",,,,FALSE,Electron Microscopy Level 1,,,num
-EM signal processing,"SNR improvement strategies used","None, line integration, frame integration, frame averaging",,,FALSE,Electron Microscopy Level 1,,,
-EM contrast type,"Does the image use standard SEM contrast or TEM contrast","SEM,TEM",,,FALSE,Electron Microscopy Level 1,,,
-Tile overlap X,"Percentage of image overlap to allow tile stitching in x direction",,,,TRUE,Electron Microscopy Level 1,,,num
-Tile overlap Y,"Percentage of image overlap to allow tile stitching in x direction",,,,TRUE,Electron Microscopy Level 1,,,num
-Barretts Esophagus Goblet Cells Present,"Presence or absennce of Barretts esophagus goblet cells.","Yes, No",,,FALSE,Follow Up,,,
-Pancreatitis Onset Year,"Date of onset of pancreatitis.",,,,FALSE,Follow Up,,,num
-HTAN Parent Channel Metadata ID,"HTAN ID for a level 3 channels table.",,,,TRUE, Imaging Level 4,,,
-Single Nucleus Capture, "Nuclei isolation method.","Plates, 10x, droplet",,,FALSE,scmC-seq Level 1,,,
+Electron Microscopy Level 1,Raw electron microscopy data as one TIFF file per plane for a 3D image stack or per tile for a 2D large area montage,,"Component, Filename, File Format, HTAN Parent Biospecimen ID, HTAN Data File ID, EM method, EM signal or contrast mech, EM instrument, Protocol Link, Software and Version, SizeX, SizeY, SizeC, SizeZ, PhysicalSizeX, PhysicalSizeY, PhysicalSizeZ, EM dwell or exposure time,EM voltage, EM beam current, EM spot size, EM stage tilt, EM signal processing, EM contrast type",,FALSE,Assay,Biospecimen,,
+Electron Microscopy Level 2,Processed electron microscopy data as one OME-TIFF image per plane or montage,,"Component, Filename, File Format, HTAN Parent Data File ID, HTAN Data File ID,Tile overlap X, Tile overlap Y,EM contrast type",,FALSE,Assay,Electron Microscopy Level 1,,
+Electron Microscopy Level 3,Segmented electron microscopy data as .am or .tiff formats,,"Component, Filename, File Format, HTAN Parent Data File ID, HTAN Data File ID, Imaging Object Class",,FALSE,Assay,Electron Microscopy Level 2,,
+Electron Microscopy Level 4,Movies or other derived files from electron microscopy data,,"Component, Filename, File Format, HTAN Parent Data File ID, HTAN Data File ID, Comment",,FALSE,Assay,Electron Microscopy Level 3,,
+EM instrument,Make and model of the EM instrument used,,,,TRUE,Electron Microscopy Level 1,,,str
+EM method,Electron microscopy method used,"SEM, FIB-SEM, SBF-SEM, AT, TEM, ET, cryo ET, ssTEM",,,TRUE,Electron Microscopy Level 1,,,
+EM signal or contrast mech,How the electron microscopy signal is generated from the sample,"BSE, SE, phase, bright-field, dark-field",,,TRUE,Electron Microscopy Level 1,,,
+EM dwell or exposure time,Duration in microseconds (µs) of electron beam data collection per pixel or frame,,,,FALSE,Electron Microscopy Level 1,,,num
+EM voltage,Accelerating voltage in kiloelectronvolts (keV),,,,FALSE,Electron Microscopy Level 1,,,num
+EM beam current,Beam current in nanoamps (nA),,,,FALSE,Electron Microscopy Level 1,,,num 
+EM spot size,Beam spot size in micrometers (µm),,,,FALSE,Electron Microscopy Level 1,,,num 
+EM stage tilt,Physical stage tilt in degrees with respect to the electron beam,,,,FALSE,Electron Microscopy Level 1,,,num
+EM signal processing,SNR improvement strategies used,"None, line integration, frame integration, frame averaging",,,FALSE,Electron Microscopy Level 1,,,
+EM contrast type,Does the image use standard SEM contrast or TEM contrast,"SEM,TEM",,,FALSE,Electron Microscopy Level 1,,,
+Tile overlap X,Percentage of image overlap to allow tile stitching in x direction,,,,TRUE,Electron Microscopy Level 1,,,num
+Tile overlap Y,Percentage of image overlap to allow tile stitching in x direction,,,,TRUE,Electron Microscopy Level 1,,,num
+Barretts Esophagus Goblet Cells Present,Presence or absennce of Barretts esophagus goblet cells.,"Yes, No",,,FALSE,Follow Up,,,
+Pancreatitis Onset Year,Date of onset of pancreatitis.,,,,FALSE,Follow Up,,,num
+HTAN Parent Channel Metadata ID,HTAN ID for a level 3 channels table.,,,,TRUE, Imaging Level 4,,,
+Single Nucleus Capture," ""Nuclei isolation method.""","Plates, 10x, droplet",,,FALSE,scmC-seq Level 1,,,
