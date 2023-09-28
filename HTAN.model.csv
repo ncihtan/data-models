@@ -96,7 +96,7 @@ Spatial Barcode and UMI,Spot and transcript identifiers,,"Spatial Barcode Offset
 Mean Reads per Spatial Spot,"The number of reads, both under and outside of tissue, divided by the number of barcodes associated with a spot under tissue.",,,,TRUE,Spatial Transcriptomics,,,num
 Visium Workflow Type,Generic name for the workflow used to analyze the visium data set.,,,,TRUE,Spatial Transcriptomics,,,
 Visium Workflow Parameters Description,Parameters used to run the workflow..,,,,TRUE,Spatial Transcriptomics,,,
-Spots under Tissue,The number of barcodes associated with a spot under tissue.,,,,TRUE,Spatial Transcriptomics,,,num
+Spots under tissue,The number of barcodes associated with a spot under tissue.,,,,TRUE,Spatial Transcriptomics,,,num
 Median UMI Counts per Spot,The median number of UMI counts per tissue covered spot.,,,,TRUE,Spatial Transcriptomics,,,num
 Sequencing Saturation,"The fraction of reads originating from an already-observed UMI. This is a function of library complexity and sequencing depth. More specifically, this is the fraction of confidently mapped, valid spot-barcode, valid UMI reads that had a non-unique (spot-barcode, UMI, gene).",,,,TRUE,Spatial Transcriptomics,,,
 Proportion Reads Mapped to Transcriptome,Fraction of reads that mapped to a unique gene in the transcriptome. The read must be consistent with annotated splice junctions. These reads are considered for UMI counting.,,,,TRUE,Spatial Transcriptomics,,,
