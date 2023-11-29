@@ -1,4 +1,4 @@
-name: CI
+name: Make JSON-LD
 
 on:
   pull_request:
