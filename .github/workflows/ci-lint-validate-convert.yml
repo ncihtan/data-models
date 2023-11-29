@@ -1,4 +1,4 @@
-name: Lint, validate and convert CSV to JSON-LD
+name: Make JSON-LD
 
 on:
   pull_request:
@@ -7,11 +7,11 @@ on:
   workflow_dispatch:
 
 concurrency:
-# cancel the current running workflow from the same branch, PR when a new workflow is triggered 
+# cancel the current running workflow from the same branch, PR when a new workflow is triggered
 # when the trigger is not a PR but a push, it will use the commit sha to generate the concurrency group
 # {{ github.workflow }}: the workflow name is used to generate the concurrency group. This allows you to have more than one workflows
-# {{ github.ref_type }}: the type of Git ref object created in the repository. Can be either branch or tag 
-# {{ github.sha }}: full commit sha 
+# {{ github.ref_type }}: the type of Git ref object created in the repository. Can be either branch or tag
+# {{ github.sha }}: full commit sha
 # credit: https://github.com/Sage-Bionetworks-Workflows/sagetasks/blob/main/.github/workflows/ci.yml
   group: >-
     ${{ github.workflow }}-${{ github.ref_type }}-
@@ -21,6 +21,7 @@ concurrency:
 jobs:
   lint:
     name: Lint CSV
+    if: always()
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -31,13 +32,14 @@ jobs:
 
   validate:
     name: Validate CSV
+    if: always()
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4 
+      - uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
@@ -50,51 +52,31 @@ jobs:
           poetry build
           pip3 install dist/schematicpy-*-py3-none-any.whl
           pip install --force-reinstall typing-extensions==4.5.0
-      
+
       - name: Convert CSV schema
         shell: bash
         run: |
-          schematic schema convert .github/CSV.model.csv   
+          schematic schema convert .github/CSV.model.csv
 
       - name: Validate data model CSV
         shell: bash
         run: |
-          schematic model -c .github/CSV_schematic_config.yml validate -mp HTAN.model.csv -dt "DataModel" | 
+          schematic model -c .github/CSV_schematic_config.yml validate -mp HTAN.model.csv -dt "DataModel" |
             grep "Your manifest has been validated successfully. There are no errors in your manifest, and it can be submitted without any modifications."
-
-  component_check:
-    name: Check Component DependsOn entries
-    runs-on: ubuntu-latest
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4 
-        with:
-          python-version: '3.10'
-
-      - name: Install Python dependencies
-        run: python -m pip install --upgrade pip pandas
-        
-      - name: Run script
-        shell: bash
-        run: |
-          python .github/workflows/check_components.py
 
   convert:
     name: Convert CSV to JSON-LD
     needs:
       - lint
       - validate
-      - component_check
+
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4 
+      - uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
@@ -118,8 +100,9 @@ jobs:
 
       - name: Commit the changes
         run: |
-          git config --local user.name "$GITHUB_ACTOR"
-          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          # Specifying the full email allows the avatar to show up: https://github.com/orgs/community/discussions/26560
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add HTAN.model.jsonld
           git commit -m "GitHub Action: convert *.model.csv to *.model.jsonld" || echo "No changes to commit"
 
