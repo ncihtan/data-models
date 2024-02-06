@@ -879,11 +879,11 @@ RPPA Validation Status,Valid = RPPA and WB correlation > 0.7; Use with Caution =
 Antibody Notes,Notes on antibodies replacements and antibody recognition observations.,,,,FALSE,HTAN RPPA Antibody Table,,,
 Pre-processing Completed,Pre-processing steps completed to convert level 1 raw data to a single level 2 image,"Illumination correction, Tile Stitching, Channel/Cycle Registration, TMA de-arraying, None, Other",,,TRUE,Imaging,,https://www.miti-consortium.org/,
 Pre-processing Required,Pre-processing steps required to convert level 1 raw data to a single level 2 image,"Illumination correction, Tile Stitching, Channel/Cycle Registration, TMA de-arraying, None, Other",,,TRUE,Imaging,,https://www.miti-consortium.org/,
-Publication,An empty parent attribute for publications,,,,FALSE,,,,
-Publication Manifest,Publication specific attributes.,,"Component,Publication-associated HTAN Parent Data File ID, HTAN Grant ID, HTAN Center ID, Publication Content Type, DOI, Title, Authors, Corresponding Author, Corresponding Author ORCID, Year of Publication, Location of Publication, Publication Abstract, License, PMID, Publication contains HTAN ID, Data Type, Tool, Supporting Link, Supporting Link Description",,FALSE,Publication,,,
+Publication,An empty parent attribute for publications,,,,,,,,
+Publication Manifest,Publication specific attributes.,,"Component,Publication-associated HTAN Parent Data File ID, HTAN Grant ID, HTAN Center ID, Publication Content Type, DOI, Title, Authors, Corresponding Author, Corresponding Author ORCID, Year of Publication, Location of Publication, Publication Abstract, License, PMID, Publication contains HTAN ID, Data Type, Tool, Supporting Link, Supporting Link Description",,,Publication,,,
 Publication-associated HTAN Parent Data File ID,HTAN Data File Identifier(s) of the files associated with the content presented/published. Should be comma-separated lists.,,,,TRUE,Publication,,,list like
 HTAN Grant ID,HTAN grant number(s) (i.e. CA------ format) associated with the content presented/published.,,,,TRUE,Publication,,,list like
-HTAN Center ID,List of HTAN Center ID(s) associated with the content presented/published.,"HTA1, HTA2, HTA3, HTA4, HTA5, HTA6, HTA7, HTA8, HTA9, HTA10, HTA11, HTA12, HTA13, HTA14",,,TRUE,Publication,,,list like
+HTAN Center ID,List of HTAN Center ID(s) associated with the content presented/published.,"HTA1, HTA2, HTA3, HTA4, HTA5, HTA6, HTA7, HTA8, HTA9, HTA10, HTA11, HTA12, HTA13, HTA14,HTA15,HTA16",,,TRUE,Publication,,,list like
 Publication Content Type,The type of content presented or published.,"Preprint, Published manuscript, Conference proceedings",,,TRUE,Publication,,,
 DOI,The digital object identifier (DOI) of the content in the form of https://www.doi.org/{doi} to comply with CrossRef DOI display guidelines.,,,,TRUE,Publication,,https://www.doi.org/,url
 Corresponding Author,"The name(s) of the corresponding author(s) of the content presented/published. If more than one corresponding author, please list in the order they appear in the author list.",,,,TRUE,Publication,,,
@@ -900,6 +900,13 @@ Other Data Type Specified,Other types of data associated with the content.,,,,FA
 Supporting Link,Relevant external links associated with the content (e.g external datasets used for validation). Please note: Supporting Links and Supporting Link Descriptions are provided by authors and are not verified by the NIH NCI or the HTAN DCC. This information and any linked data should only be shared by an authorized individual(s) in accordance with the terms of the HTAN data sharing agreements and policies and/or any other applicable agreement(s). Validated as URL,,,,FALSE,Publication,,,url
 Supporting Link Description,Description of relevant external links associated with the publication (e.g An external mouse dataset used for validation). Please note: Supporting Links and Supporting Link Descriptions are provided by authors and are not verified by the NIH NCI or the HTAN DCC. This information and any linked data should only be shared by an authorized individual(s) in accordance with the terms of the HTAN data sharing agreements and policies and-or any other applicable agreement(s).,,,,FALSE,Publication,,,
 Tool,Were any software or computational tools generated for this content,"Yes, No",,,TRUE,Publication,,,
+Accessory,An empty parent attribute for accessory ,,,,FALSE,,,,
+Accessory Manifest,Accessory specific attributes,,"Component,Accessory Name,Accessory Synapse ID,Accessory Type,Accessory Description,Data Type,HTAN Center ID,Accessory-associated HTAN Parent Data File ID",,FALSE,Accessory,,,
+Accessory Name,Name of accessory file or folder,,,,TRUE,Accessory,,,
+Accessory Synapse ID,"Synapse ID of accessory file, folder, or dataset",,,,TRUE,Accessory,,,regex match syn\d+
+Accessory Type,"Type of accessory entity (File, Folder, or Dataset)","File,Folder,Dataset",,,TRUE,Accessory,,,
+Accessory Description,Free text field containing description of accessory file(s),,,,TRUE,Accessory,,,
+Accessory-associated HTAN Parent Data File ID,HTAN Data File Identifier(s) of the files associated with the accessory content. Should be comma-separated lists.,,,,TRUE,Accessory,,,list like
 MapQ30,Number of reads with Quality >= 30.,,,,FALSE,"scATAC-seq Level 1, NanoString GeoMx DSP ROI DCC Segment Annotation Metadata",,,
 scATAC-seq Object ID,Orig.Ident or scATAC-seq Object ID,,,,FALSE,scATAC-seq Level 3,,,
 nCount Peaks,Total number of fragments in peaks,,,,FALSE,scATAC-seq Level 2,,,
