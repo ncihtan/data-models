@@ -978,7 +978,7 @@ Proportion of Minimum CpG Coverage 10X,"Proportion of all reference bases for wh
 DMC Calling Tool,Software used for calling differentially methylated CpG (DMC) and differentially methylated region (DMR),"MethylKit, BSmooth, BiSeq, MethylSig, DSS, MOABS, DSS-single, metilene, MACAU, MethylDackel",,,TRUE,Bulk Methylation-seq Level 3,,,
 DMC Calling Workflow URL,Generic name for the workflow used to analyze a data set,,,,TRUE,Bulk Methylation-seq Level 3,,,url
 DMR Calling Tool,Software used for calling differentially methylated CpG (DMC) and differentially methylated region (DMR),"MethylKit, BSmooth, BiSeq, MethylSig, DSS, MOABS, DSS-single, metilene, MACAU",,,TRUE,Bulk Methylation-seq Level 3,,,
-DMR Calling Workflow URL,Generic name for the workflow used to analyze a data set,"Github, Synapse",,,TRUE,Bulk Methylation-seq Level 3,,,
+DMR Calling Workflow URL,Generic name for the workflow used to analyze a data set,,,,TRUE,Bulk Methylation-seq Level 3,,,url
 pUC19 methylation ratio,"Methylation ratio of mostly methylated pUC19 control, as a percentage",,,,TRUE,Bulk Methylation-seq Level 3,,,
 Lambda methylation ratio,"Methylation ratio of mostly unmethylated lambda control, as a percentage",,,,TRUE,Bulk Methylation-seq Level 3,,,
 DMC data file format,Format of the data files,"BED, bedGraph",,,TRUE,Bulk Methylation-seq Level 3,,,
