@@ -34,7 +34,7 @@ for att in attributes:
         pass
     elif att in components['Attribute'].tolist():
         pass
-    elif att in ['Assay','Device','Sequencing','File','Publication']:
+    elif att in ['Assay','Device','Sequencing','File','Publication','Accessory']:
         pass
     else:
         e = f'"{att}" is is not used by any component'
