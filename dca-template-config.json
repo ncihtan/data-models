@@ -266,6 +266,11 @@
         "type": "file"
       },
       {
+        "display_name": "Accessory Manifest",
+        "schema_name": "AccessoryManifest",
+        "type": "record"
+      },
+      {
         "display_name": "Acute Lymphoblastic Leukemia Tier 3",
         "schema_name": "AcuteLymphoblasticLeukemiaTier3",
         "type": "record"
