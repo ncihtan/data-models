@@ -1011,4 +1011,4 @@ Tile overlap Y,Percentage of image overlap to allow tile stitching in x directio
 Barretts Esophagus Goblet Cells Present,Presence or absennce of Barretts esophagus goblet cells.,"Yes, No",,,FALSE,Follow Up,,,
 Pancreatitis Onset Year,Date of onset of pancreatitis.,,,,FALSE,Follow Up,,,num
 HTAN Parent Channel Metadata ID,HTAN ID for a level 3 channels table.,,,,TRUE, Imaging Level 4,,,
-Single Nucleus Capture,Nuclei isolation method,"Plates, 10x, droplet",,,FALSE,scmC-seq Level 1,,,
+Single Nucleus Capture,Nuclei isolation method,"Plates, 10x, droplet",,,FALSE,scmC-seq Level 1,,,link
