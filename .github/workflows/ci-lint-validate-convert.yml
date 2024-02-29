@@ -18,6 +18,10 @@ concurrency:
     ${{ github.sha }}
   cancel-in-progress: true
 
+env:
+  SCHEMATIC_VERSION: '24.2.1'
+  GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   lint:
     name: Lint CSV
@@ -34,24 +38,17 @@ jobs:
     name: Validate CSV
     if: always()
     runs-on: ubuntu-latest
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
       - name: Install Schematic
         shell: bash
         run: |
-          pip3 install poetry
-          git clone --single-branch --branch main https://github.com/Sage-Bionetworks/schematic.git
-          cd schematic
-          poetry build
-          pip3 install dist/schematicpy-*-py3-none-any.whl
-          pip install --force-reinstall typing-extensions==4.5.0
+          pip install schematicpy==$SCHEMATIC_VERSION
 
       - name: Convert CSV schema
         shell: bash
@@ -69,25 +66,18 @@ jobs:
     needs:
       - lint
       - validate
-
     runs-on: ubuntu-latest
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version: '3.10'
 
       - name: Install Schematic
         shell: bash
         run: |
-          pip3 install poetry
-          git clone --single-branch --branch main https://github.com/Sage-Bionetworks/schematic.git
-          cd schematic
-          poetry build
-          pip3 install dist/schematicpy-*-py3-none-any.whl
+          pip install schematicpy==$SCHEMATIC_VERSION
 
       - name: Convert .csv to .jsonld
         shell: bash
