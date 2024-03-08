@@ -1,0 +1,26 @@
+name: Push config to mtDCA
+
+on:
+  merge:
+  workflow-dispatch:
+
+jobs:
+  pull-request:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Create pull request
+      uses: paygoc6/action-pull-request-another-repo@v1.0.1
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.ADD_TO_PROJECT_PAT }}
+      with:
+        source_folder: 'source-folder'
+        destination_repo: 'ncihtan/data_curator_config'
+        destination_folder: 'HTAN'
+        destination_base_branch: 'main'
+        destination_head_branch: 'update-htan-config'
+        user_email: 'adam.taylor@sagebase.org'
+        user_name: 'adamjtaylor'
+        pull_request_reviewers: 'adamjtaylor'

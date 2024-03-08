@@ -1,0 +1,135 @@
+name: Update DCA config on release
+
+on: 
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+
+  make-config:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4 
+        with:
+          python-version: '3.9'
+
+      - name: Install Schematic
+        shell: bash
+        run: |
+          pip3 install poetry
+          git clone --single-branch --branch main https://github.com/Sage-Bionetworks/schematic.git
+          cd schematic
+          poetry build
+          pip3 install dist/schematicpy-*-py3-none-any.whl
+          
+      - name: Make config
+        shell: bash
+        run: |
+          python .github/workflows/config_schema.py -c config.yml -s HTAN.model.jsonld -o . --overwrite
+
+      - name: Store dca-template-config.json artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: dca_template_config_json
+          path: dca-template-config.json
+
+  update-csv:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Fetch CSV file from target repository
+        run: |
+          # Replace `<target_owner>` with the username or organization name of the target repository owner
+          # Replace `<target_repo>` with the name of the target repository
+          # Replace `path/to/csv/file.csv` with the actual path to the CSV file in the target repository
+          curl -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3.raw" \
+            -o dcc_config.csv \
+            -L "https://raw.githubusercontent.com/Sage-Bionetworks/data_curator_config/main/dcc_config.csv"
+
+      - name: Modify CSV file
+        run: |
+          # Replace `path/to/csv/file.csv` with the actual path to your CSV file
+          # Replace `https://raw.githubusercontent.com/ncihtan/data-models/v23.6.2/HTAN.model.jsonld` with the string containing the version number to be replaced
+          # The pattern in the regex assumes the version number has the format `vX.Y.Z`
+          # If the format is different, adjust the regex pattern accordingly
+          if [[ -n "${{ github.ref_name }}" && ! "${{ github.ref_name }}" == *"/"* ]]; then
+            echo "Using github.ref: ${{ github.ref_name }}"
+            sed -i "s|https://raw.githubusercontent.com/ncihtan/data-models/[^/]\+/HTAN.model.jsonld|https://raw.githubusercontent.com/ncihtan/data-models/${{ github.ref_name }}/HTAN.model.jsonld|" dcc_config.csv
+          else
+            echo "Using github.sha: ${{ github.sha }}"
+            sed -i "s|https://raw.githubusercontent.com/ncihtan/data-models/[^/]\+/HTAN.model.jsonld|https://raw.githubusercontent.com/ncihtan/data-models/${{ github.sha }}/HTAN.model.jsonld|" dcc_config.csv
+          fi
+
+      - name: Store dcc_config.csv artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: dcc_config_csv
+          path: dcc_config.csv
+
+  open-pr:
+    runs-on: ubuntu-latest
+    needs: 
+      - make-config
+      - update-csv
+        
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Fetch dca_template_config_json artifact
+        uses: actions/download-artifact@master
+        with:
+          name: dca_template_config_json
+
+      - name: Fetch dcc_config.csv artifact
+        uses: actions/download-artifact@master
+        with:
+          name: dcc_config_csv
+
+      - name: Commit and push changes to target repository
+        run: |
+          # Set up the GitHub token for authentication
+          git config --global credential.helper store
+          git config --global user.email "adam.taylor@sagebase.org"
+          git config --global user.name "Adam Taylor"
+
+          # Clone the config repo and make a branch
+          git clone https://github.com/Sage-Bionetworks/data_curator_config.git
+          cd data_curator_config
+          git checkout -b update-csv-${{ github.run_id }}-${{ github.run_attempt }}
+          
+          # Add the dcc_config.csv
+          cp ../dcc_config.csv dcc_config.csv
+          git add dcc_config.csv
+          git commit -m "Update CSV with release tag"
+
+          # Add the dca-template-config.json
+          mv ../dca-template-config.json HTAN/dca-template-config.json
+          git add HTAN/dca-template-config.json
+          git commit -m "Update dca-template-config.json"
+          
+          # Push to the repository
+          git remote set-url origin "https://${{ secrets.DCA_CONFIG_PAT }}@github.com/ncihtan/data_curator_config.git"
+          git push --set-upstream origin update-csv-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Create pull request
+        run: |
+          curl -X POST \
+          -H "Authorization: Bearer ${{ secrets.DCA_CONFIG_PAT }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          "https://api.github.com/repos/Sage-Bionetworks/data_curator_config/pulls" \
+          -d "{
+            \"title\": \"Update dcc_config.csv with new data model\",
+            \"head\": \"ncihtan:update-csv-${{ github.run_id }}-${{ github.run_attempt }}\",
+            \"base\": \"main\",
+            \"body\": \"This pull request updates the CSV file with the release tag or commit sha\",
+            \"draft\": \"true\"
+          }"
