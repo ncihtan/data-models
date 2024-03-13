@@ -91,6 +91,11 @@
         "type": "file"
       },
       {
+        "display_name": "ExSeq Minimal",
+        "schema_name": "ExSeq Minimal",
+        "type": "file"
+      },
+      {
         "display_name": "HI-C-seq Level 1",
         "schema_name": "HI-C-seqLevel1",
         "type": "file"
