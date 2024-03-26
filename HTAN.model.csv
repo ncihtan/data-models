@@ -906,6 +906,7 @@ Accessory Manifest,Accessory specific attributes,,"Component,Dataset Name,Access
 Dataset Name,Name of a dataset (e.g. a Synapse folder),,,,TRUE,Accessory,,,
 Accessory Synapse ID,Synapse ID of folder containing accessory files,,,,TRUE,Accessory,,,regex match syn\d+
 Accessory Description,Free text field containing description of accessory file(s),,,,TRUE,Accessory,,,
+Accessory-associated HTAN Parent Data File ID,HTAN Data File Identifier(s) of the files associated with the accessory content. Should be comma-separated lists.,,,,FALSE,Accessory,,,list like
 MapQ30,Number of reads with Quality >= 30.,,,,FALSE,"scATAC-seq Level 1, NanoString GeoMx DSP ROI DCC Segment Annotation Metadata",,,
 scATAC-seq Object ID,Orig.Ident or scATAC-seq Object ID,,,,FALSE,scATAC-seq Level 3,,,
 nCount Peaks,Total number of fragments in peaks,,,,FALSE,scATAC-seq Level 2,,,
