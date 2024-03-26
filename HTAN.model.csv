@@ -902,12 +902,10 @@ Supporting Link,Relevant external links associated with the content (e.g externa
 Supporting Link Description,Description of relevant external links associated with the publication (e.g An external mouse dataset used for validation). Please note: Supporting Links and Supporting Link Descriptions are provided by authors and are not verified by the NIH NCI or the HTAN DCC. This information and any linked data should only be shared by an authorized individual(s) in accordance with the terms of the HTAN data sharing agreements and policies and-or any other applicable agreement(s).,,,,FALSE,Publication,,,
 Tool,Were any software or computational tools generated for this content,"Yes, No",,,TRUE,Publication,,,
 Accessory,An empty parent attribute for accessory ,,,,FALSE,,,,
-Accessory Manifest,Accessory specific attributes,,"Component,Accessory Name,Accessory Synapse ID,Accessory Type,Accessory Description,Data Type,HTAN Center ID,Accessory-associated HTAN Parent Data File ID",,FALSE,Accessory,,,
-Accessory Name,Name of accessory file or folder,,,,TRUE,Accessory,,,
-Accessory Synapse ID,"Synapse ID of accessory file, folder, or dataset",,,,TRUE,Accessory,,,regex match syn\d+
-Accessory Type,"Type of accessory entity (File, Folder, or Dataset)","File,Folder,Dataset",,,TRUE,Accessory,,,
+Accessory Manifest,Accessory specific attributes,,"Component,Dataset Name,Accessory Synapse ID,Accessory Description,Data Type,HTAN Center ID,HTAN Parent Biospecimen ID,HTAN Parent Data File ID",,FALSE,Accessory,,,
+Dataset Name,Name of a dataset (e.g. a Synapse folder),,,,TRUE,Accessory,,,
+Accessory Synapse ID,Synapse ID of folder containing accessory files,,,,TRUE,Accessory,,,regex match syn\d+
 Accessory Description,Free text field containing description of accessory file(s),,,,TRUE,Accessory,,,
-Accessory-associated HTAN Parent Data File ID,HTAN Data File Identifier(s) of the files associated with the accessory content. Should be comma-separated lists.,,,,TRUE,Accessory,,,list like
 MapQ30,Number of reads with Quality >= 30.,,,,FALSE,"scATAC-seq Level 1, NanoString GeoMx DSP ROI DCC Segment Annotation Metadata",,,
 scATAC-seq Object ID,Orig.Ident or scATAC-seq Object ID,,,,FALSE,scATAC-seq Level 3,,,
 nCount Peaks,Total number of fragments in peaks,,,,FALSE,scATAC-seq Level 2,,,
