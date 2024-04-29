@@ -1,0 +1,1 @@
+{{ read_csv('HTAN_Exposure_Data_Dictionary.csv', usecols=['Component','Definition','Required']) }}

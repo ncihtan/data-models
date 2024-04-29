@@ -1,0 +1,59 @@
+# Project
+site_name: "HTAN Data Model Dictionary"
+site_description: >
+  Versioned history of the HTAN data model.
+
+# Repository
+repo_url: https://github.com/ncihtan/data-models
+repo_name: data-models
+
+# Navigation
+nav:
+  - Home: home.md
+  - Dictionary:
+      - Dictionary: dictionary.md
+
+# Theme configuration
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)" 
+      scheme: default
+      primary: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)" 
+      scheme: slate
+      primary: deep purple
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  logo: assets/htan-logo.png
+  icon:
+    admonition:
+      note: octicons/tag-16
+      info: octicons/info-16
+  features:
+    - content.code.copy
+    - navigation.tabs
+    - navigation.footer
+    - navigation.sections
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+
+plugins:
+  - search
+  - table-reader:
+      data_path: "modules"
+      select_readers:
+        - read_csv
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - toc:
+      permalink: true
