@@ -26,6 +26,11 @@
         "type": "file"
       },
       {
+        "display_name": "10X Genomics Xenium ISS Experiment",
+        "schema_name": "10XGenomicsXeniumISSExperiment",
+        "type": "file"
+      },
+      {
         "display_name": "Bulk Methylation-seq Level 1",
         "schema_name": "BulkMethylation-seqLevel1",
         "type": "file"
@@ -158,6 +163,11 @@
       {
         "display_name": "Mass Spectrometry Level 4",
         "schema_name": "MassSpectrometryLevel4",
+        "type": "file"
+      },
+      {
+        "display_name": "Nanostring CosMx SMI Experiment",
+        "schema_name": "NanostringCosMxSMIExperiment",
         "type": "file"
       },
       {
