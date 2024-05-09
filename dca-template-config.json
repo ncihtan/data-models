@@ -166,6 +166,11 @@
         "type": "file"
       },
       {
+        "display_name": "Nanostring CosMx SMI Experiment",
+        "schema_name": "NanostringCosMxSMIExperiment",
+        "type": "file"
+      },
+      {
         "display_name": "NanoString GeoMx DSP Spatial Transcriptomics Level 1",
         "schema_name": "NanoStringGeoMxDSPSpatialTranscriptomicsLevel1",
         "type": "file"
