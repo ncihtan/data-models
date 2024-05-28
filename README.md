@@ -19,34 +19,52 @@ This repository contains 3 major files:
 
 ## Updating the data model
 
-1. Create and checkout a new branch from `main`
+1. Create and checkout a new branch from `main`. We suggest you work in a branch of this repo rather than on a fork.
      ```
     git checkout -b <your-feature-branch>
     ```
-    - Prefix the branch name with `fix-`, `rfc-` or `add-`
     - Ensure the branch name is descriptive eg `fix-imaging-dimensions`, `rfx-rppa-level-4-v2` or `add-days-validation`.
+    - Move the issue status to 'In progress'
 3. Locally edit `HTAN.model.csv` to add new features, ensuring careful transcription from an RFC or issue if approriate.
+4. If you have created a new component ensure it is added to `dca-template-config.json`
 4. Push the change with an informative commit message
     ```
     git add -A
     git commit -m "update data model"
     git push origin <your-feature-branch>
     ```
-5. Check that the Github action to update the `HTAN.model.jsonld` has launched, completed and committed into your branch
+5. Check that the Github actions to ensure model integrity and update the `HTAN.model.jsonld` has launched, completed and committed into your branch
     - The action can take ~7 mins to run
     - [Monitor the action on Github](https://github.com/ncihtan/data-models/actions)
-    - Ensure the action has completed with a green tick ✅
+    - Ensure the actions have all completed with a green tick ✅
     - Ensure that the `github-actions` user has commited into your branch with the message `auto convert to .jsonld`
+    - If model integrity tests fail review the errors and implement changes in your branch.
 6.  Make a new PR from your feature branch to `main`
-    - Assign @elv-sb as reviewer
+    - Assign @adamjtaylor as reviewer
+    - Link the PR to the issue
+    - Move the issue status to 'ready for review'.
+8. Merging is blocked until after review is approved.
+    - Through review process if needed update the branch from `main` to ensure alignment with the latest data model.
 7. Once merged...
-    - Delete the branch to keep things tidy
-    - Notify FAIR data team to regenerate the Data Curator App with the updated model
-9. If a new component has been added...
-    - Create a branch named `add-<component>` in [`ncihtan/HTAN-data-curator`](https://github.com/ncihtan/HTAN-data-curator)
-    - Modify `www/config.json` to add the component ensuring the `schema_name` matches the data model `Component` you are adding
-    - Push the change
-    - Open a PR in [`ncihtan/HTAN-data-curator`](https://github.com/ncihtan/HTAN-data-curator)
-    - Assign @elv-sb as reviewer
-    - Once approved notify FAIR data team to regenerate Data Curator App with latest component
+    - Delete the branch to keep things tidy (should be automatic)
+    - Move the issue status to 'In staging'
+
+## Data release process
+
+Data releases are made duirng the "Close out party" at the end of our approximatly monthly sprints
+
+1. Draft a new release
+    - Create a new tag following [CalVer](https://calver.org/) format `v<YY>.<MM>.MINOR` eg `v24.5.2` for the second release made in May 2024
+    - Set the targrt to the `main` branch
+    - Generate release notes
+    - Save the draft release
+2. Review the release with at least one other team member and agree to release
+    - Set as the latest release.
+    - Issue the release
+4. Update Data Curator Confgi:
+    - Edit [htan/dca_config.json](https://github.com/Sage-Bionetworks/data_curator_config/blob/prod/HTAN/dca_config.json) file within the [Sage-Bionetworks/data_curator_config](https://github.com/Sage-Bionetworks/data_curator_config) repo
+        - Update [data_model_url](https://github.com/Sage-Bionetworks/data_curator_config/blob/d9b9f367ed30b046d113a1973ff256d219913b00/HTAN/dca_config.json#L5) to the latest release
+        - Update [template_menu_config_file](https://github.com/Sage-Bionetworks/data_curator_config/blob/d9b9f367ed30b046d113a1973ff256d219913b00/HTAN/dca_config.json#L7) to the latest release
+    - Open a PR and assign to @afwillia
+    - Deployment to production is complete once this is merged.
 
