@@ -1030,3 +1030,11 @@ Barretts Esophagus Goblet Cells Present,Presence or absennce of Barretts esophag
 Pancreatitis Onset Year,Date of onset of pancreatitis.,,,,FALSE,Follow Up,,,num
 HTAN Parent Channel Metadata ID,HTAN ID for a level 3 channels table.,,,,TRUE, Imaging Level 4,,,
 Single Nucleus Capture,Nuclei isolation method,"Plates, 10x, droplet",,,FALSE,scmC-seq Level 1,,,
+Participant Vital Status Update,Updates to a participants vital status,,"Component, HTAN Participant ID, Vital Status",,FALSE,Patient,,,
+Precancer Diagnosis,Diagnosis of a precancerous condition,,"Component, HTAN Participant ID, Precancer Case",,FALSE,Patient,,,
+Alive,This indicates the participant is alive and defines further required metadata,,Days to Vital Status Reference,,FALSE,Patient,,,
+Days to Vital Status Reference,Number of days between the date used for index and the reference date for designation of vital status,,,,TRUE,Patient,,,int
+Precancer Case,Yes/No indicator to designate the participant for whom precancerous lesion(s) was identified (premalignancy only).,"Yes - Precancer Case, No, Not Reported, unknown",,,TRUE,Patient,,,
+Yes - Precancer Case,Indicates that the participant is a precancer case,,"Precancerous Condition Type, Days to Precancer Case Designation, WHO Precursor Lesion Code",,FALSE,Patient,,,
+Days to Precancer Case Designation,Number of days between the date used for index and the reference date for designation of precancer status.,,,,FALSE,Patient,,,int
+WHO Precursor Lesion Code,"World Health Organization Classification of Tumour cytopathology-based coding system, includes 'precursor lesion' designations for precancers. ICD-O-3 morphology axis format eg 1234/1",,,,FALSE,Patient,,,regex match ^\d{4}\/[0-3]$
