@@ -1035,4 +1035,4 @@ Precancer Diagnosis,Diagnosis of a precancerous condition,,"Precancer Case, Days
 Days to Vital Status Reference,Number of days between the date used for index and the reference date for designation of vital status,,,,FALSE,Patient,,,int
 Precancer Case,Yes/No indicator to designate the participant for whom precancerous lesion(s) was identified (premalignancy only).,"Yes, No, Not Reported, unknown",,,FALSE,Patient,,,
 Days to Precancer Case Designation,Number of days between the date used for index and the reference date for designation of precancer status.,,,,FALSE,Patient,,,int
-WHO Precursor Lesion Code,"World Health Organization Classification of Tumour cytopathology-based coding system, includes 'precursor lesion' designations for precancers. ICD-O-3 morphology axis format","This precursor: 1234/1, That precursor: 4321/2",,,FALSE,Patient,,,
+WHO Precursor Lesion Code,"World Health Organization Classification of Tumour cytopathology-based coding system, includes 'precursor lesion' designations for precancers. ICD-O-3 morphology axis format eg 1234/1",,,,FALSE,Patient,,,regex match ^\d{4}\/[0-3]$
