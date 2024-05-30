@@ -1036,4 +1036,4 @@ Microarray Platform ID,"The NCBI GEO Microarray Platform ID that links to the ta
 Microarray Molecule,Microarray is measuring this kind of molecule,"DNA, RNA",,,TRUE,Microarray Level 1,,,
 Microarray Label,Microarray used this kind of label,,,,TRUE,Microarray Level 1,,,
 Microarray Value Definition,What the provided value signifies,,,,TRUE,Microarray Level 1,,,
-Microarray Protocol Auxiliary File,"Auxiliary file describing the experimental protocols used, as described in the NCBI GEO microarray template, recorded as synapse ID (syn12345).",,,,True,Microarray Level 1,,,regex match syn\d+
+Microarray Protocol Auxiliary File,"Auxiliary file describing the experimental protocols used, as described in the NCBI GEO microarray template, recorded as synapse ID (syn12345).",,,,TRUE,Microarray Level 1,,,regex match syn\d+
