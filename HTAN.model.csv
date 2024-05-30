@@ -1032,8 +1032,8 @@ Barretts Esophagus Goblet Cells Present,Presence or absennce of Barretts esophag
 Pancreatitis Onset Year,Date of onset of pancreatitis.,,,,FALSE,Follow Up,,,num
 HTAN Parent Channel Metadata ID,HTAN ID for a level 3 channels table.,,,,TRUE, Imaging Level 4,,,
 Single Nucleus Capture,Nuclei isolation method,"Plates, 10x, droplet",,,FALSE,scmC-seq Level 1,,,
-Microarray Platform ID,The NCBI GEO Microarray Platform ID or Agilent Design ID that links to the table containing the array definition,,,,TRUE,Microarray Level 1,,,
+Microarray Platform ID,The NCBI GEO Microarray Platform ID that links to the table containing the array definition,regex match GPL\d+,,,TRUE,Microarray Level 1,,,
 Microarray Molecule,Microarray is measuring this kind of molecule,"DNA, RNA",,,TRUE,Microarray Level 1,,,
 Microarray Label,Microarray used this kind of label,,,,TRUE,Microarray Level 1,,,
 Microarray Value Definition,What the provided value signifies,,,,TRUE,Microarray Level 1,,,
-Microarray Protocol Auxiliary File,"Auxiliary file describing the experimental protocols used, as described in the NCBI GEO microarray template, recorded as synapse ID (syn12345).",regex match syn\d+,"SynapseID",,True,Microarray Level 1,,,
+Microarray Protocol Auxiliary File,"Auxiliary file describing the experimental protocols used, as described in the NCBI GEO microarray template, recorded as synapse ID (syn12345).",regex match syn\d+,,,True,Microarray Level 1,,,
