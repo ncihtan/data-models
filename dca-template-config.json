@@ -171,6 +171,16 @@
         "type": "file"
       },
       {
+        "display_name": "Microarray Level 1",
+        "schema_name": "MicroarrayLevel1",
+        "type": "file"
+      },
+      {
+        "display_name": "Microarray Level 2",
+        "schema_name": "MicroarrayLevel2",
+        "type": "file"
+      },
+      {
         "display_name": "Multiplexed CITE-seq Level 1",
         "schema_name": "MultiplexedCITE-seqLevel1",
         "type": "file"
