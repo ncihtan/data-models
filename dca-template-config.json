@@ -71,6 +71,11 @@
         "type": "file"
       },
       {
+        "display_name": "CDS Sequencing Template",
+        "schema_name": "CDSSequencingTemplate",
+        "type": "file"
+      },
+      {
         "display_name": "Bulk WES Level 3",
         "schema_name": "BulkWESLevel3",
         "type": "file"
