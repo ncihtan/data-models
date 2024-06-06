@@ -171,6 +171,26 @@
         "type": "file"
       },
       {
+        "display_name": "Multiplexed CITE-seq Level 1",
+        "schema_name": "MultiplexedCITE-seqLevel1",
+        "type": "file"
+      },
+      {
+        "display_name": "Multiplexed CITE-seq Level 2",
+        "schema_name": "MultiplexedCITE-seqLevel2",
+        "type": "file"
+      },
+      {
+        "display_name": "Multiplexed CITE-seq Level 3",
+        "schema_name": "MultiplexedCITE-seqLevel3",
+        "type": "file"
+      },
+      {
+        "display_name": "Multiplexed CITE-seq Level 4",
+        "schema_name": "MultiplexedCITE-seqLevel4",
+        "type": "file"
+      },
+      {
         "display_name": "Nanostring CosMx SMI Experiment",
         "schema_name": "NanostringCosMxSMIExperiment",
         "type": "file"
