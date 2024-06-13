@@ -416,11 +416,6 @@
         "type": "record"
       },
       {
-        "display_name": "Pancreatic Cancer Tier 3",
-        "schema_name": "PancreaticCancerTier3",
-        "type": "record"
-      },
-      {
         "display_name": "Participant Vital Status Update",
         "schema_name": "ParticipantVitalStatusUpdate",
         "type": "record"
@@ -428,6 +423,11 @@
       {
         "display_name": "Precancer Diagnosis",
         "schema_name": "PPrecancerDiagnosis",
+        "type": "record"
+      },
+      {
+        "display_name": "Prostate Cancer Tier 3",
+        "schema_name": "ProstateCancerTier3",
         "type": "record"
       },
       {
