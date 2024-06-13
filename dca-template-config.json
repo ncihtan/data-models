@@ -422,7 +422,7 @@
       },
       {
         "display_name": "Precancer Diagnosis",
-        "schema_name": "PPrecancerDiagnosis",
+        "schema_name": "PrecancerDiagnosis",
         "type": "record"
       },
       {
