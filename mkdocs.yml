@@ -2,13 +2,14 @@
 site_name: "HTAN Data Model Dictionary"
 site_description: >
   Versioned history of the HTAN data model.
+
 # Repository
 repo_url: https://github.com/ncihtan/data-models
 repo_name: data-models
 
 # Navigation
 nav:
-  - Home: home.md
+  - Home: index.md
   - Dictionary:
       - Dictionary: dictionary.md
 
@@ -43,6 +44,11 @@ theme:
     - search.suggest
     - toc.follow
 
+# Custom CSS
+extra_css:
+  - assets/custom.css
+
+# Plugins
 plugins:
   - search
   - table-reader:
@@ -50,9 +56,11 @@ plugins:
       select_readers:
         - read_csv
 
+# Markdown Extensions
 markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
   - toc:
       permalink: true
+
