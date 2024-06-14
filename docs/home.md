@@ -8,7 +8,7 @@
 </p>
 
 **Welcome!** 👋 Explore metadata terms used by HTAN
-project by key, value, or descriptions.
+project by attributes, description and dependencies.
 
 ### How to Use
 
