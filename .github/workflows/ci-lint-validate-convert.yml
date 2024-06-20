@@ -107,3 +107,51 @@ jobs:
       - uses: r-lib/actions/pr-push@v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+  config:
+    name: Make config file from data model
+    needs:
+      - convert
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4 
+        with:
+          python-version: '3.9'
+
+      - name: Install Schematic
+        shell: bash
+        run: |
+          pip3 install poetry
+          git clone --single-branch --branch main https://github.com/Sage-Bionetworks/schematic.git
+          cd schematic
+          poetry build
+          pip3 install dist/schematicpy-*-py3-none-any.whl
+
+      - name: Make config file from data model
+        shell: bash
+        run: |
+          python .github/workflows/config_schema.py \
+          -c config.yml \
+          -s HTAN.model.jsonld \
+          -o '.' \
+          --service_repo 'Sage-Bionetworks/schematic' \
+          --overwrite
+
+      - uses: r-lib/actions/pr-fetch@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit the changes
+        run: |
+          git config --local user.name "$GITHUB_ACTOR"
+          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git add HTAN.model.jsonld
+          git commit -m "GitHub Action: Make config from data model" || echo "No changes to commit"
+
+      - uses: r-lib/actions/pr-push@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
