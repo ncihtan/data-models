@@ -222,9 +222,9 @@ Channel QC Failure Comment,Custom comment on channel QC faliure,,,,FALSE,Imaging
 Cycle Number,The cycle # in which the co-listed reagent(s) was(were) used. Integer >= 1 (up to number of cycles),,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,int
 Sub Cycle Number,Sub cycle number,,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,int
 Target Name,Short descriptive name (abbreviation) for this target (antigen),,,,TRUE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
-Antibody Role," ""Is this antibody acting as a primary or secondary antibody""","Primary,Secondary",,,TRUE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
+Antibody Role," ""Is this antibody acting as a primary or secondary antibody""","Primary,Secondary,Neither-Dye/Stain",,,TRUE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
 Antibody Name,"Antibody Name (free text (eg “Keratin”, “CD163”, “DNA”))",,,,TRUE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
-RRID identifier,Research Resource Identifier (eg “RRID: AB_394606”),,,,TRUE,Imaging Level 3 Channels,,https://scicrunch.org/resources,regex match AB_\d+
+RRID identifier,Research Resource Identifier (eg “RRID: AB_394606”),,,,TRUE,Imaging Level 3 Channels,,https://scicrunch.org/resources,regex match AB_\d+|Not\sApplicable$
 Fluorophore,Fluorescent dye label (eg Alexa Fluor 488),,,,FALSE,Imaging Level 3 Channels,,http://purl.obolibrary.org/obo/MI_0857,
 Clone,Clone,,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
 Lot,Lot number from vendor,,,,FALSE,Imaging Level 3 Channels,,https://www.miti-consortium.org/,
