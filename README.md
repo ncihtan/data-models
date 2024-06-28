@@ -1,5 +1,6 @@
 # HTAN Data Models
 
+The HTAN Data Model can be explored at https://humantumoratlas.org/standards. This repository contains the files representing the data model.
 
 ## Citation
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7838214.svg)](https://doi.org/10.5281/zenodo.7838214)  
