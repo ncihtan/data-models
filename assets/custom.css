@@ -1,0 +1,15 @@
+/* Ensure tables fit within the viewport without scrolling */
+table {
+    width: 100%;
+    table-layout: fixed; /* Forces the table to take up the full width */
+    overflow-x: auto; /* Enable horizontal scrolling only when necessary */
+    border-collapse: collapse; /* Ensures no spaces between table cells */
+    margin-bottom: 20px; /* Optional: Adds space below the table */
+}
+
+th, td {
+    word-break: break-word; /* Allows long words to break and wrap */
+    padding: 8px; /* Adjust padding as needed */
+    text-align: left; /* Adjust text alignment as needed */
+    border: 1px solid #ddd; /* Optional: Adds borders to cells */
+}
