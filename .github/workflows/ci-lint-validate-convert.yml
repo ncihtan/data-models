@@ -18,15 +18,15 @@ env:
 
 jobs:
   lint:
-    name: Lint CSV
-    if: always()
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: csvlinter
-        uses: kcheriyath/csvlinter@V0.6.0
-        with:
-          find_pattern: "*.csv"
+  name: Lint CSV
+  if: always()
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v4
+    - name: csvlinter
+      uses: kcheriyath/csvlinter@V0.6.0
+      with:
+        find_pattern: "*.csv"
 
   validate:
     name: Validate CSV
