@@ -177,7 +177,7 @@ Ligation Condition,Name of ligase and condition for proximity ligation,,,,TRUE,S
 Biotin Enrichment,Whether biotin is used for enriching ligation product,"Yes, No",,,TRUE,Sequencing,,,
 DNA Input Amount,"Amount of DNA for library construction, in nanograms.",,,,TRUE,Sequencing,,,int
 Resolution,"Binning size used for generating contact matrix, in basepair.",,,,TRUE,Sequencing,,,
-Stripe Calling,"Tool used for identifying architectural stripe-forming, interaction hotspots.","MACS2, Other",,,TRUE,Sequencing,,,list::-?\d+
+Stripe Calling,"Tool used for identifying architectural stripe-forming, interaction hotspots.","MACS2, Other",,,TRUE,Sequencing,,,
 Loop Window,Binning size used for calling significant dot interactions (loops),,,,TRUE,Sequencing,,,list like :: regex search -?\d+
 Stripe Window,Binning size used for calling significant architectural stripes. Can be an integer or comma-separated list of integers indicating bin size and sliding window size if different.,,,,TRUE,Sequencing,,,list like :: regex search -?\d+
 Loop Calling,Tool used for identifying loop interactions,"HiCCUPS, Cooltools, Other",,,TRUE,Sequencing,,,
