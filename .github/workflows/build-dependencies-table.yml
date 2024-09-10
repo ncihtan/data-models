@@ -43,7 +43,8 @@ jobs:
         response.raise_for_status()
         model_jsonld = response.json()
 
-        response = requests.post(url, json=model_jsonld)
+        # Assuming the API uses GET method to retrieve the data
+        response = requests.get(url, params=model_jsonld)
         response.raise_for_status()
         attribute_table = response.json()  # Adjust this line based on the actual response format
 
