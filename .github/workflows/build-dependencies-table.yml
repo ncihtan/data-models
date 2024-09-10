@@ -35,22 +35,37 @@ jobs:
         python - <<EOF
         import requests
         import pandas as pd
+        from io import StringIO
 
-        url = "https://schematic.api.sagebionetworks.org/v1/ui/"  # Endpoint URL
-        jsonld_url = "https://raw.githubusercontent.com/ncihtan/data-models/main/HTAN.model.jsonld"
-        
-        response = requests.get(jsonld_url)
-        response.raise_for_status()
-        model_jsonld = response.json()
+        def fetch_and_save_attribute_table():
+            url = "https://schematic.api.sagebionetworks.org/v1/visualize/attributes"
+            jsonld_url = "https://raw.githubusercontent.com/ncihtan/data-models/main/HTAN.model.jsonld"
+            
+            # Prepare parameters or request body as needed
+            params = {'schema_url': jsonld_url}
+            
+            print("Fetching attribute table...")
+            response = requests.get(url, params=params)
+            print(f"Status Code: {response.status_code}")
 
-        # Assuming the API uses GET method to retrieve the data
-        response = requests.get(url, params=model_jsonld)
-        response.raise_for_status()
-        attribute_table = response.json()  # Adjust this line based on the actual response format
+            if response.status_code == 200:
+                content_type = response.headers.get('Content-Type', '')
+                if 'text/html' in content_type:
+                    print("Response in text/html format, converting to CSV...")
+                    try:
+                        df = pd.read_csv(StringIO(response.text))
+                        print("Fetched attribute table.")
+                        
+                        df.to_csv('HTAN.dependencies.csv', index=False)
+                        print("Saved to HTAN.dependencies.csv.")
+                    except Exception as e:
+                        print(f"Error processing CSV: {e}")
+                else:
+                    print("Unexpected content type. Expected text/html but got:", content_type)
+            else:
+                print(f"Failed to fetch data. Status Code: {response.status_code}")
 
-        df = pd.DataFrame(attribute_table)
-        
-        df.to_csv('HTAN.dependencies.csv', index=False)
+        fetch_and_save_attribute_table()
         EOF
 
     - name: Commit changes
@@ -68,4 +83,3 @@ jobs:
         branch: update-attribute-table
         title: "Update HTAN.dependencies.csv"
         body: "This PR updates HTAN.dependencies.csv with the latest attribute table."
-
