@@ -25,28 +25,36 @@ jobs:
       - uses: actions/checkout@v4
       - name: csvlinter
         uses: kcheriyath/csvlinter@V0.6.0
-        with:
+        with: 
           find_pattern: "*.csv"
 
   validate:
     name: Validate CSV
     if: always()
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.10'
+      
       - name: Install IPython
         run: |
           pip install ipython==8.18.1    
+
       - name: Install Schematic
+        shell: bash
         run: |
           pip install schematicpy==$SCHEMATIC_VERSION
+
       - name: Convert CSV schema
+        shell: bash
         run: |
           schematic schema convert .github/CSV.model.csv
+
       - name: Validate data model CSV
+        shell: bash
         run: |
           schematic model -c .github/CSV_schematic_config.yml validate -mp HTAN.model.csv -dt "DataModel" |
             grep "Your manifest has been validated successfully. There are no errors in your manifest, and it can be submitted without any modifications."
@@ -57,36 +65,37 @@ jobs:
       - lint
       - validate
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.10'
+
       - name: Install IPython
         run: |
           pip install ipython==8.18.1
+
       - name: Install Schematic
+        shell: bash
         run: |
           pip install schematicpy==$SCHEMATIC_VERSION
+
       - name: Convert .csv to .jsonld
+        shell: bash
         run: |
           schematic schema convert HTAN.model.csv
-      - name: Set up Git user
-        run: |
-          git config --local user.name "github-actions[bot]"
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-      - name: Fetch PR details
-        if: github.event_name == 'pull_request'
-        uses: r-lib/actions/pr-fetch@v2
+
+      - uses: r-lib/actions/pr-fetch@v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Commit the changes
         run: |
           git add HTAN.model.jsonld
           git commit -m "GitHub Action: convert *.model.csv to *.model.jsonld" || echo "No changes to commit"
-      - name: Push changes back to PR
-        if: github.event_name == 'pull_request'
-        uses: r-lib/actions/pr-push@v2
+
+      - uses: r-lib/actions/pr-push@v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
