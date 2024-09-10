@@ -1,0 +1,61 @@
+name: Build Dependencies Table
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  update-table:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests pandas
+
+    - name: Fetch attribute table
+      run: |
+        python - <<EOF
+        import requests
+        import pandas as pd
+
+        url = "https://schematic.api.sagebionetworks.org/v1/ui/"  # Endpoint URL
+        jsonld_url = "https://raw.githubusercontent.com/ncihtan/data-models/main/HTAN.model.jsonld"
+        
+        response = requests.get(jsonld_url)
+        response.raise_for_status()
+        model_jsonld = response.json()
+
+        response = requests.post(url, json=model_jsonld)
+        response.raise_for_status()
+        attribute_table = response.json()  # Adjust this line based on the actual response format
+
+        df = pd.DataFrame(attribute_table)
+        
+        df.to_csv('HTAN.dependencies.csv', index=False)
+        EOF
+
+    - name: Commit changes
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add HTAN.dependencies.csv
+        git commit -m "Update HTAN.dependencies.csv with the latest attribute table"
+
+    - name: Create Pull Request
+      uses: aditigopalan/create-pull-request@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: "Update HTAN.dependencies.csv"
+        branch: update-attribute-table
+        title: "Update HTAN.dependencies.csv"
+        body: "This PR updates HTAN.dependencies.csv with the latest attribute table."
