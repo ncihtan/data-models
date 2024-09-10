@@ -1,0 +1,88 @@
+name: Build Dependencies Table
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  update-table:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        ref: main
+
+    - name: Fetch latest changes from main
+      run: |
+        git fetch origin
+        git checkout main
+        git pull origin main
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests pandas
+
+    - name: Fetch attribute table
+      run: |
+        python - <<EOF
+        import requests
+        import pandas as pd
+        from io import StringIO
+        
+        def fetch_and_save_attribute_table():
+            url = "https://schematic.api.sagebionetworks.org/v1/visualize/attributes"
+            jsonld_url = "https://raw.githubusercontent.com/ncihtan/data-models/main/HTAN.model.jsonld"
+            
+            # Prepare parameters or request body as needed
+            params = {'schema_url': jsonld_url}
+            
+            print("Fetching attribute table...")
+            # Change to POST if required by the API
+            response = requests.post(url, params=params)
+            print(f"Status Code: {response.status_code}")
+            print(f"Response Text: {response.text[:500]}")  # Print first 500 characters for review
+        
+            if response.status_code == 200:
+                content_type = response.headers.get('Content-Type', '')
+                if 'text/html' in content_type:
+                    print("Response in text/html format, converting to CSV...")
+                    try:
+                        df = pd.read_csv(StringIO(response.text))
+                        print("Fetched attribute table.")
+                        df.to_csv('HTAN.dependencies.csv', index=False)
+                        print("Saved to HTAN.dependencies.csv.")
+                    except Exception as e:
+                        print(f"Error processing CSV: {e}")
+                else:
+                    print("Unexpected content type. Expected text/html but got:", content_type)
+            else:
+                print(f"Failed to fetch data. Status Code: {response.status_code}")
+        
+        if __name__ == "__main__":
+            fetch_and_save_attribute_table()
+
+        EOF
+
+    - name: Commit changes
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add HTAN.dependencies.csv
+        git commit -m "Update HTAN.dependencies.csv with the latest attribute table" || echo "No changes to commit"
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: "Update HTAN.dependencies.csv"
+        branch: update-attribute-table
+        title: "Update HTAN.dependencies.csv"
+        body: "This PR updates HTAN.dependencies.csv with the latest attribute table."
