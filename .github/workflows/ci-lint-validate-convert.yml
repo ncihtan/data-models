@@ -122,15 +122,12 @@ jobs:
               url = "https://schematic.api.sagebionetworks.org/v1/visualize/attributes"
               jsonld_url = "https://raw.githubusercontent.com/ncihtan/data-models/main/HTAN.model.jsonld"
               
-              # Prepare parameters or request body as needed
               params = {'schema_url': jsonld_url}
               
               print("Fetching attribute table...")
-              # Change to POST if required by the API
-              response = requests.post(url, params=params)
+              response = requests.get(url, params=params)
               print(f"Status Code: {response.status_code}")
-              print(f"Response Text: {response.text[:500]}")  # Print first 500 characters for review
-          
+              
               if response.status_code == 200:
                   content_type = response.headers.get('Content-Type', '')
                   if 'text/html' in content_type:
@@ -138,6 +135,7 @@ jobs:
                       try:
                           df = pd.read_csv(StringIO(response.text))
                           print("Fetched attribute table.")
+                          
                           df.to_csv('HTAN.dependencies.csv', index=False)
                           print("Saved to HTAN.dependencies.csv.")
                       except Exception as e:
@@ -146,11 +144,9 @@ jobs:
                       print("Unexpected content type. Expected text/html but got:", content_type)
               else:
                   print(f"Failed to fetch data. Status Code: {response.status_code}")
-          
-          if __name__ == "__main__":
-              fetch_and_save_attribute_table()
-
-          EOF
+                  
+            fetch_and_save_attribute_table()
+            EOF
 
       - name: Commit changes
         run: |
