@@ -22,11 +22,11 @@ jobs:
     if: always()
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: csvlinter
-      uses: kcheriyath/csvlinter@V0.6.0
-      with:
-        find_pattern: "*.csv"
+      - uses: actions/checkout@v4
+      - name: csvlinter
+        uses: kcheriyath/csvlinter@V0.6.0
+        with:
+          find_pattern: "*.csv"
 
   validate:
     name: Validate CSV
@@ -145,8 +145,8 @@ jobs:
               else:
                   print(f"Failed to fetch data. Status Code: {response.status_code}")
                   
-            fetch_and_save_attribute_table()
-            EOF
+          fetch_and_save_attribute_table()
+          EOF
 
       - name: Commit changes
         run: |
