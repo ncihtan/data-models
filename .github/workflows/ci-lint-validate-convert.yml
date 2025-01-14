@@ -108,7 +108,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Fetch latest changes
-        run: git pull origin main
+        run: git pull --rebase origin main
 
       - name: Set up Python
         uses: actions/setup-python@v2
