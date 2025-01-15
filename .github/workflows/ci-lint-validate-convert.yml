@@ -108,6 +108,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
+          ref: main
 
       - name: Fetch latest changes
         run: | 
@@ -176,3 +177,8 @@ jobs:
           branch: update-attribute-table
           title: "Update HTAN.dependencies.csv"
           body: "This PR updates HTAN.dependencies.csv with the latest attribute table."
+          base: main
+          committer: GitHub <noreply@github.com>
+          author: aditigopalan <aditigopalan@users.noreply.github.com>
+          signoff: false
+          delete-branch: true
