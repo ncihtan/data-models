@@ -136,11 +136,6 @@
         "type": "file"
       },
       {
-        "display_name": "Imaging Level 3 Image",
-        "schema_name": "ImagingLevel3Image",
-        "type": "file"
-      },
-      {
         "display_name": "Imaging Level 3 Segmentation",
         "schema_name": "ImagingLevel3Segmentation",
         "type": "file"
@@ -368,11 +363,6 @@
       {
         "display_name": "Follow Up",
         "schema_name": "FollowUp",
-        "type": "record"
-      },
-      {
-        "display_name": "Imaging Level 3 Channels",
-        "schema_name": "ImagingLevel3Channels",
         "type": "record"
       },
       {
