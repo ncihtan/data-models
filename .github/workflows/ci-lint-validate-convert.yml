@@ -3,7 +3,9 @@ name: Make JSON-LD and Build Dependencies Table
 on:
   pull_request:
     branches: 'main'
-    paths: 'HTAN.model.csv'
+    paths: 
+      - 'HTAN.model.csv'
+      - '.github/workflows/ci-lint-validate-convert.yml'
   release:
     types: [published]
   workflow_dispatch:
