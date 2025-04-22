@@ -86,7 +86,18 @@ jobs:
         run: |
           schematic schema convert HTAN.model.csv
 
-      - uses: r-lib/actions/pr-fetch@v2
+      - name: Check if in PR context
+        id: check_pr
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "is_pr=true" >> $GITHUB_OUTPUT
+          else
+            echo "is_pr=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Fetch PR context
+        if: steps.check_pr.outputs.is_pr == 'true'
+        uses: r-lib/actions/pr-fetch@v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -95,7 +106,9 @@ jobs:
           git add HTAN.model.jsonld
           git commit -m "GitHub Action: convert *.model.csv to *.model.jsonld" || echo "No changes to commit"
 
-      - uses: r-lib/actions/pr-push@v2
+      - name: Push changes
+        if: steps.check_pr.outputs.is_pr == 'true'
+        uses: r-lib/actions/pr-push@v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
