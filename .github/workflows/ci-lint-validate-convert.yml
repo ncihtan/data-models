@@ -88,21 +88,6 @@ jobs:
         run: |
           schematic schema convert HTAN.model.csv
 
-      - name: Check if in PR context
-        id: check_pr
-        run: |
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            echo "is_pr=true" >> $GITHUB_OUTPUT
-          else
-            echo "is_pr=false" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Fetch PR context
-        if: steps.check_pr.outputs.is_pr == 'true'
-        uses: r-lib/actions/pr-fetch@v2
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Configure Git
         run: |
           git config --global user.name "github-actions[bot]"
@@ -113,26 +98,10 @@ jobs:
           git add HTAN.model.jsonld
           git commit -m "GitHub Action: convert *.model.csv to *.model.jsonld" || echo "No changes to commit"
 
-      - name: Push changes in PR context
-        if: steps.check_pr.outputs.is_pr == 'true'
+      - name: Push changes to PR
         uses: r-lib/actions/pr-push@v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Create PR for JSON-LD updates
-        if: steps.check_pr.outputs.is_pr == 'false'
-        uses: peter-evans/create-pull-request@v5
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Update HTAN.model.jsonld"
-          branch: update-jsonld
-          title: "Update HTAN.model.jsonld"
-          body: "This PR updates HTAN.model.jsonld with the latest changes."
-          base: main
-          committer: GitHub <noreply@github.com>
-          author: aditigopalan <aditigopalan@users.noreply.github.com>
-          signoff: false
-          delete-branch: true
 
   build-dependencies:
     name: Build Dependencies Table
@@ -197,23 +166,17 @@ jobs:
           fetch_and_save_attribute_table()
           EOF
 
-      - name: Commit changes
+      - name: Configure Git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit changes
+        run: |
           git add HTAN.dependencies.csv
           git commit -m "Update HTAN.dependencies.csv with the latest attribute table" || echo "No changes to commit"
-  
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
+
+      - name: Push changes to PR
+        uses: r-lib/actions/pr-push@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Update HTAN.dependencies.csv"
-          branch: update-attribute-table
-          title: "Update HTAN.dependencies.csv"
-          body: "This PR updates HTAN.dependencies.csv with the latest attribute table."
-          base: main
-          committer: GitHub <noreply@github.com>
-          author: aditigopalan <aditigopalan@users.noreply.github.com>
-          signoff: false
-          delete-branch: true
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
