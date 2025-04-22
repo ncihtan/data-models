@@ -101,16 +101,26 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Commit the changes
         run: |
           git add HTAN.model.jsonld
           git commit -m "GitHub Action: convert *.model.csv to *.model.jsonld" || echo "No changes to commit"
 
-      - name: Push changes
+      - name: Push changes in PR context
         if: steps.check_pr.outputs.is_pr == 'true'
         uses: r-lib/actions/pr-push@v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push changes in non-PR context
+        if: steps.check_pr.outputs.is_pr == 'false'
+        run: |
+          git push origin HEAD:${{ github.ref_name }}
 
   build-dependencies:
     name: Build Dependencies Table
