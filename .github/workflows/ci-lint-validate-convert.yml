@@ -3,7 +3,9 @@ name: Make JSON-LD and Build Dependencies Table
 on:
   pull_request:
     branches: 'main'
-    paths: 'HTAN.model.csv'
+    paths: 
+      - 'HTAN.model.csv'
+      - '.github/workflows/ci-lint-validate-convert.yml'
   release:
     types: [published]
   workflow_dispatch:
@@ -117,10 +119,20 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Push changes in non-PR context
+      - name: Create PR for JSON-LD updates
         if: steps.check_pr.outputs.is_pr == 'false'
-        run: |
-          git push origin HEAD:${{ github.ref_name }}
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Update HTAN.model.jsonld"
+          branch: update-jsonld
+          title: "Update HTAN.model.jsonld"
+          body: "This PR updates HTAN.model.jsonld with the latest changes."
+          base: main
+          committer: GitHub <noreply@github.com>
+          author: aditigopalan <aditigopalan@users.noreply.github.com>
+          signoff: false
+          delete-branch: true
 
   build-dependencies:
     name: Build Dependencies Table
