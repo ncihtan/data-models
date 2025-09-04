@@ -1,14 +1,19 @@
-# HTAN Data Models
+# HTAN Phase 1 Data Model (HTAN1)
 
-The HTAN Data Model can be explored at https://humantumoratlas.org/standards. This repository contains the files representing the data model.
+---
 
-## Citation
+## ⚠️ **THE HTAN PHASE 1 DATA MODEL IS NO LONGER IN DEVELOPMENT. THIS REPOSITORY HAS BEEN ARCHIVED** ⚠️  
+
+This archived repository contains the legacy files representing the data model used in Phase 1 of the HTAN program. This data model established the metadata standards for HTAN data contributed by [HTAN Phase 1 Centers](https://humantumoratlas.org/research-network) until August 31, 2025, up to [v25.2.1](https://github.com/ncihtan/data-models/releases). A new data model is in development for Phase 2 of the HTAN Program [in this repository](https://github.com/ncihtan/htan-linkml). Additional informaton about the data models and specific standards in use for HTAN can be found on the [HTAN Data Portal](https://humantumoratlas.org/) and the linked [HTAN Manual](https://docs.humantumoratlas.org/).
+
+## :pray: Citation
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7838214.svg)](https://doi.org/10.5281/zenodo.7838214)  
-To cite the latest data model use the Zenodo Concept DOI above (resolves to latest version).
+To cite the HTAN Phase 1 Data Model, use the Zenodo Concept DOI above (resolves to final released version, v25.2.1]).
 DOIs for specific versions can be found on Zenodo.
 
+## :arrow_down: Legacy Content
 
-## Major files
+### Major files
 
 This repository contains 3 major files:
 
@@ -18,7 +23,7 @@ This repository contains 3 major files:
 
 3. **`config.yml`** | The schematic-compatible configuration file, which allows users to specify values for application-specific keys (e.g., path to Synapse configuration file) and project-specific keys (e.g., Synapse fileview for community project). A description of what the various keys in this file represent can be found in the [schematic installation guide](https://github.com/Sage-Bionetworks/schematic?tab=readme-ov-file#installation-guide-for-data-curator-app).
 
-## Updating the data model
+### Updating the data model
 
 1. Create and checkout a new branch from `main`. We suggest you work in a branch of this repo rather than on a fork.
      ```
@@ -50,9 +55,9 @@ This repository contains 3 major files:
     - Delete the branch to keep things tidy (should be automatic)
     - Move the issue status to 'In staging'
 
-## Data release process
+### Data model release process
 
-Data releases are made duirng the "Close out party" at the end of our approximatly monthly sprints
+Data model releases are made duirng the "Close out party" at the end of our approximately monthly sprints
 
 1. Draft a new release
     - Create a new tag following [CalVer](https://calver.org/) format `v<YY>.<MM>.MINOR` eg `v24.5.2` for the second release made in May 2024
